@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "739770604058",
+    "project_id": "simplecolorpicker-eaa89",
+    "storage_bucket": "simplecolorpicker-eaa89.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:739770604058:android:211e7e76571a6970a38fa3",
+        "android_client_info": {
+          "package_name": "kosenda.makecolor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "739770604058-il6euqanitihv0b05cdong5schjnlhnf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbMBNZvh-av-qrfHoNLrclp2dnXH5gYy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "739770604058-il6euqanitihv0b05cdong5schjnlhnf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
