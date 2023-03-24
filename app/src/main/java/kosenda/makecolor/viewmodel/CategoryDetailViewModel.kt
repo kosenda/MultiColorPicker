@@ -1,0 +1,76 @@
+package kosenda.makecolor.viewmodel
+
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kosenda.makecolor.di.IODispatcher
+import kosenda.makecolor.model.Category
+import kosenda.makecolor.model.repository.ColorRepository
+import kosenda.makecolor.view.navigation.CategoryDetailParam
+import kosenda.makecolor.view.state.CategoryDetailUiState
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
+import javax.inject.Inject
+
+abstract class CategoryDetailViewModel : ViewModel() {
+    abstract val uiState: StateFlow<CategoryDetailUiState>
+    abstract fun updateCategory(newCategory: Category)
+    abstract fun deleteCategory()
+    abstract fun closeNewCategoryDialog()
+    abstract fun openNewCategoryDialog()
+}
+
+@HiltViewModel
+class CategoryDetailViewModelImpl @Inject constructor(
+    @IODispatcher private val ioDispatcher: CoroutineDispatcher,
+    private val colorRepository: ColorRepository,
+    savedStateHandle: SavedStateHandle,
+) : CategoryDetailViewModel() {
+    private val _uiState = MutableStateFlow(CategoryDetailUiState())
+    override val uiState: StateFlow<CategoryDetailUiState> = _uiState.asStateFlow()
+
+    init {
+        val categoryDetailParam = Json.decodeFromString<CategoryDetailParam>(
+            string = savedStateHandle.get<String>("categoryDetail")!!,
+        )
+        _uiState.update {
+            it.copy(
+                colors = categoryDetailParam.colors,
+                category = categoryDetailParam.category,
+                isDefault = categoryDetailParam.isDefault,
+            )
+        }
+    }
+
+    override fun updateCategory(newCategory: Category) {
+        CoroutineScope(ioDispatcher).launch {
+            colorRepository.updateCategory(
+                oldName = uiState.value.category.name,
+                newName = newCategory.name,
+            )
+            closeNewCategoryDialog()
+        }
+    }
+
+    override fun deleteCategory() {
+        CoroutineScope(ioDispatcher).launch {
+            colorRepository.deleteCategory(name = uiState.value.category.name)
+            closeNewCategoryDialog()
+        }
+    }
+
+    override fun closeNewCategoryDialog() {
+        _uiState.update { it.copy(isShowNewCategoryDialog = false) }
+    }
+
+    override fun openNewCategoryDialog() {
+        _uiState.update { it.copy(isShowNewCategoryDialog = true) }
+    }
+}
