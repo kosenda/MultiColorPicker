@@ -104,7 +104,7 @@
     <string name="licenses_title" translatable="false">Licenses</string>
     <string name="oss_licenses" translatable="false">OSS Licenses</string>
     <string name="github" translatable="false">GitHub</string>
-    <string name="github_url" translatable="false">https://github.com/kosenda/makecolor</string>
+    <string name="github_url" translatable="false">https://github.com/kosenda/MultiColorPicker</string>
 
     <!-- Locale Name -->
     <string name="locale_en" translatable="false">en</string>
