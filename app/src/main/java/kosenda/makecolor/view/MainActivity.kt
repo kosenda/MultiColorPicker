@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             val themeNum: State<Int> =
                 mainViewModel.themeNum.collectAsState(initial = Theme.AUTO.num)
             val fontType: State<String> =
-                mainViewModel.customFont.collectAsState(initial = FontType.DEFAULT.name)
+                mainViewModel.customFont.collectAsState(initial = FontType.DEFAULT.fontName)
 
             val isDarkTheme = when (themeNum.value) {
                 Theme.NIGHT.num -> true
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                     FontType.ROBOTO_SLAB.fontName -> FontType.ROBOTO_SLAB
                     FontType.PACIFICO.fontName -> FontType.PACIFICO
                     FontType.HACHI_MARU_POP.fontName -> FontType.HACHI_MARU_POP
-                    else -> throw IllegalArgumentException("定義されていないフォント: $fontType")
+                    else -> throw IllegalArgumentException("定義されていない: ${fontType.value}")
                 },
             ) {
                 CompositionLocalProvider(LocalIsDark provides isDarkTheme) {

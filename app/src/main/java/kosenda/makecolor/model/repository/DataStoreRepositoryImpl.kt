@@ -38,11 +38,11 @@ class DataStoreRepositoryImpl @Inject constructor(
                 Timber.e("DataStore: %s", exception)
                 when (exception) {
                     is IOException -> emit(emptyPreferences())
-                    else -> FontType.DEFAULT.name
+                    else -> FontType.DEFAULT.fontName
                 }
             }
             .map { preferences ->
-                preferences[PreferencesKey.FONT_TYPE] ?: FontType.DEFAULT.name
+                preferences[PreferencesKey.FONT_TYPE] ?: FontType.DEFAULT.fontName
             }
     }
 
