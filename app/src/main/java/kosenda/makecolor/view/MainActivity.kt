@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                     FontType.ROBOTO_SLAB.fontName -> FontType.ROBOTO_SLAB
                     FontType.PACIFICO.fontName -> FontType.PACIFICO
                     FontType.HACHI_MARU_POP.fontName -> FontType.HACHI_MARU_POP
-                    else -> throw IllegalArgumentException("義されていないフォント: $fontType")
+                    else -> throw IllegalArgumentException("定義されていないフォント: $fontType")
                 },
             ) {
                 CompositionLocalProvider(LocalIsDark provides isDarkTheme) {
