@@ -18,7 +18,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-abstract class GradationViewModel() : ViewModel() {
+abstract class GradationViewModel : ViewModel() {
     abstract val uiState: StateFlow<GradationUiState>
     abstract fun init(navBackStackEntry: NavBackStackEntry?)
     abstract fun fetchCategories(defaultCategories: List<Category>)
