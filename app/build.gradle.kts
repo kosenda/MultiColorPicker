@@ -82,26 +82,20 @@ dependencies {
         }
     }
 
+    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.appcompat:appcompat:1.7.0-alpha02")
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation("androidx.activity:activity:1.6.1")
+
     // color picker
     implementation("com.godaddy.android.colorpicker:compose-color-picker:0.7.0")
     // with Android ColorInt extensions
     implementation("com.godaddy.android.colorpicker:compose-color-picker-android:0.7.0")
 
-    // Accompanist
-    implementation("com.google.accompanist:accompanist-swiperefresh:0.23.1")
-    implementation("com.google.accompanist:accompanist-pager:0.23.1")
-
     // palette API
     implementation("androidx.palette:palette-ktx:1.0.0")
-
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.7.0-alpha02")
-    implementation("com.google.android.material:material:1.8.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    implementation("androidx.activity:activity:1.6.1")
 
     // Compose
     implementation("androidx.compose.ui:ui:1.3.3")
@@ -124,11 +118,6 @@ dependencies {
     implementation("androidx.room:room-runtime:2.5.0")
     annotationProcessor("androidx.room:room-compiler:2.5.0")
     kapt("androidx.room:room-compiler:2.5.0")
-
-    // Test関連
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     // FireBase
     implementation(platform("com.google.firebase:firebase-bom:31.1.1"))
