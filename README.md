@@ -8,6 +8,7 @@ https://play.google.com/store/apps/details?id=kosenda.makecolor
 - 様々な方法で色を作成できることだけでなく、保存や比較もできるアプリ
 - アーキテクチャはMVVM
 - 13言語対応
+- 色についてはRGB, CMYK, HSV, HEXに対応しています
 
 
 ## 今後特にしていきたいこと
@@ -71,3 +72,27 @@ adUnitId=ca-app-pub-3940256099942544/6300978111
 |グラデーション|<img src="https://user-images.githubusercontent.com/60963155/227682835-e8d0e7ef-0ac8-41f8-88c9-00ccb1103fc0.png" width="350">|
 |単色|<img src="https://user-images.githubusercontent.com/60963155/227682838-2504dfc0-e109-4fb9-97f4-de2946c8f857.png" width="350">|
 |カテゴリー詳細|<img src="https://user-images.githubusercontent.com/60963155/227682839-09f8beb6-7d1c-479e-9d2a-933cc68fe779.png" width="350">|
+</details>
+
+## アプリ内のデフォルトカラーデータについて
+#### 以下からデータを設定しました
+- JIS慣用色名 『フリー百科事典ウィキペディア（Wikipedia）』  
+最終更新: 2021年3月24日 (水) 06:53(UTC)  
+URL: https://ja.wikipedia.org/wiki/JIS慣用色名  
+
+- JIS安全色 『フリー百科事典ウィキペディア（Wikipedia）』  
+最終更新: 2021年2月5日 (金) 00:19(UTC)  
+URL: https://ja.wikipedia.org/wiki/JIS安全色  
+
+- ウェブカラー 『フリー百科事典ウィキペディア（Wikipedia）』   
+最終更新: 2020年11月20日 (金) 08:15(UTC)  
+URL: https://ja.wikipedia.org/wiki/ウェブカラー  
+
+- X11の色名称 『フリー百科事典ウィキペディア（Wikipedia）』  
+最終更新: 2021年5月31日 (月) 00:18(UTC)  
+URL: https://ja.wikipedia.org/wiki/X11の色名称  
+
+- コピック  
+最終更新: 2021年5月10日  
+URL: https://copic.jp/about/color-system/  
+
