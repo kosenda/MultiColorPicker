@@ -8,7 +8,7 @@ https://play.google.com/store/apps/details?id=kosenda.makecolor
 - 様々な方法で色を作成できることだけでなく、保存や比較もできるアプリ
 - アーキテクチャはMVVM
 - 13言語対応
-- 色についてはRGB, CMYK, HSV, HEXに対応しています
+- 色についてはRGB, CMYK, HSV, HEXに対応
 
 
 ## 今後特にしていきたいこと
@@ -18,7 +18,7 @@ https://play.google.com/store/apps/details?id=kosenda.makecolor
 
 
 ## アプリをクローンなどして実行する場合
-#### local.propertiesに以下を追記してください
+#### `local.properties`に以下を追記してください
 ```
 adApplicationId=ca-app-pub-3940256099942544~3347511713
 adUnitId=ca-app-pub-3940256099942544/6300978111
