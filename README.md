@@ -1,12 +1,12 @@
-🚧🚧🚧🚧🚧　　--- **整備中** --- 　🚧🚧🚧🚧🚧
-
 ## 概要
-Google Playで公開しているアプリ「マルチカラーピッカー」のソースになります。  
+<img src="https://user-images.githubusercontent.com/60963155/227688048-2d858dd1-a7e9-4037-b35c-f8ce0ca6379c.png" height="200" width="200">
+Google Playで公開しているアプリ「マルチカラーピッカー」のソースになります。
+
 https://play.google.com/store/apps/details?id=kosenda.makecolor
 
 ## アプリについての簡単な説明
 - 様々な方法で色を作成できることだけでなく、保存や比較もできるアプリ
-- アーキテクチャ: MVVM
+- アーキテクチャはMVVM
 - 13言語対応
 
 
@@ -22,6 +22,8 @@ https://play.google.com/store/apps/details?id=kosenda.makecolor
 adApplicationId=ca-app-pub-3940256099942544~3347511713
 adUnitId=ca-app-pub-3940256099942544/6300978111
 ```
+
+
 ## 使用している代表的なライブラリ  
 |名前|簡単な説明|
 |:--|:--|
