@@ -51,11 +51,6 @@ fun ColorTextField(
         isError = errorText.isNotEmpty()
     }
 
-    /*
-     * TODO 2023/03/11
-     *   他の入力で色が作れたときにエラーが残ってしまう事象を解消するために暫定的に処理を行なっているが、
-     *   今は２回onValueChangeを呼んでしまっているので１回で済むように修正したい
-     */
     LaunchedEffect(inputText) {
         errorText = onValueChange(inputText).toString()
     }
