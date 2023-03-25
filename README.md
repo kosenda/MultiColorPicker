@@ -4,6 +4,11 @@
 Google Playで公開しているアプリ「マルチカラーピッカー」のソースになります。  
 https://play.google.com/store/apps/details?id=kosenda.makecolor
 
+## アプリについての簡単な説明
+- 様々な方法で色を作成できることだけでなく、保存や比較もできるアプリ
+- アーキテクチャ: MVVM
+- 13言語対応
+
 
 ## 今後特にしていきたいこと
 - マルチモジュール対応
@@ -11,12 +16,30 @@ https://play.google.com/store/apps/details?id=kosenda.makecolor
 - テストの追加
 
 
-## クローンする場合
+## アプリをクローンなどして実行する場合
 #### local.propertiesに以下を追記してください
 ```
 adApplicationId=ca-app-pub-3940256099942544~3347511713
 adUnitId=ca-app-pub-3940256099942544/6300978111
 ```
+## 使用している代表的なライブラリ  
+|名前|簡単な説明|
+|:--|:--|
+|Jetpack Compose|UIアプリ開発ツールキット|
+|Material3|デザイン|
+|kotlinx serialization|シリアライザー|
+|Preferences DataStore|永続化データ|
+|Room|データベース|
+|Truth|アサーション|
+|Hilt|依存性注入|
+|Timber|ログ出力|
+|compose-color-picker|カラーピッカー|
+|palette-ktx|パレットAPI|
+|play-services-ads|Google AdMob|
+|play-services-oss-licenses|ライセンス|
+|ui-text-google-fonts|ダウンロード可能なフォント|
+|ktlint|フォーマッター|
+
 
 ## スクリーンショット
 <details>
