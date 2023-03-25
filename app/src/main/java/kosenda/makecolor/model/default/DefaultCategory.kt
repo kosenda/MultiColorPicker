@@ -12,7 +12,6 @@ enum class DefaultCategory {
     JIS_SAFETY,
 }
 
-// TODO JIS慣用色名とJIS安全色は日本語しか対応しないため、日本語以外は表示しない処理を追加
 fun defaultCategories(context: Context): List<Category> {
     return listOf(
         Category(
