@@ -1,16 +1,18 @@
-@file:Suppress("UnstableApiUsage", "UnstableApiUsage")
+@file:Suppress("UnstableApiUsage")
 
 val ktlint: Configuration by configurations.creating
 
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
-    id("com.google.android.gms.oss-licenses-plugin")
-    id("com.google.gms.google-services")
-    id("dagger.hilt.android.plugin")
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.7.10"
-    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    alias(libs.plugins.android.application) apply true
+    alias(libs.plugins.oss.licenses) apply true
+    alias(libs.plugins.gms) apply true
+    alias(libs.plugins.hilt) apply true
+    alias(libs.plugins.kotlin.android) apply true
+    alias(libs.plugins.kotlin.kapt) apply true
+    alias(libs.plugins.kotlin.serialization) apply true
+    alias(libs.plugins.ksp) apply true
+    alias(libs.plugins.secrets) apply true
 }
 
 android {
@@ -56,13 +58,13 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.1"
+        kotlinCompilerExtensionVersion = libs.versions.androidxComposeCompiler.get()
     }
     packagingOptions {
         resources {
@@ -72,93 +74,41 @@ android {
 }
 
 dependencies {
-    // 参考 -> https://github.com/facebook/react-native/issues/35979#issuecomment-1405377512
-    constraints {
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
-            because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
-        }
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0") {
-            because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
-        }
-    }
+    implementation(libs.accompanist.navigationAnimation)
+    implementation(libs.accompanist.systemuicontroller)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.material)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.coroutines.android)
+    implementation(libs.androidx.dataStore.preferences)
+    implementation(libs.androidx.lifecycle.viewModelCompose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.palette)
+    implementation(libs.androidx.ui.google.fonts)
+    implementation(libs.compose.color.picker)
+    implementation(libs.compose.color.picker.android)
+    implementation(libs.firebase.analytics)
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
+    implementation(libs.oss.licenses)
+    implementation(libs.play.services.ads)
+    implementation(libs.room.runtime)
+    implementation(libs.kotlin.stdlib.jdk8)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.timber)
+    implementation(platform(libs.firebase.bom))
+    testImplementation(libs.junit)
+    annotationProcessor(libs.room.compiler)
+    androidTestImplementation(libs.androidx.test)
+    kapt(libs.hilt.compiler)
+    ksp(libs.room.compiler)
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.7.0-alpha02")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    implementation("androidx.activity:activity:1.6.1")
-
-    // color picker
-    implementation("com.godaddy.android.colorpicker:compose-color-picker:0.7.0")
-    // with Android ColorInt extensions
-    implementation("com.godaddy.android.colorpicker:compose-color-picker-android:0.7.0")
-
-    // palette API
-    implementation("androidx.palette:palette-ktx:1.0.0")
-
-    // Compose
-    implementation("androidx.compose.ui:ui:1.3.3")
-    implementation("androidx.compose.material:material:1.3.1")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.3.3")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.0")
-    implementation("androidx.activity:activity-compose:1.6.1")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.3.3")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.0")
-    implementation("androidx.navigation:navigation-compose:2.5.3")
-    implementation("androidx.core:core-ktx:1.9.0")
-
-    // AD
-    implementation("com.google.android.gms:play-services-ads:21.5.0")
-
-    // コルーチン
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
-
-    // ROOM
-    implementation("androidx.room:room-runtime:2.5.0")
-    annotationProcessor("androidx.room:room-compiler:2.5.0")
-    kapt("androidx.room:room-compiler:2.5.0")
-
-    // FireBase
-    implementation(platform("com.google.firebase:firebase-bom:31.1.1"))
-    implementation("com.google.firebase:firebase-analytics-ktx")
-    implementation("com.google.firebase:firebase-firestore-ktx")
-
-    // Splash Screen
-    implementation("androidx.core:core-splashscreen:1.0.0")
-
-    // Material3
-    implementation("com.google.android.material:material:1.8.0")
-    implementation("androidx.compose.material3:material3:1.1.0-alpha08")
-
-    // accompanist
-    implementation("com.google.accompanist:accompanist-systemuicontroller:0.28.0")
-
-    // OSS Licenses Gradle Plugin
-    implementation("com.google.android.gms:play-services-oss-licenses:17.0.0")
-
-    // Hilt
-    implementation("com.google.dagger:hilt-android:2.45")
-    kapt("com.google.dagger:hilt-compiler:2.45")
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
-
-    // dataStore preferences
-    implementation("androidx.datastore:datastore-preferences:1.0.0")
-
-    // Google Fonts
-    implementation("androidx.compose.ui:ui-text-google-fonts:1.3.3")
-
-    // Timber
-    implementation("com.jakewharton.timber:timber:5.0.1")
-
-    // kotlinx serialization
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
-
-    // Navigation Animation
-    implementation("com.google.accompanist:accompanist-navigation-animation:0.24.5-alpha")
-
-    // ktlint
-    ktlint("com.pinterest:ktlint:0.48.0") {
+    ktlint(libs.ktlint) {
         attributes {
             attribute(Bundling.BUNDLING_ATTRIBUTE, objects.named(Bundling.EXTERNAL))
         }
