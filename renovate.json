@@ -2,5 +2,8 @@
   "extends": [
     "config:base"
   ],
-  "dependencyDashboard": false
+  "dependencyDashboard": false,
+  "automergeSchedule": [
+    "every 8 hour after 00:00 and before 23:59 every day"
+  ],
 }
