@@ -3,7 +3,8 @@
     "config:base"
   ],
   "dependencyDashboard": false,
+  "timezone": "Asia/Tokyo",
   "automergeSchedule": [
-    "every 8 hour after 00:00 and before 23:59 every day"
+    "every 4 hour after 00:00 and before 23:59 every day"
   ],
 }
