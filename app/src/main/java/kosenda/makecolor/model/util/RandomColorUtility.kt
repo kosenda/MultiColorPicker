@@ -1,6 +1,6 @@
 package kosenda.makecolor.model.util
 
-import kosenda.makecolor.model.RGB
+import kosenda.makecolor.model.data.RGB
 import kosenda.makecolor.view.code.RandomType
 
 fun outputRandomRGBColors(randomType: RandomType, size: Int = 10): List<RGB> {

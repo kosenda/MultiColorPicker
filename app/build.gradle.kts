@@ -74,6 +74,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:model"))
     implementation(libs.accompanist.navigationAnimation)
     implementation(libs.accompanist.systemuicontroller)
     implementation(libs.androidx.appcompat)

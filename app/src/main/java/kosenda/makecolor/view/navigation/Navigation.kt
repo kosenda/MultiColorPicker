@@ -18,8 +18,8 @@ import androidx.navigation.NavType
 import androidx.navigation.navArgument
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
-import kosenda.makecolor.model.ColorData
-import kosenda.makecolor.model.ColorItem
+import kosenda.makecolor.model.data.ColorData
+import kosenda.makecolor.model.data.ColorItem
 import kosenda.makecolor.view.code.ColorIndex
 import kosenda.makecolor.view.screen.CategoryDetailScreen
 import kosenda.makecolor.view.screen.ColorDetailScreen

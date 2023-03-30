@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.model.RGB
+import kosenda.makecolor.model.data.RGB
 import kosenda.makecolor.model.util.outputRandomRGBColors
 import kosenda.makecolor.model.util.rgbToColor
 import kosenda.makecolor.view.code.RandomType

@@ -1,6 +1,6 @@
 package kosenda.makecolor.view.state
 
-import kosenda.makecolor.model.ColorData
+import kosenda.makecolor.model.data.ColorData
 import kosenda.makecolor.model.ColorType
 import kosenda.makecolor.model.util.randomColorData
 

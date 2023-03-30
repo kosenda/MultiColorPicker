@@ -2,7 +2,7 @@ package kosenda.makecolor.model.repository
 
 import kosenda.makecolor.model.Category
 import kosenda.makecolor.model.ColorDao
-import kosenda.makecolor.model.ColorItem
+import kosenda.makecolor.model.data.ColorItem
 import javax.inject.Inject
 
 class ColorRepositoryImpl @Inject constructor(
