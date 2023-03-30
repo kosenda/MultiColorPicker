@@ -26,7 +26,7 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
-import kosenda.makecolor.model.ColorData
+import kosenda.makecolor.model.data.ColorData
 import kosenda.makecolor.model.util.hexToHexStrWithSharp
 import kosenda.makecolor.model.util.randomColorData
 import kosenda.makecolor.view.component.ContentDivider

@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import kosenda.makecolor.R
-import kosenda.makecolor.model.ColorData
+import kosenda.makecolor.model.data.ColorData
 import kosenda.makecolor.model.default.defaultCategories
 import kosenda.makecolor.model.util.getNameIfNoAlias
 import kosenda.makecolor.view.PreviewSurface

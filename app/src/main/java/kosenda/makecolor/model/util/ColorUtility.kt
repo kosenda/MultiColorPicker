@@ -7,11 +7,11 @@ import androidx.core.graphics.blue
 import androidx.core.graphics.green
 import androidx.core.graphics.red
 import com.godaddy.android.colorpicker.HsvColor
-import kosenda.makecolor.model.CMYK
-import kosenda.makecolor.model.ColorData
-import kosenda.makecolor.model.HEX
-import kosenda.makecolor.model.HSV
-import kosenda.makecolor.model.RGB
+import kosenda.makecolor.model.data.CMYK
+import kosenda.makecolor.model.data.ColorData
+import kosenda.makecolor.model.data.HEX
+import kosenda.makecolor.model.data.HSV
+import kosenda.makecolor.model.data.RGB
 import kosenda.makecolor.view.theme.ThinBlack
 import kosenda.makecolor.view.theme.ThinWhite
 import kotlin.math.max

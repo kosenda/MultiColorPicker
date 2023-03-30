@@ -22,4 +22,5 @@ dependencyResolutionManagement {
     }
 }
 include(":app")
+include(":core:model")
 rootProject.name = "MultiColorPicker"

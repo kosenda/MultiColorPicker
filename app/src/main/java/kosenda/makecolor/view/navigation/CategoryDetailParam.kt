@@ -1,7 +1,7 @@
 package kosenda.makecolor.view.navigation
 
 import kosenda.makecolor.model.Category
-import kosenda.makecolor.model.ColorItem
+import kosenda.makecolor.model.data.ColorItem
 import kotlinx.serialization.Serializable
 
 @Serializable

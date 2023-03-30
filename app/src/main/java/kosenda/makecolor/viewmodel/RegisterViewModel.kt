@@ -9,7 +9,7 @@ import kosenda.makecolor.R
 import kosenda.makecolor.di.IODispatcher
 import kosenda.makecolor.di.MainDispatcher
 import kosenda.makecolor.model.Category
-import kosenda.makecolor.model.ColorItem
+import kosenda.makecolor.model.data.ColorItem
 import kosenda.makecolor.model.repository.ColorRepository
 import kosenda.makecolor.view.state.RegisterUiState
 import kotlinx.coroutines.CoroutineDispatcher
