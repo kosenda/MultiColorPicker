@@ -1,8 +1,8 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id(libs.plugins.android.library.get().pluginId) apply true
-    id(libs.plugins.kotlin.android.get().pluginId) apply true
-    alias(libs.plugins.kotlin.serialization) apply true
+    id(libs.plugins.android.library.get().pluginId)
+    id(libs.plugins.kotlin.android.get().pluginId)
+    id(libs.plugins.kotlin.serialization.get().pluginId)
 }
 
 android {
