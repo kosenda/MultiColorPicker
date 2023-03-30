@@ -1,7 +1,7 @@
 package kosenda.makecolor.view.state
 
 import kosenda.makecolor.model.Category
-import kosenda.makecolor.model.ColorItem
+import kosenda.makecolor.model.data.ColorItem
 import kosenda.makecolor.view.code.ColorIndex
 
 data class SelectColorUiState(
