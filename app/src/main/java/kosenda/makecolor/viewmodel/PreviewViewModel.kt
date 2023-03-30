@@ -12,6 +12,7 @@ import com.godaddy.android.colorpicker.HsvColor
 import com.godaddy.android.colorpicker.harmony.ColorHarmonyMode
 import kosenda.makecolor.model.Category
 import kosenda.makecolor.model.StringResource
+import kosenda.makecolor.model.data.ColorItem
 import kosenda.makecolor.model.default.webColor
 import kosenda.makecolor.view.CMYKColor
 import kosenda.makecolor.view.FontType
@@ -138,7 +139,7 @@ class PreviewSelectColorViewModel : SelectColorViewModel() {
         SelectColorUiState(colors = webColor),
     )
     override fun getColors() {}
-    override fun deleteColorItem(deleteColorItem: kosenda.makecolor.model.data.ColorItem) {}
+    override fun deleteColorItem(deleteColorItem: ColorItem) {}
 }
 
 class PreviewSettingsViewModel : SettingsViewModel() {
