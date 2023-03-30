@@ -30,7 +30,7 @@ navigationAnimation = "0.24.5-alpha"
 ossLicenses = "17.0.0"
 ossLicensesPlugin = "0.10.6"
 playServicesAds = "21.5.0"
-room = "2.5.0"
+room = "2.5.1"
 secrets = "2.0.1"
 timber = "5.0.1"
 
