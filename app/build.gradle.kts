@@ -54,11 +54,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
     buildFeatures {
         compose = true
@@ -99,7 +99,6 @@ dependencies {
     implementation(libs.oss.licenses)
     implementation(libs.play.services.ads)
     implementation(libs.room.runtime)
-    implementation(libs.kotlin.stdlib.jdk8)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.timber)
     implementation(platform(libs.firebase.bom))

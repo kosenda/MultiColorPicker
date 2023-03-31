@@ -8,6 +8,10 @@ plugins {
 android {
     compileSdk = 33
     namespace = "kosenda.makecolor.core.model"
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
 }
 
 dependencies {
