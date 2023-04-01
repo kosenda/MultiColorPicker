@@ -1,5 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
+import com.android.build.api.dsl.Lint
+import com.android.build.api.dsl.LintOptions
+
 val ktlint: Configuration by configurations.creating
 
 @Suppress("DSL_SCOPE_VIOLATION")
@@ -70,6 +73,9 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+    lint {
+        baseline = file("lint-baseline.xml")
     }
 }
 
