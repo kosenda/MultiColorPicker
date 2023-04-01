@@ -22,9 +22,7 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
-      - checkout:
-          post: 
-             - cp ./local.properties.ci 〜/circleci/project/local.properties
+      - checkout
 
       # The next step will run the unit tests
       - android/run-tests:
