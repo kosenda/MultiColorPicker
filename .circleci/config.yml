@@ -24,7 +24,7 @@ jobs:
     steps:
       - checkout:
           post: 
-             - cp local.properties.ci local.properties
+             - cp ./local.properties.ci /home/circleci/project/local.properties
 
       # The next step will run the unit tests
       - android/run-tests:
