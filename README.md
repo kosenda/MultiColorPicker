@@ -13,8 +13,14 @@ https://play.google.com/store/apps/details?id=kosenda.makecolor
 
 ## 今後特にしていきたいこと
 - マルチモジュール対応
-- CircleCI導入
 - テストの追加
+
+## アプリを初めて起動するとき
+#### `local.properties`に以下を追記してください
+```
+adApplicationId=ca-app-pub-3940256099942544~3347511713
+adUnitId=ca-app-pub-3940256099942544/6300978111
+```
 
 
 ## 使用している代表的なライブラリ  
