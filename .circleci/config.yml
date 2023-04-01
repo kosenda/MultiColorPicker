@@ -23,7 +23,7 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout:
-          post: cp ./circleci/local.properties.ci local.properties
+          post: cp ./.circleci/local.properties.ci local.properties
 
       # The next step will run the unit tests
       - android/run-tests:
