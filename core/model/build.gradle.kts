@@ -3,6 +3,7 @@ plugins {
     id(libs.plugins.android.library.get().pluginId)
     id(libs.plugins.kotlin.android.get().pluginId)
     id(libs.plugins.kotlin.serialization.get().pluginId)
+    id(libs.plugins.ksp.serialization.get().pluginId)
 }
 
 android {
@@ -18,5 +19,5 @@ dependencies {
     implementation(libs.compose.color.picker.android)
     implementation(libs.room.runtime)
     implementation(libs.kotlinx.serialization.json)
-    annotationProcessor(libs.room.compiler)
+    ksp(libs.room.compiler)
 }
