@@ -103,7 +103,6 @@ dependencies {
     implementation(libs.timber)
     implementation(platform(libs.firebase.bom))
     testImplementation(libs.junit)
-    annotationProcessor(libs.room.compiler)
     androidTestImplementation(libs.androidx.test)
     kapt(libs.hilt.compiler)
     ksp(libs.room.compiler)
