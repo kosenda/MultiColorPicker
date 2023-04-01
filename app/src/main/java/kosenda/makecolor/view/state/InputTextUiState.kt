@@ -1,7 +1,7 @@
 package kosenda.makecolor.view.state
 
-import kosenda.makecolor.model.data.ColorData
 import kosenda.makecolor.model.ColorTypeWithHex
+import kosenda.makecolor.model.data.ColorData
 import kosenda.makecolor.model.util.randomColorData
 
 data class InputTextUiState(

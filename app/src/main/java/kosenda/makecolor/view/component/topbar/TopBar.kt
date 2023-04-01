@@ -13,8 +13,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
-import kosenda.makecolor.view.component.button.ShareIcon
 import kosenda.makecolor.view.component.button.CustomIconButton
+import kosenda.makecolor.view.component.button.ShareIcon
 import kosenda.makecolor.view.dialog.InfoDialog
 
 @OptIn(ExperimentalMaterial3Api::class)

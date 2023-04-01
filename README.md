@@ -17,14 +17,6 @@ https://play.google.com/store/apps/details?id=kosenda.makecolor
 - テストの追加
 
 
-## アプリをクローンなどして実行する場合
-#### `local.properties`に以下を追記してください
-```
-adApplicationId=ca-app-pub-3940256099942544~3347511713
-adUnitId=ca-app-pub-3940256099942544/6300978111
-```
-
-
 ## 使用している代表的なライブラリ  
 |名前|簡単な説明|
 |:--|:--|

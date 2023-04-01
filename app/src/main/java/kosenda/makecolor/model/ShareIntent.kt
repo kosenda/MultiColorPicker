@@ -34,7 +34,7 @@ fun shareIntent(
             )
             val cachePath = File(context.cacheDir, "images").also { it.mkdirs() }
             val filePath = File(cachePath, "${Date().time}.png")
-           FileOutputStream(filePath.absolutePath).apply {
+            FileOutputStream(filePath.absolutePath).apply {
                 createdBitmap.compress(Bitmap.CompressFormat.PNG, 100, this)
                 close()
             }
