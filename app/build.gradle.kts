@@ -1,13 +1,11 @@
 @file:Suppress("UnstableApiUsage")
 
-import com.android.build.api.dsl.Lint
-import com.android.build.api.dsl.LintOptions
-
 val ktlint: Configuration by configurations.creating
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.android.application) apply true
+    alias(libs.plugins.firebase.crashlytics) apply true
     alias(libs.plugins.oss.licenses) apply true
     alias(libs.plugins.gms) apply true
     alias(libs.plugins.hilt) apply true
@@ -80,6 +78,7 @@ android {
 }
 
 dependencies {
+    compileOnly(libs.firebase.crashlytics.gradle)
     implementation(project(":core:model"))
     implementation(libs.accompanist.navigationAnimation)
     implementation(libs.accompanist.systemuicontroller)
@@ -100,6 +99,7 @@ dependencies {
     implementation(libs.compose.color.picker)
     implementation(libs.compose.color.picker.android)
     implementation(libs.firebase.analytics)
+    implementation(libs.firebase.crashlytics)
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.oss.licenses)

@@ -11,7 +11,7 @@ import kosenda.makecolor.model.data.ColorItem
 @Database(
     version = 2,
     entities = [ColorItem::class, Category::class],
-    exportSchema = true,
+    exportSchema = false,
 )
 abstract class ColorDatabase : RoomDatabase() {
     abstract fun colorDao(): ColorDao
