@@ -19,6 +19,8 @@ jobs:
       - run:
           command: bundle install
       - run:
+          command: ./gradlew ktlintCheck
+      - run:
           name: run-danger-file
           command: bundle exec danger --verbose
       - android/run-tests:
