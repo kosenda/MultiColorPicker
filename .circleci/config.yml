@@ -34,3 +34,9 @@ workflows:
 
 # ■ memo ■
 # チェックコマンド： circleci config validate
+#
+# ■ 特に参考にしたサイト ■
+# Android プロジェクトの継続的インテグレーション
+# https://circleci.com/ja/blog/building-android-on-circleci/
+# 3年の運用で編み出した CircleCI 超設計大全
+# https://qiita.com/dodonki1223/items/98dbdac6f31f9b486ecf
