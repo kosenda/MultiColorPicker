@@ -33,6 +33,7 @@ playServicesAds = "22.0.0"
 room = "2.5.1"
 secrets = "2.0.1"
 timber = "5.0.1"
+truth = "1.1.3"
 
 [libraries]
 accompanist-systemuicontroller = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanist" }
@@ -73,6 +74,7 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
 ktlint = { group = "com.pinterest", name = "ktlint", version.ref = "ktlint" }
 
 [plugins]
