@@ -122,12 +122,14 @@ dependencies {
 }
 
 // チェック
-//val ktlintCheck by tasks.creating(JavaExec::class) {
 tasks.create<JavaExec>("ktlintCheck") {
     description = "Check Kotlin code style."
     classpath = ktlint
     mainClass.set("com.pinterest.ktlint.Main")
-    args = listOf("src/**/*.kt")
+    args = listOf(
+        "src/**/*.kt",
+        "--reporter=checkstyle,output=${buildDir}/reports/ktlint/ktlint-result.xml",
+    )
 }
 
 // フォーマット
