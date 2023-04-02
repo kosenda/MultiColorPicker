@@ -69,6 +69,9 @@ fun Drawer(
                         else -> {
                             selectItemRoute = clickItem.route
                             navController.navigate(clickItem.route) {
+                                navController.graph.startDestinationRoute?.let { route ->
+                                    popUpTo(route) { saveState = false }
+                                }
                                 launchSingleTop = true
                                 restoreState = false
                             }
