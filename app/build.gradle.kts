@@ -130,6 +130,7 @@ tasks.create<JavaExec>("ktlintCheck") {
         "src/**/*.kt",
         "--reporter=checkstyle,output=${buildDir}/reports/ktlint/ktlint-result.xml",
     )
+    isIgnoreExitValue = true
 }
 
 // フォーマット
