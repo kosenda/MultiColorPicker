@@ -9,7 +9,7 @@ enum class DefaultCategory {
     X11,
     COPIC,
     JIS_IDIOMATIC,
-    JIS_SAFETY
+    JIS_SAFETY,
 }
 
 fun defaultCategories(context: Context): List<Category> {
