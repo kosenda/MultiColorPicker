@@ -15,7 +15,7 @@ enum class DefaultCategory {
 fun defaultCategories(context: Context): List<Category> {
     return listOf(
         Category(
-            name =  DefaultCategory.WEB.name,
+            name = DefaultCategory.WEB.name,
             alias = context.getString(R.string.web_color),
             size = webColor.size,
         ),
