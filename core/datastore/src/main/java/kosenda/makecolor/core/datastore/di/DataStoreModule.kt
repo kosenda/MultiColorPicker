@@ -1,4 +1,4 @@
-package kosenda.makecolor.di
+package kosenda.makecolor.core.datastore.di
 
 import android.content.Context
 import androidx.datastore.core.DataStore
