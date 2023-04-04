@@ -78,8 +78,9 @@ android {
 }
 
 dependencies {
-    compileOnly(libs.firebase.crashlytics.gradle)
     implementation(project(":core:model"))
+    implementation(project(":core:datastore"))
+    compileOnly(libs.firebase.crashlytics.gradle)
     implementation(libs.accompanist.navigationAnimation)
     implementation(libs.accompanist.systemuicontroller)
     implementation(libs.androidx.appcompat)
