@@ -42,7 +42,20 @@ adUnitId=ca-app-pub-3940256099942544/6300978111
 |play-services-oss-licenses|ライセンス|
 |ui-text-google-fonts|ダウンロード可能なフォント|
 |ktlint|フォーマッター|
+|Circle Ci|CI/CD|
+|danger|プルリク時に警告|
 
+## モジュール構成
+```mermaid
+flowchart LR
+  classDef appModule fill:#FFBC99,color:#000
+  classDef featureModule fill:#BC99FF,color:#000
+  classDef coreModule fill:#99FFBC,color:#000
+  
+  A([:app]):::appModule --> B([:feature 予定]):::featureModule
+  B([:feature 予定]):::featureModule --> C([:core:model]):::coreModule 
+  B([:feature 予定]):::featureModule --> D([:core:datastore]):::coreModule
+```
 
 ## スクリーンショット
 <details>
