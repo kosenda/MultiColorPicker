@@ -1,7 +1,7 @@
 package kosenda.makecolor.model.usecase
 
 import kosenda.makecolor.model.ColorType
-import kosenda.makecolor.model.data.ColorData
+import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.model.util.cmykToRgb
 import kosenda.makecolor.model.util.hsvToRGB
 import kosenda.makecolor.model.util.rgbToCmyk

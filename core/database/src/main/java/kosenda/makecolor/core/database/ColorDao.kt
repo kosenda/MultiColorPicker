@@ -1,10 +1,11 @@
-package kosenda.makecolor.model
+package kosenda.makecolor.core.database
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import kosenda.makecolor.model.data.ColorItem
+import kosenda.makecolor.core.model.data.Category
+import kosenda.makecolor.core.model.data.ColorItem
 
 @Dao
 interface ColorDao {

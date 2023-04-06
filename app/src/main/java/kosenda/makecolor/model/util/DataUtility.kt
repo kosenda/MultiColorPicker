@@ -1,6 +1,6 @@
 package kosenda.makecolor.model.util
 
-import kosenda.makecolor.model.Category
+import kosenda.makecolor.core.model.data.Category
 
 fun Category.getNameIfNoAlias(): String {
     return when {

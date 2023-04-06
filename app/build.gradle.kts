@@ -34,13 +34,7 @@ android {
         targetSdk = 33
         versionCode = 35
         versionName = "4.1"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments += mapOf("room.schemaLocation" to "$projectDir/schemas")
-            }
-        }
     }
 
     buildTypes {
@@ -79,6 +73,7 @@ android {
 
 dependencies {
     implementation(project(":core:model"))
+    implementation(project(":core:database"))
     implementation(project(":core:datastore"))
     compileOnly(libs.firebase.crashlytics.gradle)
     implementation(libs.accompanist.navigationAnimation)

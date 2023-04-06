@@ -3,7 +3,7 @@ package kosenda.makecolor.viewmodel
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kosenda.makecolor.model.data.ColorItem
+import kosenda.makecolor.core.model.data.ColorItem
 import kosenda.makecolor.model.util.hexToRGB
 import kosenda.makecolor.model.util.rgbToColorData
 import kosenda.makecolor.model.util.rgbToComplementaryRgb

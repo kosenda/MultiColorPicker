@@ -1,6 +1,6 @@
 package kosenda.makecolor.view.state
 
-import kosenda.makecolor.model.Category
+import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.model.util.randomHex
 import kosenda.makecolor.view.code.SplitColorNum
 

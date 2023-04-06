@@ -1,6 +1,6 @@
 package kosenda.makecolor.model.usecase
 
-import kosenda.makecolor.model.Category
+import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.model.repository.ColorRepository
 import javax.inject.Inject
 

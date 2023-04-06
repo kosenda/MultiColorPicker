@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import kosenda.makecolor.model.data.ColorData
+import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.model.util.blackOrWhiteFromRGB
 import kosenda.makecolor.model.util.hexToHexStrWithSharp
 import kosenda.makecolor.model.util.randomColorData

@@ -1,7 +1,7 @@
 package kosenda.makecolor.model.repository
 
-import kosenda.makecolor.model.Category
-import kosenda.makecolor.model.data.ColorItem
+import kosenda.makecolor.core.model.data.Category
+import kosenda.makecolor.core.model.data.ColorItem
 
 interface ColorRepository {
     suspend fun insertCategory(category: Category)

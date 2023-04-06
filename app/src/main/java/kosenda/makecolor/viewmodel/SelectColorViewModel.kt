@@ -4,7 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kosenda.makecolor.di.IODispatcher
-import kosenda.makecolor.model.data.ColorItem
+import kosenda.makecolor.core.model.data.ColorItem
 import kosenda.makecolor.model.default.DefaultCategory
 import kosenda.makecolor.model.default.copicColor
 import kosenda.makecolor.model.default.jisIdiomaticColor

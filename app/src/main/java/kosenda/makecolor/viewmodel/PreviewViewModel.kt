@@ -10,9 +10,9 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.navigation.NavBackStackEntry
 import com.godaddy.android.colorpicker.HsvColor
 import com.godaddy.android.colorpicker.harmony.ColorHarmonyMode
-import kosenda.makecolor.model.Category
+import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.model.StringResource
-import kosenda.makecolor.model.data.ColorItem
+import kosenda.makecolor.core.model.data.ColorItem
 import kosenda.makecolor.model.default.webColor
 import kosenda.makecolor.view.CMYKColor
 import kosenda.makecolor.view.FontType

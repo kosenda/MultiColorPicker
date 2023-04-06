@@ -2,7 +2,7 @@ package kosenda.makecolor.model.default
 
 import android.content.Context
 import kosenda.makecolor.R
-import kosenda.makecolor.model.Category
+import kosenda.makecolor.core.model.data.Category
 
 enum class DefaultCategory {
     WEB,

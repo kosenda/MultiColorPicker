@@ -1,8 +1,8 @@
 package kosenda.makecolor.view.state
 
 import android.graphics.Bitmap
-import kosenda.makecolor.model.Category
-import kosenda.makecolor.model.data.ColorData
+import kosenda.makecolor.core.model.data.Category
+import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.model.util.randomColorData
 import kosenda.makecolor.model.util.randomHex
 

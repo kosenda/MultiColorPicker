@@ -1,8 +1,8 @@
 package kosenda.makecolor.model.repository
 
-import kosenda.makecolor.model.Category
-import kosenda.makecolor.model.ColorDao
-import kosenda.makecolor.model.data.ColorItem
+import kosenda.makecolor.core.database.ColorDao
+import kosenda.makecolor.core.model.data.Category
+import kosenda.makecolor.core.model.data.ColorItem
 import javax.inject.Inject
 
 class ColorRepositoryImpl @Inject constructor(
@@ -28,7 +28,7 @@ class ColorRepositoryImpl @Inject constructor(
             else -> fetchCategories
         }
     }
-    override suspend fun getColors(category: String): List<ColorItem> = colorDao.getColors(category = category)
+    override suspend fun getColors(category: String) = colorDao.getColors(category = category)
     override suspend fun getSize(category: String): Int = colorDao.getSize(category = category)
     override suspend fun isExistCategory(category: String): Boolean {
         val size = colorDao.isExistCategory(name = category)
