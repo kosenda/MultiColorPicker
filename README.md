@@ -48,13 +48,15 @@ adUnitId=ca-app-pub-3940256099942544/6300978111
 ## モジュール構成
 ```mermaid
 flowchart LR
-  classDef appModule fill:#FFBC99,color:#000
-  classDef featureModule fill:#BC99FF,color:#000
-  classDef coreModule fill:#99FFBC,color:#000
+  classDef appModule fill:#37C478,color:#000
+  classDef featureModule fill:#E37D66,color:#000
+  classDef dataModule fill:#1B5FB2,color:#FFF
+  classDef coreModule fill:#252E37,color:#FFF
   
-  A([:app]):::appModule --> B([:feature 予定]):::featureModule
-  B([:feature 予定]):::featureModule --> C([:core:model]):::coreModule 
-  B([:feature 予定]):::featureModule --> D([:core:datastore]):::coreModule
+  A1([:app]):::appModule --> B1([:feature 予定]):::featureModule
+  B1 --> C1([:data 予定]):::dataModule
+  C1 --> D1([:core:model]):::coreModule 
+  C1 --> D2([:core:datastore]):::coreModule
 ```
 
 ## スクリーンショット
