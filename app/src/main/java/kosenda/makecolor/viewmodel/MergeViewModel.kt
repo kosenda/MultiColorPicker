@@ -12,8 +12,8 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavBackStackEntry
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kosenda.makecolor.di.IODispatcher
 import kosenda.makecolor.core.model.data.Category
+import kosenda.makecolor.di.IODispatcher
 import kosenda.makecolor.model.ColorType
 import kosenda.makecolor.model.usecase.FetchCategoriesUseCase
 import kosenda.makecolor.model.usecase.UpdateOtherColorUseCase
