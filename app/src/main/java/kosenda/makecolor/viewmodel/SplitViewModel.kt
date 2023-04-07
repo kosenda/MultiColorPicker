@@ -3,8 +3,8 @@ package kosenda.makecolor.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavBackStackEntry
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.di.IODispatcher
-import kosenda.makecolor.model.Category
 import kosenda.makecolor.model.usecase.FetchCategoriesUseCase
 import kosenda.makecolor.view.code.ColorIndex
 import kosenda.makecolor.view.code.SplitColorNum

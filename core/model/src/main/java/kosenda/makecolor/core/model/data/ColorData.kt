@@ -1,4 +1,4 @@
-package kosenda.makecolor.model.data
+package kosenda.makecolor.core.model.data
 
 import kotlinx.serialization.Serializable
 

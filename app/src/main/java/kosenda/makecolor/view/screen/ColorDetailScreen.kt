@@ -26,7 +26,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kosenda.makecolor.R
-import kosenda.makecolor.model.data.ColorData
+import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.view.PreviewSurface
 import kosenda.makecolor.view.component.card.CategoryNameAndMemoCard
 import kosenda.makecolor.view.component.card.ColorValueTextsCard

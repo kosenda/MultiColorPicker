@@ -1,4 +1,4 @@
-package kosenda.makecolor.model
+package kosenda.makecolor.core.datastore
 
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey

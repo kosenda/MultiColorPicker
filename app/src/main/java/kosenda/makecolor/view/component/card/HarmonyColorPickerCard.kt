@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.godaddy.android.colorpicker.HsvColor
 import com.godaddy.android.colorpicker.harmony.ColorHarmonyMode
 import com.godaddy.android.colorpicker.harmony.HarmonyColorPicker
-import kosenda.makecolor.model.data.HsvColorData
+import kosenda.makecolor.core.model.data.HsvColorData
 import kosenda.makecolor.model.util.colorToRGB
 import kosenda.makecolor.model.util.hexToColor
 import kosenda.makecolor.model.util.hsvColorToHexStr

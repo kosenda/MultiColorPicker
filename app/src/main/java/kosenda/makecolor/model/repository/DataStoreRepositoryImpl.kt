@@ -4,7 +4,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
-import kosenda.makecolor.model.PreferencesKey
+import kosenda.makecolor.core.datastore.PreferencesKey
 import kosenda.makecolor.view.FontType
 import kosenda.makecolor.view.Theme
 import kotlinx.coroutines.flow.Flow

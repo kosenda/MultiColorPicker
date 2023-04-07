@@ -2,8 +2,8 @@ package kosenda.makecolor.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.di.IODispatcher
-import kosenda.makecolor.model.Category
 import kosenda.makecolor.model.usecase.FetchCategoriesUseCase
 import kosenda.makecolor.view.state.DataUiState
 import kotlinx.coroutines.CoroutineDispatcher

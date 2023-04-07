@@ -3,7 +3,7 @@ package kosenda.makecolor.view.dialog
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import kosenda.makecolor.model.Category
+import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.view.content.NewCategoryDialogContent
 
 @Composable

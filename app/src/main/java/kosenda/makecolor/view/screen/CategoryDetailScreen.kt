@@ -28,7 +28,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
-import kosenda.makecolor.model.Category
+import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.model.util.getNameIfNoAlias
 import kosenda.makecolor.model.util.hexToColor
 import kosenda.makecolor.view.PreviewSurface

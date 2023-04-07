@@ -1,6 +1,6 @@
 package kosenda.makecolor.model.default
 
-import kosenda.makecolor.model.data.ColorItem
+import kosenda.makecolor.core.model.data.ColorItem
 
 val webColor: List<ColorItem> = listOf(
     ColorItem("FFFFFF", "_", "White", 1),

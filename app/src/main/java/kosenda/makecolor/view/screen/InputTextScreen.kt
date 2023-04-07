@@ -24,8 +24,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
+import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.model.ColorTypeWithHex
-import kosenda.makecolor.model.data.ColorData
 import kosenda.makecolor.view.PreviewSurface
 import kosenda.makecolor.view.component.GoogleAd
 import kosenda.makecolor.view.component.button.FloatingAddButton

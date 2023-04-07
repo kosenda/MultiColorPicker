@@ -1,7 +1,7 @@
 package kosenda.makecolor.view.state
 
-import kosenda.makecolor.model.Category
-import kosenda.makecolor.model.data.ColorData
+import kosenda.makecolor.core.model.data.Category
+import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.model.util.randomColorData
 
 data class RegisterUiState(
