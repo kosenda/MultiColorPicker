@@ -28,11 +28,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import kosenda.makecolor.R
+import kosenda.makecolor.core.data.default.defaultCategories
 import kosenda.makecolor.core.model.data.ColorData
-import kosenda.makecolor.model.default.defaultCategories
-import kosenda.makecolor.model.util.getNameIfNoAlias
+import kosenda.makecolor.core.ui.code.ColorIndex
+import kosenda.makecolor.core.util.getNameIfNoAlias
 import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.code.ColorIndex
 import kosenda.makecolor.view.component.GoogleAd
 import kosenda.makecolor.view.component.ImagePicker
 import kosenda.makecolor.view.component.button.FloatingAddButton

@@ -13,9 +13,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.core.model.data.RGB
-import kosenda.makecolor.model.util.outputRandomRGBColors
-import kosenda.makecolor.model.util.rgbToColor
-import kosenda.makecolor.view.code.RandomType
+import kosenda.makecolor.core.model.data.RandomType
+import kosenda.makecolor.core.util.outputRandomRGBColors
+import kosenda.makecolor.core.util.rgbToColor
 import kosenda.makecolor.view.component.ColorCircle
 import kosenda.makecolor.view.theme.MakeColorTheme
 

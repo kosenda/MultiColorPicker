@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.dp
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.ColorItem
-import kosenda.makecolor.model.util.getNameIfNoAlias
+import kosenda.makecolor.core.util.getNameIfNoAlias
 import kosenda.makecolor.view.PreviewSurface
 import kosenda.makecolor.view.component.button.TonalButton
 import kosenda.makecolor.view.component.card.ColorCard

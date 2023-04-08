@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">Recogedora múltiples colores</string>
+    <string name="registration">Registrar</string>
+    <string name="registrated">Registrado</string>
+    <string name="category">Categoría</string>
+    <string name="detail">Detalles</string>
+    <string name="memo">Memo</string>
+    <string name="complementary">Color complementario</string>
+    <string name="opposite">Color opuesto</string>
+    <string name="enter_new_category">Introducir el nombre de la nueva categoría</string>
+    <string name="confirm">Confirmación</string>
+    <string name="cancel">Cancelar</string>
+    <string name="add">Añadir</string>
+    <string name="copy">Copiar</string>
+    <string name="delete">Borrar</string>
+    <string name="confirm_delete">Borrar el archivo. </string>
+    <string name="deleted">Borrado. </string>
+    <string name="all_delete">Borrar todos los datos</string>
+    <string name="not_data">Sin datos. </string>
+    <string name="change">Cambio</string>
+    <string name="enter_memo">Introducir memo</string>
+    <string name="picker">Picker</string>
+    <string name="mode">Modo</string>
+    <string name="tap_pick_picture">Tocar para seleccionar una imagen</string>
+    <string name="reset">Reset</string>
+    <string name="output_random">Salida de color aleatorio</string>
+    <string name="output">Salida</string>
+    <string name="dark_mode">Modo oscuro</string>
+    <string name="light_mode">Modo luz</string>
+    <string name="terminal_setting">Del terminal</string>
+    <string name="mode_switching">Cambio de modo</string>
+    <string name="data_management">Gestión de datos</string>
+    <string name="split">Split</string>
+    <string name="split_num">Número de split</string>
+    <string name="select">Seleccionar</string>
+    <string name="select_1">Seleccionar 1</string>
+    <string name="select_2">Seleccionar 2</string>
+    <string name="select_3">Seleccionar 3</string>
+    <string name="select_4">Seleccionar 4</string>
+    <string name="select_language">Seleccionar idioma</string>
+    <string name="language_settings">Configuración del idioma</string>
+    <string name="not_select">no seleccionado</string>
+    <string name="font_setting">Fuente</string>
+
+    <!-- エラーテキスト -->
+    <string name="invalid_value">Valor no válido.</string>
+    <string name="please_enter">Introduzca %1$s 〜 %2$s.</string>
+
+    <string name="picker_title">Crear (picker)</string>
+    <string name="seekbar_title">Crear (seekbar)</string>
+    <string name="text_title">Crear (text)</string>
+    <string name="picture_title">Crear (imagen)</string>
+    <string name="merge_title">Crear (merge)</string>
+    <string name="random_title">Crear (aleatorio)</string>
+    <string name="data_title">Lista de datos</string>
+    <string name="gradation_title">Gradación</string>
+    <string name="review_title">Revisión</string>
+    <string name="setting_title">Configuración</string>
+
+    <string name="jis_idiomatic_color">JIS conventional color name</string>
+
+    <string name="jis_safe_color">JIS safe color</string>.
+
+    <string name="web_color">Web colors</string>
+
+    <string name="x11_color">X11 color names</string>.
+
+    <string name="copic_color">Copic Color</string>.
+
+    <array name="square_circle">
+        <item>Círculo</item>
+        <item>Cuadrado</item>
+    </array>
+
+    <array name="random_category">
+        <item>Sin especificar</item>
+        <item>Pastel</item>
+        <item>Vivo</item>
+        <item>Blanco y negro</item>
+    </array>
+
+    <array name="color_harmony_mode">
+        <item>ANALOGO</item>
+        <item>MONOCROMÁTICO</item>
+        <item>COMPLEMENTARIO</item>
+        <item>COMPLEMENTARIOS</item>
+        <item>Tríada</item>
+        <item>TETRÁDICA</item>
+        <item>SHADES</item>
+    </array>
+
+</resources>

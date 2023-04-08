@@ -9,12 +9,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import kosenda.makecolor.core.model.data.CMYKColor
 import kosenda.makecolor.core.model.data.ColorData
-import kosenda.makecolor.model.ColorType
-import kosenda.makecolor.model.util.randomColorData
-import kosenda.makecolor.view.CMYKColor
-import kosenda.makecolor.view.HSVColor
-import kosenda.makecolor.view.RGBColor
+import kosenda.makecolor.core.model.data.ColorType
+import kosenda.makecolor.core.model.data.HSVColor
+import kosenda.makecolor.core.model.data.RGBColor
+import kosenda.makecolor.core.util.randomColorData
 import kosenda.makecolor.view.component.Seekbar
 import kosenda.makecolor.view.theme.MakeColorTheme
 

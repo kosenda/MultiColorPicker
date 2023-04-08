@@ -2,12 +2,12 @@ package kosenda.makecolor.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kosenda.makecolor.model.ColorType
-import kosenda.makecolor.model.usecase.UpdateColorDataUseCase
-import kosenda.makecolor.view.CMYKColor
-import kosenda.makecolor.view.HSVColor
-import kosenda.makecolor.view.RGBColor
-import kosenda.makecolor.view.state.SeekbarUiState
+import kosenda.makecolor.core.domain.UpdateColorDataUseCase
+import kosenda.makecolor.core.model.data.CMYKColor
+import kosenda.makecolor.core.model.data.ColorType
+import kosenda.makecolor.core.model.data.HSVColor
+import kosenda.makecolor.core.model.data.RGBColor
+import kosenda.makecolor.core.ui.state.SeekbarUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

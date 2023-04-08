@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">多色选择器</string>
+    <string name="registration">登记</string>
+    <string name="registrated">已注册</string>
+    <string name="category">类别</string>
+    <string name="detail">详细内容</string>
+    <string name="memo">备忘录</string>
+    <string name="complementary">互补的颜色</string>
+    <string name="opposite">相反的颜色</string>
+    <string name="enter_new_category">输入新的类别名称</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">Cancel</string>
+    <string name="add">添加</string>
+    <string name="copy">Copy</string>
+    <string name="delete">删除</string>
+    <string name="confirm_delete">删除？ </string>
+    <string name="deleted">删除了。 </string>
+    <string name="all_delete">删除所有数据</string>
+    <string name="not_data">没有数据。 </string>
+    <string name="change">变化</string>
+    <string name="enter_memo">输入备忘录</string>
+    <string name="picker">Picker</string>
+    <string name="mode">Mode</string>
+    <string name="tap_pick_picture">点击选择一个图片</string>
+    <string name="reset">reset</string>
+    <string name="output_random">随机颜色输出</string>
+    <string name="output">输出</string>
+    <string name="dark_mode">黑暗模式</string>
+    <string name="light_mode">灯光模式</string>
+    <string name="terminal_setting">终端设置</string>
+    <string name="mode_switching">模式切换</string>
+    <string name="data_management">数据管理</string>
+    <string name="split">分裂</string>
+    <string name="split_num">分区数</string>
+    <string name="select">选择</string>
+    <string name="select_1">选择 1</string>
+    <string name="select_2">选择 2</string>
+    <string name="select_3">选择 3</string>
+    <string name="select_4">选择 4</string>
+    <string name="select_language">选择语言</string>
+    <string name="language_settings">语言设置</string>
+    <string name="not_select">未选择</string>
+    <string name="font_setting">字体</string>
+
+    <!-- エラーテキスト -->
+    <string name="invalid_value">无效值</string>
+    <string name="please_enter">输入 %1$s 〜 %2$s</string>
+
+    <string name="picker_title">颜色创建（picker）</string>
+    <string name="seekbar_title">颜色创建（seekbar）</string>
+    <string name="text_title">颜色创建 （text）</string>
+    <string name="picture_title">颜色创建（picture）</string>
+    <string name="merge_title">颜色创建（merge）</string>
+    <string name="random_title">颜色创建（random）</string>
+    <string name="data_title">数据列表</string>
+    <string name="gradation_title">梯度</string>
+    <string name="review_title">评论</string>
+    <string name="setting_title">设置</string>
+
+    <string name="jis_idiomatic_color">JIS常规颜色名称</string>
+
+    <string name="jis_safe_color">JIS安全色</string>
+
+    <string name="web_color">Web colors</string>
+
+    <string name="x11_color">X11 color names</string>
+
+    <string name="copic_color">Copic Color</string>.
+
+    <array name="square_circle">
+        <item>Circle</item>
+        <item>Square</item>
+    </array>
+
+    <array name="random_category">
+        <item>未指定</item>
+        <item>淡色</item>
+        <item>生动</item>
+        <item>黑色和白色</item>
+    </array>
+
+    <array name="color_harmony_mode">
+        <item>类似的颜色</item>
+        <item>单色的颜色</item>
+        <item>互补的颜色</item>
+        <item>互补的颜色（分裂）</item>
+        <item>三个和</item>
+        <item>四个部门</item>
+        <item>阴影</item>
+    </array>
+
+</resources>

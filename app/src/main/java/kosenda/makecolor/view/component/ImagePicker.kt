@@ -31,7 +31,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.model.util.hexToColor
+import kosenda.makecolor.core.util.hexToColor
 import kotlin.math.roundToInt
 
 @Composable

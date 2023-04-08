@@ -3,11 +3,11 @@ package kosenda.makecolor.viewmodel
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kosenda.makecolor.core.data.repository.ColorRepository
 import kosenda.makecolor.core.model.data.Category
+import kosenda.makecolor.core.ui.state.CategoryDetailUiState
 import kosenda.makecolor.di.IODispatcher
-import kosenda.makecolor.model.repository.ColorRepository
 import kosenda.makecolor.view.navigation.CategoryDetailParam
-import kosenda.makecolor.view.state.CategoryDetailUiState
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow

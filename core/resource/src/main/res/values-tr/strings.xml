@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">Çoklu Renk Seçici</string>
+    <string name="registration">Kayıt</string>
+    <string name="registrated">Kayıtlı</string>
+    <string name="category">Kategori</string>
+    <string name="detail">Detaylar</string>
+    <string name="memo">Memo</string>
+    <string name="complementary">Tamamlayıcı renk</string>
+    <string name="opposite">Zıt renk</string>
+    <string name="enter_new_category">Yeni kategori adı girin</string>
+    <string name="confirm">Onaylama</string>
+    <string name="cancel">İptal</string>
+    <string name="add">Ekle</string>
+    <string name="copy">Copy</string>
+    <string name="delete">Sil</string>
+    <string name="confirm_delete">Dosyayı silin. </string>
+    <string name="deleted">Silindi. </string>
+    <string name="all_delete">Tüm verileri sil</string>
+    <string name="not_data">Veri yok. </string>
+    <string name="change">Değiştir</string>
+    <string name="enter_memo">Not girin</string>
+    <string name="picker">Seçici</string>
+    <string name="mode">Mod</string>
+    <string name="tap_pick_picture">Bir resim seçmek için dokunun</string>
+    <string name="reset">Sıfırla</string>
+    <string name="output_random">Çıktı rastgele renk</string>
+    <string name="output">Çıktı</string>
+    <string name="dark_mode">Karanlık mod</string>
+    <string name="light_mode">Işık modu</string>>
+    <string name="terminal_setting">Terminal ayarı</string>
+    <string name="mode_switching">Mod Değiştirme</string>
+    <string name="data_management">Veri Yönetimi</string>
+    <string name="split">Bölünmüş</string>
+    <string name="split_num">Bölünmüş Numara</string>
+    <string name="select">Seçiniz</string>
+    <string name="select_1">Seçiniz 1</string>
+    <string name="select_2">Seçiniz 2</string>
+    <string name="select_3">Seçiniz 3</string>
+    <string name="select_4">Seçiniz 4</string>
+    <string name="select_language">Dil seçin</string>
+    <string name="language_settings">Dil Ayarları</string>
+    <string name="not_select">seçilmedi</string>
+    <string name="font_setting">%1$d 〜 %2$d girin</string>
+
+
+    <!-- エラーテキスト -->
+    <string name="invalid_value">Geçersiz değer.</string>
+    <string name="please_enter">Enter %1$s 〜 %2$s .</string>
+
+
+    <string name="picker_title">Oluştur (seçici)</string>
+    <string name="seekbar_title">Oluştur (seekbar)</string>
+    <string name="text_title">Oluştur (text)</string>
+    <string name="picture_title">Oluştur (resim)</string>
+    <string name="merge_title">Oluştur (birleştirme)</string>
+    <string name="random_title">Oluştur (rastgele)</string>
+    <string name="data_title">Veri Listesi</string>
+    <string name="gradation_title">Derecelendirme</string>
+    <string name="review_title">İnceleme</string>
+    <string name="setting_title">Ayarlar</string>
+
+    <string name="jis_idiomatic_color">JIS geleneksel renk adı</string>
+
+    <string name="jis_safe_color">JIS güvenli renk</string>.
+
+    <string name="web_color">Web renkleri</string>
+
+    <string name="x11_color">X11 renk adları</string>.
+
+    <string name="copic_color">Copic Color</string>.
+
+
+    <array name="square_circle">
+        <item>Daire</item>
+        <item>Kare</item>
+    </array>
+
+    <array name="random_category">
+        <item>Belirtilmemiş</item>
+        <item>Pastel</item>
+        <item>Canlı</item>
+        <item>Siyah ve beyaz</item>
+    </array>
+
+    <array name="color_harmony_mode">
+        <item>ANALOG</item>
+        <item>MONOKROMATİK</item>
+        <item>COMPLEMENTARY</item>
+        <item>SPLIT_COMPLEMENTARY</item>
+        <item>TRİADİK</item>
+        <item>TETRADİK</item>
+        <item>GÖLGELER</item>
+    </array>
+
+</resources>

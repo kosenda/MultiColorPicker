@@ -25,7 +25,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
-import kosenda.makecolor.view.Theme
+import kosenda.makecolor.core.model.data.Theme
 import kosenda.makecolor.view.component.ContentDivider
 import kosenda.makecolor.view.component.card.TitleCard
 import kosenda.makecolor.view.theme.MakeColorTheme

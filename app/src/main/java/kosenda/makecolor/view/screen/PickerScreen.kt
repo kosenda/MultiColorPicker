@@ -26,8 +26,8 @@ import androidx.compose.ui.unit.dp
 import com.godaddy.android.colorpicker.harmony.ColorHarmonyMode
 import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.ColorData
+import kosenda.makecolor.core.ui.code.PickerType
 import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.code.PickerType
 import kosenda.makecolor.view.component.GoogleAd
 import kosenda.makecolor.view.component.button.FloatingAddButton
 import kosenda.makecolor.view.component.card.ClassicColorPickerCard

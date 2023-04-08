@@ -10,7 +10,7 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-import kosenda.makecolor.view.FontType
+import kosenda.makecolor.core.model.data.FontType
 
 private val LightThemeColors = lightColorScheme()
 private val DarkThemeColors = darkColorScheme()

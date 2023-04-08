@@ -26,9 +26,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.ColorItem
-import kosenda.makecolor.model.util.blackOrWhiteFromRGB
-import kosenda.makecolor.model.util.hexToColor
-import kosenda.makecolor.model.util.hexToRGB
+import kosenda.makecolor.core.util.blackOrWhiteFromRGB
+import kosenda.makecolor.core.util.hexToColor
+import kosenda.makecolor.core.util.hexToRGB
 
 @Composable
 fun ColorCard(

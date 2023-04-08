@@ -11,6 +11,8 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kosenda.makecolor.core.model.data.FontType
+import kosenda.makecolor.core.model.data.Theme
 import kosenda.makecolor.view.screen.FirstScreen
 import kosenda.makecolor.view.theme.MakeColorTheme
 import kosenda.makecolor.viewmodel.MainViewModel

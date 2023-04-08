@@ -22,9 +22,9 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.ColorData
-import kosenda.makecolor.model.util.blackOrWhiteFromRGB
-import kosenda.makecolor.model.util.randomColorData
-import kosenda.makecolor.model.util.rgbToColor
+import kosenda.makecolor.core.util.blackOrWhiteFromRGB
+import kosenda.makecolor.core.util.randomColorData
+import kosenda.makecolor.core.util.rgbToColor
 import kosenda.makecolor.view.theme.MakeColorTheme
 
 @Composable

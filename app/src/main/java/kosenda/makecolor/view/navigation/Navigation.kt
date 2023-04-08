@@ -20,7 +20,7 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.core.model.data.ColorItem
-import kosenda.makecolor.view.code.ColorIndex
+import kosenda.makecolor.core.ui.code.ColorIndex
 import kosenda.makecolor.view.screen.CategoryDetailScreen
 import kosenda.makecolor.view.screen.ColorDetailScreen
 import kosenda.makecolor.view.screen.DataScreen

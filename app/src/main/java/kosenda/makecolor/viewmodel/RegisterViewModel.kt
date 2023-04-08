@@ -6,12 +6,12 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kosenda.makecolor.R
+import kosenda.makecolor.core.data.repository.ColorRepository
 import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.model.data.ColorItem
+import kosenda.makecolor.core.ui.state.RegisterUiState
 import kosenda.makecolor.di.IODispatcher
 import kosenda.makecolor.di.MainDispatcher
-import kosenda.makecolor.model.repository.ColorRepository
-import kosenda.makecolor.view.state.RegisterUiState
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow

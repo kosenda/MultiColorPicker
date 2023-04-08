@@ -1,7 +1,7 @@
 package kosenda.makecolor.view.navigation
 
 import kosenda.makecolor.core.model.data.Category
-import kosenda.makecolor.view.code.ColorIndex
+import kosenda.makecolor.core.ui.code.ColorIndex
 
 data class SelectColorParam(
     val category: Category,

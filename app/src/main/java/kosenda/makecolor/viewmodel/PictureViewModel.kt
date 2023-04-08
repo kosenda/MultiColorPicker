@@ -10,12 +10,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
 import androidx.palette.graphics.Palette
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kosenda.makecolor.core.domain.UpdateOtherColorUseCase
+import kosenda.makecolor.core.domain.UpdatePaletteColorsUseCase
+import kosenda.makecolor.core.model.data.ColorType
+import kosenda.makecolor.core.ui.state.PictureUiState
+import kosenda.makecolor.core.util.colorToRGB
 import kosenda.makecolor.di.IODispatcher
-import kosenda.makecolor.model.ColorType
-import kosenda.makecolor.model.usecase.UpdateOtherColorUseCase
-import kosenda.makecolor.model.usecase.UpdatePaletteColorsUseCase
-import kosenda.makecolor.model.util.colorToRGB
-import kosenda.makecolor.view.state.PictureUiState
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow

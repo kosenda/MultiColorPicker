@@ -1,0 +1,94 @@
+<resources>
+    <string name="app_name">Multi-Color Picker</string>
+    <string name="registration">Registrieren</string>
+    <string name="registrated">Registriert</string>
+    <string name="category">Kategorie</string>
+    <string name="detail">Details</string>
+    <string name="memo">Memo</string>
+    <string name="complementary">Komplementärfarbe</string>
+    <string name="opposite">Gegenfarbe</string>
+    <string name="enter_new_category">Namen der neuen Kategorie eingeben</string>
+    <string name="confirm">Bestätigung</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="add">Add</string>
+    <string name="copy">Kopieren</string>
+    <string name="delete">Löschen</string>
+    <string name="confirm_delete">Löschen Sie die Datei. </string>
+    <string name="deleted">Gelöscht. </string>
+    <string name="all_delete">Löschen aller Daten</string>
+    <string name="not_data">Keine Daten. </string>
+    <string name="change">Änderung</string>
+    <string name="enter_memo">Notiz eingeben</string>
+    <string name="picker">Picker</string>
+    <string name="mode">Modus</string>
+    <string name="tap_pick_picture">Tippen, um ein Bild auszuwählen</string>
+    <string name="reset">RESET</string>
+    <string name="output_random">Zufallsfarbe ausgeben</string>
+    <string name="output">Ausgabe</string>
+    <string name="dark_mode">Dunkelmodus</string>
+    <string name="light_mode">Lichtmodus</string>>
+    <string name="terminal_setting">Automatikmodus</string>
+    <string name="mode_switching">Modusumschaltung</string>
+    <string name="data_management">Datenverwaltung</string>
+    <string name="split">Split</string>
+    <string name="split_num">Split Nummer</string>
+    <string name="select">Auswahl</string>
+    <string name="select_1">Wählen Sie 1</string>
+    <string name="select_2">Wählen Sie 2</string>
+    <string name="select_3">Wählen Sie 3</string>
+    <string name="select_4">Wählen Sie 4</string>
+    <string name="not_select">nicht ausgewählt</string>
+    <string name="font_setting">Schriftart</string>
+
+    <!-- エラーテキスト -->
+    <string name="invalid_value">Ungültiger Wert.</string>
+    <string name="please_enter">Geben Sie %1$s〜 %2$s ein.</string>
+
+    <string name="select_language">Sprache auswählen</string>
+    <string name="language_settings">Spracheinstellungen</string>
+
+
+    <string name="picker_title">Erstellen (Picker)</string>
+    <string name="seekbar_title">Erstellen (Seekbar)</string>
+    <string name="text_title">Erstellen (Text)</string>
+    <string name="picture_title">Erstellen (Bild)</string>
+    <string name="merge_title">Erstellen (Merge)</string>
+    <string name="random_title">Erstellen (Random)</string>
+    <string name="data_title">Datenliste</string>
+    <string name="gradation_title">Abstufung</string>
+    <string name="review_title">Überprüfung</string>
+    <string name="setting_title">Einstellungen</string>
+
+    <string name="jis_idiomatic_color">JIS konventioneller Farbname</string>
+
+    <string name="jis_safe_color">JIS safe color</string>
+
+    <string name="web_color">Webfarben</string>
+
+    <string name="x11_color">X11 Farbnamen</string>.
+
+    <string name="copic_color">Kopierfarbe</string>.
+
+    <array name="square_circle">
+        <item>Kreis</item>
+        <item>Quadrat</item>
+    </array>
+
+    <array name="random_category">
+        <item>Nicht angegeben</item>
+        <item>Pastell</item>
+        <item>Leuchtend</item>
+        <item>Schwarz und Weiß</item>
+    </array>
+
+    <array name="color_harmony_mode">
+        <item>ANALOGES</item>
+        <item>MONOCHROMATISCH</item>
+        <item>KOMPLEMENTÄR</item>
+        <item>SPLIT_KOMPLEMENTÄR</item>
+        <item>TRIADISCH</item>
+        <item>TETRADISCH</item>
+        <item>SCHATTEN</item>
+    </array>
+
+</resources>

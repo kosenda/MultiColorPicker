@@ -20,10 +20,10 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import kosenda.makecolor.model.default.defaultCategories
-import kosenda.makecolor.model.util.getNameIfNoAlias
+import kosenda.makecolor.core.data.default.defaultCategories
+import kosenda.makecolor.core.ui.code.ColorIndex
+import kosenda.makecolor.core.util.getNameIfNoAlias
 import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.code.ColorIndex
 import kosenda.makecolor.view.component.GoogleAd
 import kosenda.makecolor.view.component.card.CategoryCard
 import kosenda.makecolor.view.component.topbar.TopBar

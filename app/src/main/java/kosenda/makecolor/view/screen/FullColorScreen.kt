@@ -15,10 +15,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kosenda.makecolor.core.model.data.ColorData
-import kosenda.makecolor.model.util.blackOrWhiteFromRGB
-import kosenda.makecolor.model.util.hexToHexStrWithSharp
-import kosenda.makecolor.model.util.randomColorData
-import kosenda.makecolor.model.util.rgbToColor
+import kosenda.makecolor.core.util.blackOrWhiteFromRGB
+import kosenda.makecolor.core.util.hexToHexStrWithSharp
+import kosenda.makecolor.core.util.randomColorData
+import kosenda.makecolor.core.util.rgbToColor
 import kosenda.makecolor.view.theme.MakeColorTheme
 
 @Composable

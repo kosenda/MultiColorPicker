@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import kosenda.makecolor.view.LocalIsDark
 import kosenda.makecolor.view.component.Drawer
 import kosenda.makecolor.view.navigation.Navigation
 import kosenda.makecolor.view.theme.backgroundBottomColor
@@ -29,9 +30,13 @@ fun FirstScreen() {
     val systemUiController = rememberSystemUiController()
     val topColor = backgroundTopColor()
     val bottomColor = backgroundBottomColor()
+    val isDark = LocalIsDark.current
     SideEffect {
-        systemUiController.setStatusBarColor(topColor)
-        systemUiController.setNavigationBarColor(bottomColor)
+        systemUiController.setStatusBarColor(
+            color = topColor,
+            darkIcons = isDark.not(),
+        )
+        systemUiController.setNavigationBarColor(color = bottomColor)
     }
 
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)

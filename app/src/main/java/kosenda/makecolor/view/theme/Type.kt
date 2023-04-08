@@ -7,7 +7,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.googlefonts.GoogleFont
 import androidx.compose.ui.unit.sp
 import kosenda.makecolor.R
-import kosenda.makecolor.view.FontType
+import kosenda.makecolor.core.model.data.FontType
 
 val provider = GoogleFont.Provider(
     providerAuthority = "com.google.android.gms.fonts",
