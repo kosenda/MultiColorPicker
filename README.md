@@ -54,8 +54,13 @@ flowchart LR
   
   A1([:app]):::appModule --> B1([:feature 予定]):::featureModule
   B1 --> C1([:core:model]):::coreModule 
-  B1 --> C2([:core:datastore]):::coreModule
+  B1 --> C2([:core:data]):::coreModule
   B1 --> C3([:core:database]):::coreModule
+  B1 --> C4([:core:datastore]):::coreModule
+  B1 --> C5([:core:domain]):::coreModule
+  B1 --> C6([:core:resource]):::coreModule
+  B1 --> C7([:core:ui]):::coreModule
+  B1 --> C8([:core:util]):::coreModule
 ```
 
 ## スクリーンショット
