@@ -28,7 +28,7 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.model.StringResource
+import kosenda.makecolor.core.model.data.StringResource
 import kosenda.makecolor.view.component.ClearTextIcon
 
 @OptIn(ExperimentalMaterial3Api::class)

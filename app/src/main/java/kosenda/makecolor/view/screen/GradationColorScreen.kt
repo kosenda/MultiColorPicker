@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import kosenda.makecolor.model.util.hexToColor
-import kosenda.makecolor.model.util.randomHex
+import kosenda.makecolor.core.util.hexToColor
+import kosenda.makecolor.core.util.randomHex
 import kosenda.makecolor.view.theme.MakeColorTheme
 
 @Composable

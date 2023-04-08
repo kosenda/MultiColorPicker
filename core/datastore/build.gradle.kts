@@ -18,7 +18,9 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.dataStore.preferences)
+    api(libs.androidx.dataStore.preferences)
     implementation(libs.hilt.android)
+    implementation(libs.timber)
+    implementation(libs.kotlinx.serialization.json)
     kapt(libs.hilt.compiler)
 }

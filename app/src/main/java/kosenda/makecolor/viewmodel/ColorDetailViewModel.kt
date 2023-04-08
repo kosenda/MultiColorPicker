@@ -4,11 +4,11 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kosenda.makecolor.core.model.data.ColorItem
-import kosenda.makecolor.model.util.hexToRGB
-import kosenda.makecolor.model.util.rgbToColorData
-import kosenda.makecolor.model.util.rgbToComplementaryRgb
-import kosenda.makecolor.model.util.rgbToOppositeRgb
-import kosenda.makecolor.view.state.ColorDetailUiState
+import kosenda.makecolor.core.ui.state.ColorDetailUiState
+import kosenda.makecolor.core.util.hexToRGB
+import kosenda.makecolor.core.util.rgbToColorData
+import kosenda.makecolor.core.util.rgbToComplementaryRgb
+import kosenda.makecolor.core.util.rgbToOppositeRgb
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

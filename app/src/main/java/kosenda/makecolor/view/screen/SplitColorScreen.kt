@@ -15,10 +15,10 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import kosenda.makecolor.model.util.hexToColor
-import kosenda.makecolor.model.util.randomHex
+import kosenda.makecolor.core.ui.code.SplitColorNum
+import kosenda.makecolor.core.util.hexToColor
+import kosenda.makecolor.core.util.randomHex
 import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.code.SplitColorNum
 import kosenda.makecolor.view.navigation.SplitColorParam
 import kosenda.makecolor.view.theme.MakeColorTheme
 

@@ -2,7 +2,7 @@ package kosenda.makecolor.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kosenda.makecolor.model.repository.DataStoreRepository
+import kosenda.makecolor.core.data.repository.DataStoreRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

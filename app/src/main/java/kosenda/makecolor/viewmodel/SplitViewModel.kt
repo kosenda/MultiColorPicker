@@ -3,12 +3,12 @@ package kosenda.makecolor.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavBackStackEntry
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kosenda.makecolor.core.domain.FetchCategoriesUseCase
 import kosenda.makecolor.core.model.data.Category
+import kosenda.makecolor.core.ui.code.ColorIndex
+import kosenda.makecolor.core.ui.code.SplitColorNum
+import kosenda.makecolor.core.ui.state.SplitUiState
 import kosenda.makecolor.di.IODispatcher
-import kosenda.makecolor.model.usecase.FetchCategoriesUseCase
-import kosenda.makecolor.view.code.ColorIndex
-import kosenda.makecolor.view.code.SplitColorNum
-import kosenda.makecolor.view.state.SplitUiState
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow

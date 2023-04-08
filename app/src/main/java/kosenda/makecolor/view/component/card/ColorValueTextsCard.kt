@@ -27,8 +27,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.ColorData
-import kosenda.makecolor.model.util.hexToHexStrWithSharp
-import kosenda.makecolor.model.util.randomColorData
+import kosenda.makecolor.core.util.hexToHexStrWithSharp
+import kosenda.makecolor.core.util.randomColorData
 import kosenda.makecolor.view.component.ContentDivider
 import kosenda.makecolor.view.theme.MakeColorTheme
 

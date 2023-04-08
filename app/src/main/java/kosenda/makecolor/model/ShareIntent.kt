@@ -7,7 +7,7 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import kosenda.makecolor.model.util.createShareBitmap
+import kosenda.makecolor.core.util.createShareBitmap
 import java.io.File
 import java.io.FileOutputStream
 import java.util.*

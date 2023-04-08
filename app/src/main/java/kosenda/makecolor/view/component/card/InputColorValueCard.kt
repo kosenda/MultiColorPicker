@@ -9,13 +9,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.model.ColorTypeWithHex
-import kosenda.makecolor.model.StringResource
-import kosenda.makecolor.view.CMYKColor
-import kosenda.makecolor.view.HSVColor
-import kosenda.makecolor.view.RGBColor
+import kosenda.makecolor.core.model.data.CMYKColor
+import kosenda.makecolor.core.model.data.ColorTypeWithHex
+import kosenda.makecolor.core.model.data.HSVColor
+import kosenda.makecolor.core.model.data.RGBColor
+import kosenda.makecolor.core.model.data.StringResource
+import kosenda.makecolor.core.ui.state.InputTextUiState
 import kosenda.makecolor.view.component.textfield.ColorTextField
-import kosenda.makecolor.view.state.InputTextUiState
 import kosenda.makecolor.view.theme.MakeColorTheme
 
 @Composable

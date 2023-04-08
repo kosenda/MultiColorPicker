@@ -29,8 +29,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.Category
-import kosenda.makecolor.model.util.getNameIfNoAlias
-import kosenda.makecolor.model.util.hexToColor
+import kosenda.makecolor.core.util.getNameIfNoAlias
+import kosenda.makecolor.core.util.hexToColor
 import kosenda.makecolor.view.PreviewSurface
 import kosenda.makecolor.view.component.button.DeleteButton
 import kosenda.makecolor.view.component.button.TonalButton

@@ -21,10 +21,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
-import kosenda.makecolor.model.util.blackOrWhiteFromRGB
-import kosenda.makecolor.model.util.hexToColor
-import kosenda.makecolor.model.util.hexToRGB
-import kosenda.makecolor.model.util.randomHex
+import kosenda.makecolor.core.util.blackOrWhiteFromRGB
+import kosenda.makecolor.core.util.hexToColor
+import kosenda.makecolor.core.util.hexToRGB
+import kosenda.makecolor.core.util.randomHex
 import kosenda.makecolor.view.theme.MakeColorTheme
 
 @Composable

@@ -1,6 +1,6 @@
 package kosenda.makecolor.view.navigation
 
-import kosenda.makecolor.view.code.SplitColorNum
+import kosenda.makecolor.core.ui.code.SplitColorNum
 import kotlinx.serialization.Serializable
 
 @Serializable

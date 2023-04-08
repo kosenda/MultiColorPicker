@@ -13,8 +13,8 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import kosenda.makecolor.core.ui.state.PaletteColorsState
 import kosenda.makecolor.view.component.ColorCircle
-import kosenda.makecolor.view.state.PaletteColorsState
 import kosenda.makecolor.view.theme.MakeColorTheme
 
 @Composable

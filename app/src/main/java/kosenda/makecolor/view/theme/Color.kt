@@ -10,17 +10,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import kosenda.makecolor.view.LocalIsDark
 
-val Red = Color.Red
-val Green = Color.Green
-val Blue = Color(0xFF4D88FF)
-
-val Cyan = Color.Cyan
-val Magenta = Color.Magenta
-val Yellow = Color(0xFFEBD300)
-
-val ThinBlack = Color(0xFF141414)
-val ThinWhite = Color(0xFFEBEBEB)
-
 @Composable
 fun primaryBrush(): Brush = Brush.linearGradient(
     listOf(

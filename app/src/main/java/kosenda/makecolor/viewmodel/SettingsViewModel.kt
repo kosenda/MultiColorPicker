@@ -5,12 +5,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kosenda.makecolor.core.data.repository.ColorRepository
+import kosenda.makecolor.core.data.repository.DataStoreRepository
+import kosenda.makecolor.core.model.data.FontType
+import kosenda.makecolor.core.model.data.Theme
+import kosenda.makecolor.core.ui.state.SettingUiState
 import kosenda.makecolor.di.IODispatcher
-import kosenda.makecolor.model.repository.ColorRepository
-import kosenda.makecolor.model.repository.DataStoreRepository
-import kosenda.makecolor.view.FontType
-import kosenda.makecolor.view.Theme
-import kosenda.makecolor.view.state.SettingUiState
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow

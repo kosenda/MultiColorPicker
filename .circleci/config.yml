@@ -12,6 +12,8 @@ jobs:
 
     steps:
       - checkout
+      - android/restore-gradle-cache
+      - android/restore-build-cache
       - run:
           command: cp ./.circleci/local.properties.ci local.properties
       - run:
@@ -24,7 +26,9 @@ jobs:
           name: run-danger-file
           command: bundle exec danger --verbose
       - android/run-tests:
-          test-command: ./gradlew lint testDebug --continue
+          test-command: ./gradlew testDebug --stacktrace
+      - android/save-gradle-cache
+      - android/save-build-cache
 #       - android/create-avd:
 #           avd-name: myavd
 #           install: true

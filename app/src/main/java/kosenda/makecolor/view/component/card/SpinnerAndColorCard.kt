@@ -6,11 +6,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
-import kosenda.makecolor.model.util.convertDisplayStringListFromCategories
-import kosenda.makecolor.model.util.getNameIfNoAlias
-import kosenda.makecolor.view.code.ColorIndex
+import kosenda.makecolor.core.ui.code.ColorIndex
+import kosenda.makecolor.core.ui.state.SplitUiState
+import kosenda.makecolor.core.util.convertDisplayStringListFromCategories
+import kosenda.makecolor.core.util.getNameIfNoAlias
 import kosenda.makecolor.view.navigation.SelectColorParam
-import kosenda.makecolor.view.state.SplitUiState
 
 @Composable
 fun SpinnerAndColorCard(

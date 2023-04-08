@@ -20,8 +20,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
-import kosenda.makecolor.model.util.hexToColor
-import kosenda.makecolor.model.util.randomHex
+import kosenda.makecolor.core.util.hexToColor
+import kosenda.makecolor.core.util.randomHex
 import kosenda.makecolor.view.theme.MakeColorTheme
 
 @Composable
