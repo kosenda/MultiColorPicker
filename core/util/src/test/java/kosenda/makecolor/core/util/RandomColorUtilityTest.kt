@@ -8,7 +8,7 @@ class RandomColorUtilityTest {
     @Test
     fun outputRandomRGBColors_default_size10() {
         assertThat(outputRandomRGBColors(randomType = RandomType.Vivid).size)
-            .isEqualTo(10)
+            .isEqualTo(100)
     }
 
     @Test
