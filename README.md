@@ -46,7 +46,7 @@ adUnitId=ca-app-pub-3940256099942544/6300978111
 |danger|プルリク時に警告|
 
 ## モジュール構成
-#### ⚠️ :feature と :core 内の階層の依存関係は省略しています
+#### ⚠️ :feature と :core 内の依存関係は省略しています
 ```mermaid
 flowchart TB
   classDef appModule fill:#AEFFDA,color:#000
