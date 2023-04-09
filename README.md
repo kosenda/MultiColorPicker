@@ -46,32 +46,35 @@ adUnitId=ca-app-pub-3940256099942544/6300978111
 |danger|プルリク時に警告|
 
 ## モジュール構成
+#### ⚠️ :feature と :core 内の階層の依存関係は省略しています
 ```mermaid
 flowchart TB
   classDef appModule fill:#AEFFDA,color:#000
   classDef featureModule fill:#FFDAAE,color:#000
   classDef coreModule fill:#DAAEFF,color:#000
   
-  A1([:app]):::appModule --> B1([:feature 予定]):::featureModule
-  
+  A1([:app]):::appModule --> B1([:feature:makecolor]):::featureModule
   A1 --> B2([:feature:settings]):::featureModule
   A1 --> B3([:feature:preview]):::featureModule
+  
+  
+  B1 --> C1([:core:model]):::coreModule 
+  B1 --> C2
+  B1 --> C5
+  B1 --> C7
+  B1 --> C8
   
   B2 --> C2([:core:data]):::coreModule
   B2 --> C5([:core:domain]):::coreModule
   B2 --> C7([:core:ui]):::coreModule
   B2 --> C8([:core:util]):::coreModule
+  
   B3 --> C7
   
   
-  B1 --> C1([:core:model]):::coreModule 
-  B1 --> C2
-  B1 --> C3([:core:database]):::coreModule
-  B1 --> C4([:core:datastore]):::coreModule
-  B1 --> C5
-  B1 --> C6([:core:resource]):::coreModule
-  B1 --> C7
-  B1 --> C8
+  C5 ~~~ C3([:core:database]):::coreModule
+  C5 ~~~ C4([:core:datastore]):::coreModule
+  C5 ~~~ C6([:core:resource]):::coreModule
 ```
 
 ## スクリーンショット
