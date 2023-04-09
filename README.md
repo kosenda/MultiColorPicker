@@ -53,14 +53,25 @@ flowchart LR
   classDef coreModule fill:#DAAEFF,color:#000
   
   A1([:app]):::appModule --> B1([:feature 予定]):::featureModule
+  
+  A1 --> B2([:feature:settings]):::featureModule
+  A1 --> B3([:feature:preview]):::featureModule
+  
+  B2 --> C2([:core:data]):::coreModule
+  B2 --> C5([:core:domain]):::coreModule
+  B2 --> C7([:core:ui]):::coreModule
+  B2 --> C8([:core:util]):::coreModule
+  B3 --> C7
+  
+  
   B1 --> C1([:core:model]):::coreModule 
-  B1 --> C2([:core:data]):::coreModule
+  B1 --> C2
   B1 --> C3([:core:database]):::coreModule
   B1 --> C4([:core:datastore]):::coreModule
-  B1 --> C5([:core:domain]):::coreModule
+  B1 --> C5
   B1 --> C6([:core:resource]):::coreModule
-  B1 --> C7([:core:ui]):::coreModule
-  B1 --> C8([:core:util]):::coreModule
+  B1 --> C7
+  B1 --> C8
 ```
 
 ## スクリーンショット
