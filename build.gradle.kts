@@ -16,6 +16,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.secrets) apply false
+    id("com.android.library") version "7.4.2" apply false
 }
 
 tasks.create<Delete>("clean") {

@@ -26,15 +26,15 @@ import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.core.model.data.ColorTypeWithHex
-import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.component.GoogleAd
-import kosenda.makecolor.view.component.button.FloatingAddButton
-import kosenda.makecolor.view.component.card.ColorValueTextsCard
-import kosenda.makecolor.view.component.card.DisplayColorCard
-import kosenda.makecolor.view.component.card.InputColorValueCard
-import kosenda.makecolor.view.component.card.SpinnerCard
-import kosenda.makecolor.view.component.topbar.TopBar
-import kosenda.makecolor.view.theme.MakeColorTheme
+import kosenda.makecolor.core.ui.feature.common.button.FloatingAddButton
+import kosenda.makecolor.core.ui.feature.common.card.ColorValueTextsCard
+import kosenda.makecolor.core.ui.feature.common.card.DisplayColorCard
+import kosenda.makecolor.core.ui.feature.common.card.InputColorValueCard
+import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
+import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
+import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.feature.preview.PreviewSurface
+import kosenda.makecolor.view.content.GoogleAd
 import kosenda.makecolor.viewmodel.InputTextViewModel
 import kosenda.makecolor.viewmodel.InputTextViewModelImpl
 import kosenda.makecolor.viewmodel.PreviewInputTextViewModel
@@ -43,12 +43,14 @@ import kosenda.makecolor.viewmodel.PreviewInputTextViewModel
 fun InputTextScreen(
     viewModel: InputTextViewModelImpl,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
 ) {
     InputTextScreenContent(
         viewModel = viewModel,
         onClickMenu = onClickMenu,
+        onClickInfo = onClickInfo,
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
     )
@@ -59,6 +61,7 @@ fun InputTextScreen(
 fun InputTextScreenContent(
     viewModel: InputTextViewModel,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
     googleAd: @Composable () -> Unit = { GoogleAd() },
@@ -80,6 +83,7 @@ fun InputTextScreenContent(
             TopBar(
                 scrollBehavior = scrollBehavior,
                 onClickMenu = onClickMenu,
+                onClickInfo = onClickInfo,
                 hex1 = uiState.colorData.hex.toString(),
             )
         },
@@ -141,6 +145,7 @@ private fun PreviewInputTextScreen_Light() {
             InputTextScreenContent(
                 viewModel = PreviewInputTextViewModel(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
                 googleAd = {},
@@ -157,6 +162,7 @@ private fun PreviewInputTextScreen_Dark() {
             InputTextScreenContent(
                 viewModel = PreviewInputTextViewModel(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
                 googleAd = {},

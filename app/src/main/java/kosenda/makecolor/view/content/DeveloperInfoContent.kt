@@ -1,4 +1,4 @@
-package kosenda.makecolor.view.content
+package kosenda.makecolor.core.ui.feature.common.content
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -19,11 +19,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.R
-import kosenda.makecolor.view.component.InfoItemBody
-import kosenda.makecolor.view.component.InfoItemTitle
-import kosenda.makecolor.view.component.card.TitleCard
-import kosenda.makecolor.view.theme.MakeColorTheme
+import kosenda.makecolor.core.ui.R
+import kosenda.makecolor.core.ui.feature.common.InfoItemBody
+import kosenda.makecolor.core.ui.feature.common.InfoItemTitle
+import kosenda.makecolor.core.ui.feature.common.card.TitleCard
+import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 
 @Composable
 fun DeveloperInfoContent() {

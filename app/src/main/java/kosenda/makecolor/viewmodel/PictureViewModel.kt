@@ -15,7 +15,7 @@ import kosenda.makecolor.core.domain.UpdatePaletteColorsUseCase
 import kosenda.makecolor.core.model.data.ColorType
 import kosenda.makecolor.core.ui.state.PictureUiState
 import kosenda.makecolor.core.util.colorToRGB
-import kosenda.makecolor.di.IODispatcher
+import kosenda.makecolor.core.util.ui.IODispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -12,9 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.util.hexToColor
 import kosenda.makecolor.core.util.randomHex
-import kosenda.makecolor.view.theme.MakeColorTheme
 
 @Composable
 fun GradationColorScreen(

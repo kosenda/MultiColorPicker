@@ -79,6 +79,8 @@ dependencies {
     implementation(project(":core:resource"))
     implementation(project(":core:ui"))
     implementation(project(":core:util"))
+    implementation(project(":feature:settings"))
+    implementation(project(":feature:preview"))
     compileOnly(libs.firebase.crashlytics.gradle)
     implementation(libs.accompanist.navigationAnimation)
     implementation(libs.accompanist.systemuicontroller)

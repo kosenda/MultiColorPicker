@@ -31,17 +31,17 @@ import kosenda.makecolor.R
 import kosenda.makecolor.core.data.default.defaultCategories
 import kosenda.makecolor.core.ui.code.ColorIndex
 import kosenda.makecolor.core.ui.code.SplitColorNum
-import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.component.ContentDivider
-import kosenda.makecolor.view.component.GoogleAd
-import kosenda.makecolor.view.component.button.TonalButton
-import kosenda.makecolor.view.component.card.SpinnerAndColorCard
-import kosenda.makecolor.view.component.card.SpinnerCard
-import kosenda.makecolor.view.component.topbar.TopBar
+import kosenda.makecolor.core.ui.feature.common.ContentDivider
+import kosenda.makecolor.core.ui.feature.common.SelectColorParam
+import kosenda.makecolor.core.ui.feature.common.button.TonalButton
+import kosenda.makecolor.core.ui.feature.common.card.SpinnerAndColorCard
+import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
+import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
+import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.feature.preview.PreviewSurface
+import kosenda.makecolor.view.content.GoogleAd
 import kosenda.makecolor.view.navigation.NavigationItems
-import kosenda.makecolor.view.navigation.SelectColorParam
 import kosenda.makecolor.view.navigation.SplitColorParam
-import kosenda.makecolor.view.theme.MakeColorTheme
 import kosenda.makecolor.viewmodel.PreviewSplitViewModel
 import kosenda.makecolor.viewmodel.SplitViewModel
 import kosenda.makecolor.viewmodel.SplitViewModelImpl
@@ -53,12 +53,14 @@ fun SplitScreen(
     viewModel: SplitViewModelImpl,
     navController: NavController,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
 ) {
     SplitScreenContent(
         viewModel = viewModel,
         navController = navController,
         onClickMenu = onClickMenu,
+        onClickInfo = onClickInfo,
         onClickSelectColor = onClickSelectColor,
     )
 }
@@ -69,6 +71,7 @@ fun SplitScreenContent(
     viewModel: SplitViewModel,
     navController: NavController,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
     googleAd: @Composable () -> Unit = { GoogleAd() },
 ) {
@@ -87,6 +90,7 @@ fun SplitScreenContent(
             TopBar(
                 scrollBehavior = scrollBehavior,
                 onClickMenu = onClickMenu,
+                onClickInfo = onClickInfo,
             )
         },
         bottomBar = googleAd,
@@ -157,6 +161,7 @@ private fun PreviewSplitScreenContent_Light() {
                 viewModel = PreviewSplitViewModel(),
                 navController = rememberNavController(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickSelectColor = {},
             ) {}
         }
@@ -172,6 +177,7 @@ private fun PreviewSplitScreenContent_Dark() {
                 viewModel = PreviewSplitViewModel(),
                 navController = rememberNavController(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickSelectColor = {},
             ) {}
         }

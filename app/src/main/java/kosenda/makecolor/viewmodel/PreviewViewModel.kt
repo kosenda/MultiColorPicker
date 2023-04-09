@@ -2,8 +2,6 @@ package kosenda.makecolor.viewmodel
 
 import android.content.Context
 import android.net.Uri
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.LayoutDirection
@@ -14,11 +12,9 @@ import kosenda.makecolor.core.data.default.webColor
 import kosenda.makecolor.core.model.data.CMYKColor
 import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.model.data.ColorItem
-import kosenda.makecolor.core.model.data.FontType
 import kosenda.makecolor.core.model.data.HSVColor
 import kosenda.makecolor.core.model.data.RGBColor
 import kosenda.makecolor.core.model.data.StringResource
-import kosenda.makecolor.core.model.data.Theme
 import kosenda.makecolor.core.ui.code.ColorIndex
 import kosenda.makecolor.core.ui.code.PickerType
 import kosenda.makecolor.core.ui.state.CategoryDetailUiState
@@ -33,7 +29,6 @@ import kosenda.makecolor.core.ui.state.RandomUiState
 import kosenda.makecolor.core.ui.state.RegisterUiState
 import kosenda.makecolor.core.ui.state.SeekbarUiState
 import kosenda.makecolor.core.ui.state.SelectColorUiState
-import kosenda.makecolor.core.ui.state.SettingUiState
 import kosenda.makecolor.core.ui.state.SplitUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -142,20 +137,20 @@ class PreviewSelectColorViewModel : SelectColorViewModel() {
     override fun deleteColorItem(deleteColorItem: ColorItem) {}
 }
 
-class PreviewSettingsViewModel : SettingsViewModel() {
-    override val uiState: StateFlow<SettingUiState> = MutableStateFlow(SettingUiState())
-    override val fontType: MutableState<FontType> = mutableStateOf(FontType.DEFAULT)
-    override val themeNum: MutableState<Int> = mutableStateOf(Theme.AUTO.num)
-    override fun updateThemeNum(newThemeNum: Int) {}
-    override fun updateFontType(newFontType: FontType) {}
-    override fun isSelectedThemeNum(themeNum: Int): Boolean = true
-    override fun isSelectedFont(fontType: FontType): Boolean = true
-    override fun openConfirmDialog() {}
-    override fun closeConfirmDialog() {}
-    override fun openSelectLanguageDialog() {}
-    override fun closeSelectLanguageDialog() {}
-    override suspend fun deleteAllData() {}
-}
+// class PreviewSettingsViewModel : SettingsViewModel() {
+//    override val uiState: StateFlow<SettingUiState> = MutableStateFlow(SettingUiState())
+//    override val fontType: MutableState<FontType> = mutableStateOf(FontType.DEFAULT)
+//    override val themeNum: MutableState<Int> = mutableStateOf(Theme.AUTO.num)
+//    override fun updateThemeNum(newThemeNum: Int) {}
+//    override fun updateFontType(newFontType: FontType) {}
+//    override fun isSelectedThemeNum(themeNum: Int): Boolean = true
+//    override fun isSelectedFont(fontType: FontType): Boolean = true
+//    override fun openConfirmDialog() {}
+//    override fun closeConfirmDialog() {}
+//    override fun openSelectLanguageDialog() {}
+//    override fun closeSelectLanguageDialog() {}
+//    override suspend fun deleteAllData() {}
+// }
 
 class PreviewSplitViewModel : SplitViewModel() {
     override val uiState: StateFlow<SplitUiState> = MutableStateFlow(SplitUiState())

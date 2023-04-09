@@ -22,10 +22,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
+import kosenda.makecolor.core.ui.feature.common.LocalIsDark
+import kosenda.makecolor.core.ui.feature.theme.changeBrightness
+import kosenda.makecolor.core.ui.feature.theme.contentBrush
+import kosenda.makecolor.core.ui.feature.theme.primaryBrush
 import kosenda.makecolor.view.navigation.NavigationItems
-import kosenda.makecolor.view.theme.changeBrightness
-import kosenda.makecolor.view.theme.contentBrush
-import kosenda.makecolor.view.theme.primaryBrush
 
 @Composable
 fun DrawerItem(
