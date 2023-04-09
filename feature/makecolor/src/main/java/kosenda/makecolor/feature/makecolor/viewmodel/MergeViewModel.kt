@@ -1,4 +1,4 @@
-package kosenda.makecolor.viewmodel
+package kosenda.makecolor.feature.makecolor.viewmodel
 
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
@@ -150,4 +150,22 @@ class MergeViewModelImpl @Inject constructor(
     override fun updateSelectCategory2(index: Int) {
         _uiState.update { it.copy(selectCategory2 = it.categories[index]) }
     }
+}
+
+class PreviewMergeViewModel : MergeViewModel() {
+    override val uiState: StateFlow<MergeUiState> = MutableStateFlow(MergeUiState())
+    override fun init(navBackStackEntry: NavBackStackEntry?) {}
+    override fun fetchCategories(defaultCategories: List<Category>) {}
+    override fun updateColorData(color: Color) {}
+    override fun resetBitmap() {}
+    override fun createBitmap(
+        hex1: String,
+        hex2: String,
+        btmHeight: Float,
+        btmWidth: Float,
+        density: Density,
+        layoutDirection: LayoutDirection,
+    ) {}
+    override fun updateSelectCategory1(index: Int) {}
+    override fun updateSelectCategory2(index: Int) {}
 }

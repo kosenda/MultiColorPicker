@@ -1,4 +1,4 @@
-package kosenda.makecolor.viewmodel
+package kosenda.makecolor.feature.makecolor.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -56,4 +56,12 @@ class SeekbarViewModelImpl @Inject constructor(
             it.copy(colorData = updateColorDataUseCase(it.colorData, hsvType, value))
         }
     }
+}
+
+class PreviewSeekbarViewModel : SeekbarViewModel() {
+    override val uiState: StateFlow<SeekbarUiState> = MutableStateFlow(SeekbarUiState())
+    override fun updateSelectColorType(index: Int) {}
+    override fun updateColorData(rgbType: RGBColor, value: Float) {}
+    override fun updateColorData(cmykType: CMYKColor, value: Float) {}
+    override fun updateColorData(hsvType: HSVColor, value: Float) {}
 }

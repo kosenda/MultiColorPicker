@@ -1,9 +1,9 @@
-package kosenda.makecolor.view.screen
+package kosenda.makecolor.feature.makecolor.screen
 
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -18,59 +18,64 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.ColorData
-import kosenda.makecolor.core.model.data.ColorType
+import kosenda.makecolor.core.model.data.ColorTypeWithHex
 import kosenda.makecolor.core.ui.feature.common.button.FloatingAddButton
 import kosenda.makecolor.core.ui.feature.common.card.ColorValueTextsCard
 import kosenda.makecolor.core.ui.feature.common.card.DisplayColorCard
-import kosenda.makecolor.core.ui.feature.common.card.SeekbarsCard
+import kosenda.makecolor.core.ui.feature.common.card.InputColorValueCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.feature.makecolor.R
+import kosenda.makecolor.feature.makecolor.viewmodel.InputTextViewModel
+import kosenda.makecolor.feature.makecolor.viewmodel.InputTextViewModelImpl
+import kosenda.makecolor.feature.makecolor.viewmodel.PreviewInputTextViewModel
 import kosenda.makecolor.feature.preview.PreviewSurface
-import kosenda.makecolor.view.content.GoogleAd
-import kosenda.makecolor.viewmodel.PreviewSeekbarViewModel
-import kosenda.makecolor.viewmodel.SeekbarViewModel
-import kosenda.makecolor.viewmodel.SeekbarViewModelImpl
 
 @Composable
-fun SeekbarScreen(
-    viewModel: SeekbarViewModelImpl,
+fun InputTextScreen(
+    viewModel: InputTextViewModelImpl,
     onClickMenu: () -> Unit,
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
+    googleAd: @Composable () -> Unit,
 ) {
-    SeekbarScreenContent(
+    InputTextScreenContent(
         viewModel = viewModel,
         onClickMenu = onClickMenu,
         onClickInfo = onClickInfo,
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
+        googleAd = googleAd,
     )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SeekbarScreenContent(
-    viewModel: SeekbarViewModel,
+fun InputTextScreenContent(
+    viewModel: InputTextViewModel,
     onClickMenu: () -> Unit,
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
-    googleAd: @Composable () -> Unit = { GoogleAd() },
+    googleAd: @Composable () -> Unit = {},
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
+    val focusManager = LocalFocusManager.current
     val scrollState = rememberScrollState()
     val colorTypeArray: Array<String> = arrayOf(
-        ColorType.RGB.name,
-        ColorType.CMYK.name,
-        ColorType.HSV.name,
+        ColorTypeWithHex.RGB.name,
+        ColorTypeWithHex.CMYK.name,
+        ColorTypeWithHex.HSV.name,
+        ColorTypeWithHex.HEX.name,
     )
 
     Scaffold(
@@ -97,7 +102,14 @@ fun SeekbarScreenContent(
                 .padding(it)
                 .padding(horizontal = 16.dp)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
-                .verticalScroll(scrollState),
+                .verticalScroll(scrollState)
+                .pointerInput(Unit) {
+                    detectTapGestures(
+                        onTap = {
+                            focusManager.clearFocus()
+                        },
+                    )
+                },
         ) {
             DisplayColorCard(
                 colorData = uiState.colorData,
@@ -110,51 +122,52 @@ fun SeekbarScreenContent(
                 onSelectedChange = viewModel::updateSelectColorType,
                 displayItemList = colorTypeArray,
             )
-            SeekbarsCard(
+
+            InputColorValueCard(
                 selectColorType = uiState.selectColorType,
-                onRGBColorChange = viewModel::updateColorData,
-                onCMYKColorChange = viewModel::updateColorData,
-                onHSVColorChange = viewModel::updateColorData,
-                colorData = uiState.colorData,
+                onRGBTextChange = viewModel::updateInputText,
+                onCMYKTextChange = viewModel::updateInputText,
+                onHSVTextChange = viewModel::updateInputText,
+                onHexTextChange = viewModel::updateInputText,
+                uiState = uiState,
             )
+
             ColorValueTextsCard(colorData = uiState.colorData)
-            Spacer(
-                modifier = Modifier
-                    .fillMaxWidth(1f)
-                    .height(150.dp),
-            )
+            Spacer(modifier = Modifier.height(150.dp))
         }
     }
 }
 
 @Preview
 @Composable
-private fun PreviewSeekbarScreenContent_Light() {
+private fun PreviewInputTextScreen_Light() {
     MakeColorTheme(isDarkTheme = false) {
         PreviewSurface {
-            SeekbarScreenContent(
-                viewModel = PreviewSeekbarViewModel(),
+            InputTextScreenContent(
+                viewModel = PreviewInputTextViewModel(),
                 onClickMenu = {},
                 onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
-            ) {}
+                googleAd = {},
+            )
         }
     }
 }
 
 @Preview
 @Composable
-private fun PreviewSeekbarScreenContent_Dark() {
+private fun PreviewInputTextScreen_Dark() {
     MakeColorTheme(isDarkTheme = true) {
         PreviewSurface {
-            SeekbarScreenContent(
-                viewModel = PreviewSeekbarViewModel(),
+            InputTextScreenContent(
+                viewModel = PreviewInputTextViewModel(),
                 onClickMenu = {},
                 onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
-            ) {}
+                googleAd = {},
+            )
         }
     }
 }

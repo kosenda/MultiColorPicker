@@ -1,33 +1,16 @@
 package kosenda.makecolor.viewmodel
 
 import android.content.Context
-import android.net.Uri
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.Density
-import androidx.compose.ui.unit.LayoutDirection
 import androidx.navigation.NavBackStackEntry
-import com.godaddy.android.colorpicker.HsvColor
-import com.godaddy.android.colorpicker.harmony.ColorHarmonyMode
 import kosenda.makecolor.core.data.default.webColor
-import kosenda.makecolor.core.model.data.CMYKColor
 import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.model.data.ColorItem
-import kosenda.makecolor.core.model.data.HSVColor
-import kosenda.makecolor.core.model.data.RGBColor
-import kosenda.makecolor.core.model.data.StringResource
 import kosenda.makecolor.core.ui.code.ColorIndex
-import kosenda.makecolor.core.ui.code.PickerType
 import kosenda.makecolor.core.ui.state.CategoryDetailUiState
 import kosenda.makecolor.core.ui.state.ColorDetailUiState
 import kosenda.makecolor.core.ui.state.DataUiState
 import kosenda.makecolor.core.ui.state.GradationUiState
-import kosenda.makecolor.core.ui.state.InputTextUiState
-import kosenda.makecolor.core.ui.state.MergeUiState
-import kosenda.makecolor.core.ui.state.PickerUiState
-import kosenda.makecolor.core.ui.state.PictureUiState
-import kosenda.makecolor.core.ui.state.RandomUiState
 import kosenda.makecolor.core.ui.state.RegisterUiState
-import kosenda.makecolor.core.ui.state.SeekbarUiState
 import kosenda.makecolor.core.ui.state.SelectColorUiState
 import kosenda.makecolor.core.ui.state.SplitUiState
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -61,54 +44,54 @@ class PreviewGradationViewModel : GradationViewModel() {
     override fun updateSelectCategory2(index: Int) {}
 }
 
-class PreviewInputTextViewModel : InputTextViewModel() {
-    override val uiState: StateFlow<InputTextUiState> = MutableStateFlow(InputTextUiState())
-    override fun updateSelectColorType(index: Int) {}
-    override fun updateInputText(rgbType: RGBColor, value: String): StringResource? = null
-    override fun updateInputText(cmykType: CMYKColor, value: String): StringResource? = null
-    override fun updateInputText(hsvType: HSVColor, value: String): StringResource? = null
-    override fun updateInputText(hex: String): StringResource? = null
-}
+// class PreviewInputTextViewModel : InputTextViewModel() {
+//    override val uiState: StateFlow<InputTextUiState> = MutableStateFlow(InputTextUiState())
+//    override fun updateSelectColorType(index: Int) {}
+//    override fun updateInputText(rgbType: RGBColor, value: String): StringResource? = null
+//    override fun updateInputText(cmykType: CMYKColor, value: String): StringResource? = null
+//    override fun updateInputText(hsvType: HSVColor, value: String): StringResource? = null
+//    override fun updateInputText(hex: String): StringResource? = null
+// }
 
-class PreviewMergeViewModel : MergeViewModel() {
-    override val uiState: StateFlow<MergeUiState> = MutableStateFlow(MergeUiState())
-    override fun init(navBackStackEntry: NavBackStackEntry?) {}
-    override fun fetchCategories(defaultCategories: List<Category>) {}
-    override fun updateColorData(color: Color) {}
-    override fun resetBitmap() {}
-    override fun createBitmap(
-        hex1: String,
-        hex2: String,
-        btmHeight: Float,
-        btmWidth: Float,
-        density: Density,
-        layoutDirection: LayoutDirection,
-    ) {}
-    override fun updateSelectCategory1(index: Int) {}
-    override fun updateSelectCategory2(index: Int) {}
-}
+// class PreviewMergeViewModel : MergeViewModel() {
+//    override val uiState: StateFlow<MergeUiState> = MutableStateFlow(MergeUiState())
+//    override fun init(navBackStackEntry: NavBackStackEntry?) {}
+//    override fun fetchCategories(defaultCategories: List<Category>) {}
+//    override fun updateColorData(color: Color) {}
+//    override fun resetBitmap() {}
+//    override fun createBitmap(
+//        hex1: String,
+//        hex2: String,
+//        btmHeight: Float,
+//        btmWidth: Float,
+//        density: Density,
+//        layoutDirection: LayoutDirection,
+//    ) {}
+//    override fun updateSelectCategory1(index: Int) {}
+//    override fun updateSelectCategory2(index: Int) {}
+// }
 
-class PreviewPickerViewModel : PickerViewModel() {
-    override val uiState: StateFlow<PickerUiState> = MutableStateFlow(PickerUiState())
-    override fun updateHsvColor(color: HsvColor) {}
-    override fun updateColorData(color: HsvColor) {}
-    override fun updatePickerType(type: PickerType) {}
-    override fun updateHarmonyMode(mode: ColorHarmonyMode) {}
-}
+// class PreviewPickerViewModel : PickerViewModel() {
+//    override val uiState: StateFlow<PickerUiState> = MutableStateFlow(PickerUiState())
+//    override fun updateHsvColor(color: HsvColor) {}
+//    override fun updateColorData(color: HsvColor) {}
+//    override fun updatePickerType(type: PickerType) {}
+//    override fun updateHarmonyMode(mode: ColorHarmonyMode) {}
+// }
 
-class PreviewPictureViewModel : PictureViewModel() {
-    override val uiState: StateFlow<PictureUiState> = MutableStateFlow(PictureUiState())
-    override fun updateColorData(color: Color) {}
-    override fun makeBitmapAndPalette(uri: Uri, context: Context) {}
-    override fun resetImage() {}
-}
+// class PreviewPictureViewModel : PictureViewModel() {
+//    override val uiState: StateFlow<PictureUiState> = MutableStateFlow(PictureUiState())
+//    override fun updateColorData(color: Color) {}
+//    override fun makeBitmapAndPalette(uri: Uri, context: Context) {}
+//    override fun resetImage() {}
+// }
 
-class PreviewRandomViewModel : RandomViewModel() {
-    override val uiState: StateFlow<RandomUiState> = MutableStateFlow(RandomUiState())
-    override fun updateColorData(color: Color) {}
-    override fun updateRandomType(index: Int) {}
-    override fun outputRandomColors() {}
-}
+// class PreviewRandomViewModel : RandomViewModel() {
+//    override val uiState: StateFlow<RandomUiState> = MutableStateFlow(RandomUiState())
+//    override fun updateColorData(color: Color) {}
+//    override fun updateRandomType(index: Int) {}
+//    override fun outputRandomColors() {}
+// }
 
 class PreviewRegisterViewModel : RegisterViewModel() {
     override val uiState: StateFlow<RegisterUiState> = MutableStateFlow(RegisterUiState())
@@ -121,13 +104,13 @@ class PreviewRegisterViewModel : RegisterViewModel() {
     override fun registerColor(hex: String, context: Context) {}
 }
 
-class PreviewSeekbarViewModel : SeekbarViewModel() {
-    override val uiState: StateFlow<SeekbarUiState> = MutableStateFlow(SeekbarUiState())
-    override fun updateSelectColorType(index: Int) {}
-    override fun updateColorData(rgbType: RGBColor, value: Float) {}
-    override fun updateColorData(cmykType: CMYKColor, value: Float) {}
-    override fun updateColorData(hsvType: HSVColor, value: Float) {}
-}
+// class PreviewSeekbarViewModel : SeekbarViewModel() {
+//    override val uiState: StateFlow<SeekbarUiState> = MutableStateFlow(SeekbarUiState())
+//    override fun updateSelectColorType(index: Int) {}
+//    override fun updateColorData(rgbType: RGBColor, value: Float) {}
+//    override fun updateColorData(cmykType: CMYKColor, value: Float) {}
+//    override fun updateColorData(hsvType: HSVColor, value: Float) {}
+// }
 
 class PreviewSelectColorViewModel : SelectColorViewModel() {
     override val uiState: StateFlow<SelectColorUiState> = MutableStateFlow(

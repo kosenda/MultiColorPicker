@@ -1,4 +1,4 @@
-package kosenda.makecolor.viewmodel
+package kosenda.makecolor.feature.makecolor.viewmodel
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -88,4 +88,11 @@ class PictureViewModelImpl @Inject constructor(
             )
         }
     }
+}
+
+class PreviewPictureViewModel : PictureViewModel() {
+    override val uiState: StateFlow<PictureUiState> = MutableStateFlow(PictureUiState())
+    override fun updateColorData(color: Color) {}
+    override fun makeBitmapAndPalette(uri: Uri, context: Context) {}
+    override fun resetImage() {}
 }

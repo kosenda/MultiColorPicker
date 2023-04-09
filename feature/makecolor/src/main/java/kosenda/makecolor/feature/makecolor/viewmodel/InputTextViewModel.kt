@@ -1,4 +1,4 @@
-package kosenda.makecolor.viewmodel
+package kosenda.makecolor.feature.makecolor.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -179,4 +179,13 @@ class InputTextViewModelImpl @Inject constructor(
             }
         }
     }
+}
+
+class PreviewInputTextViewModel : InputTextViewModel() {
+    override val uiState: StateFlow<InputTextUiState> = MutableStateFlow(InputTextUiState())
+    override fun updateSelectColorType(index: Int) {}
+    override fun updateInputText(rgbType: RGBColor, value: String): StringResource? = null
+    override fun updateInputText(cmykType: CMYKColor, value: String): StringResource? = null
+    override fun updateInputText(hsvType: HSVColor, value: String): StringResource? = null
+    override fun updateInputText(hex: String): StringResource? = null
 }

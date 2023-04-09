@@ -1,4 +1,4 @@
-package kosenda.makecolor.viewmodel
+package kosenda.makecolor.feature.makecolor.viewmodel
 
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
@@ -59,4 +59,11 @@ class RandomViewModelImpl @Inject constructor(
             it.copy(randomRGBColors = outputRandomRGBColors(randomType = it.selectRandomType))
         }
     }
+}
+
+class PreviewRandomViewModel : RandomViewModel() {
+    override val uiState: StateFlow<RandomUiState> = MutableStateFlow(RandomUiState())
+    override fun updateColorData(color: Color) {}
+    override fun updateRandomType(index: Int) {}
+    override fun outputRandomColors() {}
 }
