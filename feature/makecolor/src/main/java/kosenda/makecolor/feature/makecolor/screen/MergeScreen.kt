@@ -1,4 +1,4 @@
-package kosenda.makecolor.view.screen
+package kosenda.makecolor.feature.makecolor.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -27,7 +27,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import kosenda.makecolor.R
 import kosenda.makecolor.core.data.default.defaultCategories
 import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.core.ui.code.ColorIndex
@@ -41,11 +40,11 @@ import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.util.getNameIfNoAlias
+import kosenda.makecolor.feature.makecolor.R
+import kosenda.makecolor.feature.makecolor.viewmodel.MergeViewModel
+import kosenda.makecolor.feature.makecolor.viewmodel.MergeViewModelImpl
+import kosenda.makecolor.feature.makecolor.viewmodel.PreviewMergeViewModel
 import kosenda.makecolor.feature.preview.PreviewSurface
-import kosenda.makecolor.view.content.GoogleAd
-import kosenda.makecolor.viewmodel.MergeViewModel
-import kosenda.makecolor.viewmodel.MergeViewModelImpl
-import kosenda.makecolor.viewmodel.PreviewMergeViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -58,6 +57,7 @@ fun MergeScreen(
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
+    googleAd: @Composable () -> Unit = {},
 ) {
     MergeScreenContent(
         viewModel = viewModel,
@@ -67,6 +67,7 @@ fun MergeScreen(
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
         onClickSelectColor = onClickSelectColor,
+        googleAd = googleAd,
     )
 }
 
@@ -80,7 +81,7 @@ fun MergeScreenContent(
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
-    googleAd: @Composable () -> Unit = { GoogleAd() },
+    googleAd: @Composable () -> Unit = {},
 ) {
     val context = LocalContext.current
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())

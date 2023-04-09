@@ -1,12 +1,10 @@
-package kosenda.makecolor.view.screen
+package kosenda.makecolor.feature.makecolor.screen
 
-import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -18,64 +16,62 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.ColorData
-import kosenda.makecolor.core.model.data.ColorTypeWithHex
 import kosenda.makecolor.core.ui.feature.common.button.FloatingAddButton
+import kosenda.makecolor.core.ui.feature.common.button.TonalButton
 import kosenda.makecolor.core.ui.feature.common.card.ColorValueTextsCard
 import kosenda.makecolor.core.ui.feature.common.card.DisplayColorCard
-import kosenda.makecolor.core.ui.feature.common.card.InputColorValueCard
+import kosenda.makecolor.core.ui.feature.common.card.RandomColorsCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.feature.makecolor.R
+import kosenda.makecolor.feature.makecolor.viewmodel.PreviewRandomViewModel
+import kosenda.makecolor.feature.makecolor.viewmodel.RandomViewModel
+import kosenda.makecolor.feature.makecolor.viewmodel.RandomViewModelImpl
 import kosenda.makecolor.feature.preview.PreviewSurface
-import kosenda.makecolor.view.content.GoogleAd
-import kosenda.makecolor.viewmodel.InputTextViewModel
-import kosenda.makecolor.viewmodel.InputTextViewModelImpl
-import kosenda.makecolor.viewmodel.PreviewInputTextViewModel
 
 @Composable
-fun InputTextScreen(
-    viewModel: InputTextViewModelImpl,
+fun RandomScreen(
+    viewModel: RandomViewModelImpl,
     onClickMenu: () -> Unit,
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
+    googleAd: @Composable () -> Unit = {},
 ) {
-    InputTextScreenContent(
+    RandomScreenContent(
         viewModel = viewModel,
         onClickMenu = onClickMenu,
         onClickInfo = onClickInfo,
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
+        googleAd = googleAd,
     )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun InputTextScreenContent(
-    viewModel: InputTextViewModel,
+fun RandomScreenContent(
+    viewModel: RandomViewModel,
     onClickMenu: () -> Unit,
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
-    googleAd: @Composable () -> Unit = { GoogleAd() },
+    googleAd: @Composable () -> Unit = {},
 ) {
     val uiState by viewModel.uiState.collectAsState()
+    val scrollState = androidx.compose.foundation.rememberScrollState()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
-    val focusManager = LocalFocusManager.current
-    val scrollState = rememberScrollState()
-    val colorTypeArray: Array<String> = arrayOf(
-        ColorTypeWithHex.RGB.name,
-        ColorTypeWithHex.CMYK.name,
-        ColorTypeWithHex.HSV.name,
-        ColorTypeWithHex.HEX.name,
-    )
+    val horizontalPadding = 16.dp
+    val randomTypeArray = stringArrayResource(id = R.array.random_category)
+    val screenWidth = LocalConfiguration.current.screenWidthDp.dp - horizontalPadding * 2
+    val size = (screenWidth - horizontalPadding * 2 + 8.dp) / 5 - 8.dp
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -99,37 +95,35 @@ fun InputTextScreenContent(
         Column(
             modifier = Modifier
                 .padding(it)
-                .padding(horizontal = 16.dp)
+                .padding(horizontal = horizontalPadding)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
-                .verticalScroll(scrollState)
-                .pointerInput(Unit) {
-                    detectTapGestures(
-                        onTap = {
-                            focusManager.clearFocus()
-                        },
-                    )
-                },
+                .verticalScroll(scrollState),
         ) {
             DisplayColorCard(
                 colorData = uiState.colorData,
                 onClickDisplayColor = onClickDisplayColor,
             )
-            SpinnerCard(
-                modifier = Modifier.padding(top = 8.dp),
-                selectedText = uiState.selectColorType.name,
-                categoryName = stringResource(id = R.string.category),
-                onSelectedChange = viewModel::updateSelectColorType,
-                displayItemList = colorTypeArray,
-            )
-
-            InputColorValueCard(
-                selectColorType = uiState.selectColorType,
-                onRGBTextChange = viewModel::updateInputText,
-                onCMYKTextChange = viewModel::updateInputText,
-                onHSVTextChange = viewModel::updateInputText,
-                onHexTextChange = viewModel::updateInputText,
-                uiState = uiState,
-            )
+            Column {
+                SpinnerCard(
+                    modifier = Modifier.padding(top = 8.dp),
+                    selectedText = randomTypeArray[uiState.selectRandomType.index],
+                    categoryName = stringResource(id = R.string.category),
+                    onSelectedChange = viewModel::updateRandomType,
+                    displayItemList = randomTypeArray,
+                )
+                RandomColorsCard(
+                    randomRGBColors = uiState.randomRGBColors,
+                    size = size,
+                    updateColorData = viewModel::updateColorData,
+                )
+                TonalButton(
+                    modifier = Modifier
+                        .padding(top = 16.dp, bottom = 8.dp)
+                        .fillMaxSize(),
+                    text = stringResource(id = R.string.output_random),
+                    onClick = viewModel::outputRandomColors,
+                )
+            }
 
             ColorValueTextsCard(colorData = uiState.colorData)
             Spacer(modifier = Modifier.height(150.dp))
@@ -139,34 +133,32 @@ fun InputTextScreenContent(
 
 @Preview
 @Composable
-private fun PreviewInputTextScreen_Light() {
+private fun PreviewRandomScreenContent_Light() {
     MakeColorTheme(isDarkTheme = false) {
         PreviewSurface {
-            InputTextScreenContent(
-                viewModel = PreviewInputTextViewModel(),
+            RandomScreenContent(
+                viewModel = PreviewRandomViewModel(),
                 onClickMenu = {},
                 onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
-                googleAd = {},
-            )
+            ) {}
         }
     }
 }
 
 @Preview
 @Composable
-private fun PreviewInputTextScreen_Dark() {
+private fun PreviewRandomScreenContent_Dark() {
     MakeColorTheme(isDarkTheme = true) {
         PreviewSurface {
-            InputTextScreenContent(
-                viewModel = PreviewInputTextViewModel(),
+            RandomScreenContent(
+                viewModel = PreviewRandomViewModel(),
                 onClickMenu = {},
                 onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
-                googleAd = {},
-            )
+            ) {}
         }
     }
 }

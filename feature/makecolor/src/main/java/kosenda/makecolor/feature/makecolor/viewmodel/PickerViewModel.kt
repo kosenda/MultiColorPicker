@@ -1,4 +1,4 @@
-package kosenda.makecolor.viewmodel
+package kosenda.makecolor.feature.makecolor.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.godaddy.android.colorpicker.HsvColor
@@ -85,4 +85,12 @@ class PickerViewModelImpl @Inject constructor() : PickerViewModel() {
     override fun updateHarmonyMode(mode: ColorHarmonyMode) {
         _uiState.update { it.copy(harmonyMode = mode) }
     }
+}
+
+class PreviewPickerViewModel : PickerViewModel() {
+    override val uiState: StateFlow<PickerUiState> = MutableStateFlow(PickerUiState())
+    override fun updateHsvColor(color: HsvColor) {}
+    override fun updateColorData(color: HsvColor) {}
+    override fun updatePickerType(type: PickerType) {}
+    override fun updateHarmonyMode(mode: ColorHarmonyMode) {}
 }

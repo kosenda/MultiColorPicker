@@ -1,4 +1,4 @@
-package kosenda.makecolor.view.screen
+package kosenda.makecolor.feature.makecolor.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -24,7 +24,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.godaddy.android.colorpicker.harmony.ColorHarmonyMode
-import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.core.ui.code.PickerType
 import kosenda.makecolor.core.ui.feature.common.button.FloatingAddButton
@@ -35,11 +34,11 @@ import kosenda.makecolor.core.ui.feature.common.card.HarmonyColorPickerCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.feature.makecolor.R
+import kosenda.makecolor.feature.makecolor.viewmodel.PickerViewModel
+import kosenda.makecolor.feature.makecolor.viewmodel.PickerViewModelImpl
+import kosenda.makecolor.feature.makecolor.viewmodel.PreviewPickerViewModel
 import kosenda.makecolor.feature.preview.PreviewSurface
-import kosenda.makecolor.view.content.GoogleAd
-import kosenda.makecolor.viewmodel.PickerViewModel
-import kosenda.makecolor.viewmodel.PickerViewModelImpl
-import kosenda.makecolor.viewmodel.PreviewPickerViewModel
 
 @Composable
 fun PickerScreen(
@@ -48,6 +47,7 @@ fun PickerScreen(
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
+    googleAd: @Composable () -> Unit = {},
 ) {
     PickerScreenContent(
         viewModel = viewModel,
@@ -55,6 +55,7 @@ fun PickerScreen(
         onClickInfo = onClickInfo,
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
+        googleAd = googleAd,
     )
 }
 
@@ -66,7 +67,7 @@ fun PickerScreenContent(
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
-    googleAd: @Composable () -> Unit = { GoogleAd() },
+    googleAd: @Composable () -> Unit = {},
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val scrollState = rememberScrollState()

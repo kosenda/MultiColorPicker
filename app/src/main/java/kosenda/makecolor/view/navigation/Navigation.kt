@@ -24,7 +24,14 @@ import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.core.model.data.ColorItem
 import kosenda.makecolor.core.ui.code.ColorIndex
 import kosenda.makecolor.core.ui.feature.common.SelectColorParam
+import kosenda.makecolor.feature.makecolor.screen.InputTextScreen
+import kosenda.makecolor.feature.makecolor.screen.MergeScreen
+import kosenda.makecolor.feature.makecolor.screen.PickerScreen
+import kosenda.makecolor.feature.makecolor.screen.PictureScreen
+import kosenda.makecolor.feature.makecolor.screen.RandomScreen
+import kosenda.makecolor.feature.makecolor.screen.SeekbarScreen
 import kosenda.makecolor.feature.settings.SettingScreen
+import kosenda.makecolor.view.content.GoogleAd
 import kosenda.makecolor.view.dialog.InfoDialog
 import kosenda.makecolor.view.screen.CategoryDetailScreen
 import kosenda.makecolor.view.screen.ColorDetailScreen
@@ -32,13 +39,7 @@ import kosenda.makecolor.view.screen.DataScreen
 import kosenda.makecolor.view.screen.FullColorScreen
 import kosenda.makecolor.view.screen.GradationColorScreen
 import kosenda.makecolor.view.screen.GradationScreen
-import kosenda.makecolor.view.screen.InputTextScreen
-import kosenda.makecolor.view.screen.MergeScreen
-import kosenda.makecolor.view.screen.PickerScreen
-import kosenda.makecolor.view.screen.PictureScreen
-import kosenda.makecolor.view.screen.RandomScreen
 import kosenda.makecolor.view.screen.RegisterScreen
-import kosenda.makecolor.view.screen.SeekbarScreen
 import kosenda.makecolor.view.screen.SelectColorScreen
 import kosenda.makecolor.view.screen.SplitColorScreen
 import kosenda.makecolor.view.screen.SplitScreen
@@ -170,6 +171,7 @@ fun Navigation(
                 onClickInfo = ::openInfoDialog,
                 onClickDisplayColor = ::onClickDisplayColor,
                 onClickFloatingButton = ::onClickFloatingButton,
+                googleAd = { GoogleAd() },
             )
         }
         horizontalComposable(NavigationItems.Seekbar.route) {
@@ -188,6 +190,7 @@ fun Navigation(
                 onClickInfo = ::openInfoDialog,
                 onClickDisplayColor = ::onClickDisplayColor,
                 onClickFloatingButton = ::onClickFloatingButton,
+                googleAd = { GoogleAd() },
             )
         }
         horizontalComposable(NavigationItems.Picture.route) {
@@ -197,6 +200,7 @@ fun Navigation(
                 onClickInfo = ::openInfoDialog,
                 onClickDisplayColor = ::onClickDisplayColor,
                 onClickFloatingButton = ::onClickFloatingButton,
+                googleAd = { GoogleAd() },
             )
         }
         horizontalComposable(NavigationItems.Merge.route) {
@@ -208,6 +212,7 @@ fun Navigation(
                 onClickDisplayColor = ::onClickDisplayColor,
                 onClickFloatingButton = ::onClickFloatingButton,
                 onClickSelectColor = ::onClickSelectColor,
+                googleAd = { GoogleAd() },
             )
         }
         horizontalComposable(NavigationItems.Random.route) {
