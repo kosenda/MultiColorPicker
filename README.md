@@ -47,7 +47,7 @@ adUnitId=ca-app-pub-3940256099942544/6300978111
 
 ## モジュール構成
 ```mermaid
-flowchart LR
+flowchart TB
   classDef appModule fill:#AEFFDA,color:#000
   classDef featureModule fill:#FFDAAE,color:#000
   classDef coreModule fill:#DAAEFF,color:#000
