@@ -24,8 +24,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import kosenda.makecolor.R
-import kosenda.makecolor.view.navigation.NavigationItems
 import kosenda.makecolor.core.ui.feature.theme.backgroundBrush
+import kosenda.makecolor.view.navigation.NavigationItems
 import kotlinx.coroutines.launch
 
 @Composable

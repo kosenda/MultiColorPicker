@@ -31,4 +31,5 @@ include(":core:resource")
 include(":core:ui")
 include(":core:util")
 include(":feature:settings")
+include(":feature:preview")
 rootProject.name = "MultiColorPicker"

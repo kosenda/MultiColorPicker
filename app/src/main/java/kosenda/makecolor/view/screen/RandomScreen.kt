@@ -23,16 +23,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.ColorData
-import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.content.GoogleAd
 import kosenda.makecolor.core.ui.feature.common.button.FloatingAddButton
 import kosenda.makecolor.core.ui.feature.common.button.TonalButton
 import kosenda.makecolor.core.ui.feature.common.card.ColorValueTextsCard
 import kosenda.makecolor.core.ui.feature.common.card.DisplayColorCard
 import kosenda.makecolor.core.ui.feature.common.card.RandomColorsCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
-import kosenda.makecolor.view.topbar.TopBar
+import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.feature.preview.PreviewSurface
+import kosenda.makecolor.view.content.GoogleAd
 import kosenda.makecolor.viewmodel.PreviewRandomViewModel
 import kosenda.makecolor.viewmodel.RandomViewModel
 import kosenda.makecolor.viewmodel.RandomViewModelImpl
@@ -41,12 +41,14 @@ import kosenda.makecolor.viewmodel.RandomViewModelImpl
 fun RandomScreen(
     viewModel: RandomViewModelImpl,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
 ) {
     RandomScreenContent(
         viewModel = viewModel,
         onClickMenu = onClickMenu,
+        onClickInfo = onClickInfo,
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
     )
@@ -57,6 +59,7 @@ fun RandomScreen(
 fun RandomScreenContent(
     viewModel: RandomViewModel,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
     googleAd: @Composable () -> Unit = { GoogleAd() },
@@ -75,6 +78,7 @@ fun RandomScreenContent(
             TopBar(
                 scrollBehavior = scrollBehavior,
                 onClickMenu = onClickMenu,
+                onClickInfo = onClickInfo,
                 hex1 = uiState.colorData.hex.toString(),
             )
         },
@@ -134,6 +138,7 @@ private fun PreviewRandomScreenContent_Light() {
             RandomScreenContent(
                 viewModel = PreviewRandomViewModel(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
             ) {}
@@ -149,6 +154,7 @@ private fun PreviewRandomScreenContent_Dark() {
             RandomScreenContent(
                 viewModel = PreviewRandomViewModel(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
             ) {}

@@ -1,4 +1,4 @@
-package kosenda.makecolor.view.screen
+package kosenda.makecolor.feature.settings
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
@@ -24,29 +24,24 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import kosenda.makecolor.R
-import kosenda.makecolor.view.PreviewSurface
 import kosenda.makecolor.core.ui.feature.common.button.CustomButton
 import kosenda.makecolor.core.ui.feature.common.card.TitleCard
-import kosenda.makecolor.view.topbar.TopBar
-import kosenda.makecolor.view.content.SelectThemeContent
-import kosenda.makecolor.view.content.SettingFontContent
-import kosenda.makecolor.view.dialog.ConfirmDialog
-import kosenda.makecolor.view.dialog.SelectLanguageDialog
+import kosenda.makecolor.core.ui.feature.common.dialog.ConfirmDialog
+import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
-import kosenda.makecolor.viewmodel.PreviewSettingsViewModel
-import kosenda.makecolor.viewmodel.SettingsViewModel
-import kosenda.makecolor.viewmodel.SettingsViewModelImpl
+import kosenda.makecolor.feature.preview.PreviewSurface
 import kotlinx.coroutines.launch
 
 @Composable
 fun SettingScreen(
     viewModel: SettingsViewModelImpl,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
 ) {
     SettingScreenContent(
         viewModel = viewModel,
         onClickMenu = onClickMenu,
+        onClickInfo = onClickInfo,
     )
 }
 
@@ -55,6 +50,7 @@ fun SettingScreen(
 fun SettingScreenContent(
     viewModel: SettingsViewModel,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
 ) {
     val context = LocalContext.current
     val coroutineScope = rememberCoroutineScope()
@@ -74,6 +70,7 @@ fun SettingScreenContent(
             TopBar(
                 scrollBehavior = scrollBehavior,
                 onClickMenu = onClickMenu,
+                onClickInfo = onClickInfo,
             )
         },
         containerColor = Color.Transparent,
@@ -142,6 +139,7 @@ private fun PreviewSettingScreenContent_Light() {
             SettingScreenContent(
                 viewModel = PreviewSettingsViewModel(),
                 onClickMenu = {},
+                onClickInfo = {},
             )
         }
     }
@@ -155,6 +153,7 @@ private fun PreviewSettingScreenContent_Dark() {
             SettingScreenContent(
                 viewModel = PreviewSettingsViewModel(),
                 onClickMenu = {},
+                onClickInfo = {},
             )
         }
     }

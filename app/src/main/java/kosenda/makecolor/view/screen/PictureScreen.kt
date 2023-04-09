@@ -27,8 +27,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.ColorData
-import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.content.GoogleAd
 import kosenda.makecolor.core.ui.feature.common.ImagePicker
 import kosenda.makecolor.core.ui.feature.common.button.FloatingAddButton
 import kosenda.makecolor.core.ui.feature.common.button.TonalButton
@@ -36,8 +34,10 @@ import kosenda.makecolor.core.ui.feature.common.card.ColorValueTextsCard
 import kosenda.makecolor.core.ui.feature.common.card.DisplayColorCard
 import kosenda.makecolor.core.ui.feature.common.card.PaletteCircleCard
 import kosenda.makecolor.core.ui.feature.common.card.SelectImageCard
-import kosenda.makecolor.view.topbar.TopBar
+import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.feature.preview.PreviewSurface
+import kosenda.makecolor.view.content.GoogleAd
 import kosenda.makecolor.viewmodel.PictureViewModel
 import kosenda.makecolor.viewmodel.PictureViewModelImpl
 import kosenda.makecolor.viewmodel.PreviewPictureViewModel
@@ -46,12 +46,14 @@ import kosenda.makecolor.viewmodel.PreviewPictureViewModel
 fun PictureScreen(
     viewModel: PictureViewModelImpl,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
 ) {
     PictureScreenContent(
         viewModel = viewModel,
         onClickMenu = onClickMenu,
+        onClickInfo = onClickInfo,
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
     )
@@ -62,6 +64,7 @@ fun PictureScreen(
 fun PictureScreenContent(
     viewModel: PictureViewModel,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
     googleAd: @Composable () -> Unit = { GoogleAd() },
@@ -84,6 +87,7 @@ fun PictureScreenContent(
             TopBar(
                 scrollBehavior = scrollBehavior,
                 onClickMenu = onClickMenu,
+                onClickInfo = onClickInfo,
                 hex1 = uiState.colorData.hex.toString(),
             )
         },
@@ -150,6 +154,7 @@ private fun PreviewPictureScreenContent_Light() {
             PictureScreenContent(
                 viewModel = PreviewPictureViewModel(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
             ) {}
@@ -165,6 +170,7 @@ private fun PreviewPictureScreenContent_Dark() {
             PictureScreenContent(
                 viewModel = PreviewPictureViewModel(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
             ) {}

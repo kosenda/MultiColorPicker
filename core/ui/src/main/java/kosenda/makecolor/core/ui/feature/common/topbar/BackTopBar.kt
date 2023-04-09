@@ -1,4 +1,4 @@
-package kosenda.makecolor.view.topbar
+package kosenda.makecolor.core.ui.feature.common.topbar
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api

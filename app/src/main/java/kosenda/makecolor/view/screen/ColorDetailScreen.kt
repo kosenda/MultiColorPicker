@@ -27,14 +27,14 @@ import androidx.compose.ui.unit.dp
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.ColorData
-import kosenda.makecolor.view.PreviewSurface
 import kosenda.makecolor.core.ui.feature.common.card.CategoryNameAndMemoCard
 import kosenda.makecolor.core.ui.feature.common.card.ColorValueTextsCard
 import kosenda.makecolor.core.ui.feature.common.card.DisplayColorCard
 import kosenda.makecolor.core.ui.feature.common.card.TitleCard
-import kosenda.makecolor.view.topbar.BackTopBar
+import kosenda.makecolor.core.ui.feature.common.topbar.BackTopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.ui.feature.theme.backgroundBrush
+import kosenda.makecolor.feature.preview.PreviewSurface
 import kosenda.makecolor.viewmodel.ColorDetailViewModel
 import kosenda.makecolor.viewmodel.ColorDetailViewModelImpl
 import kosenda.makecolor.viewmodel.PreviewColorDetailViewModel

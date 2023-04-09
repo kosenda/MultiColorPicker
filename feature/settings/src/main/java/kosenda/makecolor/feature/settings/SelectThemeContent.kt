@@ -1,4 +1,4 @@
-package kosenda.makecolor.view.content
+package kosenda.makecolor.feature.settings
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -24,7 +24,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.Theme
 import kosenda.makecolor.core.ui.feature.common.ContentDivider
 import kosenda.makecolor.core.ui.feature.common.card.TitleCard

@@ -6,7 +6,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kosenda.makecolor.core.data.repository.ColorRepository
 import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.ui.state.CategoryDetailUiState
-import kosenda.makecolor.di.IODispatcher
+import kosenda.makecolor.core.util.ui.IODispatcher
 import kosenda.makecolor.view.navigation.CategoryDetailParam
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope

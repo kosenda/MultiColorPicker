@@ -17,11 +17,11 @@ import androidx.compose.ui.graphics.Color
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kosenda.makecolor.core.ui.feature.common.LocalIsDark
-import kosenda.makecolor.view.Drawer
-import kosenda.makecolor.view.navigation.Navigation
 import kosenda.makecolor.core.ui.feature.theme.backgroundBottomColor
 import kosenda.makecolor.core.ui.feature.theme.backgroundBrush
 import kosenda.makecolor.core.ui.feature.theme.backgroundTopColor
+import kosenda.makecolor.view.Drawer
+import kosenda.makecolor.view.navigation.Navigation
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalAnimationApi::class)

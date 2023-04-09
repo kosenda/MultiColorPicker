@@ -1,4 +1,4 @@
-package kosenda.makecolor.view
+package kosenda.makecolor.feature.preview
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column

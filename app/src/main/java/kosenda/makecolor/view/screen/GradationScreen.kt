@@ -27,15 +27,15 @@ import androidx.navigation.compose.rememberNavController
 import kosenda.makecolor.R
 import kosenda.makecolor.core.data.default.defaultCategories
 import kosenda.makecolor.core.ui.code.ColorIndex
-import kosenda.makecolor.core.util.getNameIfNoAlias
-import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.content.GoogleAd
+import kosenda.makecolor.core.ui.feature.common.SelectColorParam
 import kosenda.makecolor.core.ui.feature.common.card.DisplayGradationColorCard
 import kosenda.makecolor.core.ui.feature.common.card.HexAndDisplayColorCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
-import kosenda.makecolor.view.topbar.TopBar
-import kosenda.makecolor.core.ui.feature.common.SelectColorParam
+import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.core.util.getNameIfNoAlias
+import kosenda.makecolor.feature.preview.PreviewSurface
+import kosenda.makecolor.view.content.GoogleAd
 import kosenda.makecolor.viewmodel.GradationViewModel
 import kosenda.makecolor.viewmodel.GradationViewModelImpl
 import kosenda.makecolor.viewmodel.PreviewGradationViewModel
@@ -45,6 +45,7 @@ fun GradationScreen(
     viewModel: GradationViewModelImpl,
     navController: NavController,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickDisplayGradationColor: (String, String) -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
 ) {
@@ -52,6 +53,7 @@ fun GradationScreen(
         viewModel = viewModel,
         navController = navController,
         onClickMenu = onClickMenu,
+        onClickInfo = onClickInfo,
         onClickDisplayGradationColor = onClickDisplayGradationColor,
         onClickSelectColor = onClickSelectColor,
     )
@@ -63,6 +65,7 @@ fun GradationScreenContent(
     viewModel: GradationViewModel,
     navController: NavController,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickDisplayGradationColor: (String, String) -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
     googleAd: @Composable () -> Unit = { GoogleAd() },
@@ -82,6 +85,7 @@ fun GradationScreenContent(
             TopBar(
                 scrollBehavior = scrollBehavior,
                 onClickMenu = onClickMenu,
+                onClickInfo = onClickInfo,
                 hex1 = uiState.selectHex1,
                 hex2 = uiState.selectHex2,
             )
@@ -153,6 +157,7 @@ private fun PreviewGradationScreen_Light() {
                 viewModel = PreviewGradationViewModel(),
                 navController = rememberNavController(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickDisplayGradationColor = { _, _ -> },
                 onClickSelectColor = {},
                 googleAd = {},
@@ -170,6 +175,7 @@ private fun PreviewGradationScreen_Dark() {
                 viewModel = PreviewGradationViewModel(),
                 navController = rememberNavController(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickDisplayGradationColor = { _, _ -> },
                 onClickSelectColor = {},
                 googleAd = {},

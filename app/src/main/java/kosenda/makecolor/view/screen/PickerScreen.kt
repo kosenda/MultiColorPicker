@@ -27,16 +27,16 @@ import com.godaddy.android.colorpicker.harmony.ColorHarmonyMode
 import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.core.ui.code.PickerType
-import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.content.GoogleAd
 import kosenda.makecolor.core.ui.feature.common.button.FloatingAddButton
 import kosenda.makecolor.core.ui.feature.common.card.ClassicColorPickerCard
 import kosenda.makecolor.core.ui.feature.common.card.ColorValueTextsCard
 import kosenda.makecolor.core.ui.feature.common.card.DisplayColorCard
 import kosenda.makecolor.core.ui.feature.common.card.HarmonyColorPickerCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
-import kosenda.makecolor.view.topbar.TopBar
+import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.feature.preview.PreviewSurface
+import kosenda.makecolor.view.content.GoogleAd
 import kosenda.makecolor.viewmodel.PickerViewModel
 import kosenda.makecolor.viewmodel.PickerViewModelImpl
 import kosenda.makecolor.viewmodel.PreviewPickerViewModel
@@ -45,12 +45,14 @@ import kosenda.makecolor.viewmodel.PreviewPickerViewModel
 fun PickerScreen(
     viewModel: PickerViewModelImpl,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
 ) {
     PickerScreenContent(
         viewModel = viewModel,
         onClickMenu = onClickMenu,
+        onClickInfo = onClickInfo,
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
     )
@@ -61,6 +63,7 @@ fun PickerScreen(
 fun PickerScreenContent(
     viewModel: PickerViewModel,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
     googleAd: @Composable () -> Unit = { GoogleAd() },
@@ -76,6 +79,7 @@ fun PickerScreenContent(
             TopBar(
                 scrollBehavior = scrollBehavior,
                 onClickMenu = onClickMenu,
+                onClickInfo = onClickInfo,
                 hex1 = uiState.colorData.hex.toString(),
             )
         },
@@ -187,6 +191,7 @@ private fun PreviewPickerScreenContent_Light() {
             PickerScreenContent(
                 viewModel = PreviewPickerViewModel(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
             ) {}
@@ -202,6 +207,7 @@ private fun PreviewPickerScreenContent_Dark() {
             PickerScreenContent(
                 viewModel = PreviewPickerViewModel(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
             ) {}

@@ -1,4 +1,4 @@
-package kosenda.makecolor.view.topbar
+package kosenda.makecolor.core.ui.feature.common.topbar
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row

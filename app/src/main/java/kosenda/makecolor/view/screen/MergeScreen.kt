@@ -31,18 +31,18 @@ import kosenda.makecolor.R
 import kosenda.makecolor.core.data.default.defaultCategories
 import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.core.ui.code.ColorIndex
-import kosenda.makecolor.core.util.getNameIfNoAlias
-import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.content.GoogleAd
 import kosenda.makecolor.core.ui.feature.common.ImagePicker
+import kosenda.makecolor.core.ui.feature.common.SelectColorParam
 import kosenda.makecolor.core.ui.feature.common.button.FloatingAddButton
 import kosenda.makecolor.core.ui.feature.common.card.ColorValueTextsCard
 import kosenda.makecolor.core.ui.feature.common.card.DisplayColorCard
 import kosenda.makecolor.core.ui.feature.common.card.HexAndDisplayColorCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
-import kosenda.makecolor.view.topbar.TopBar
-import kosenda.makecolor.core.ui.feature.common.SelectColorParam
+import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.core.util.getNameIfNoAlias
+import kosenda.makecolor.feature.preview.PreviewSurface
+import kosenda.makecolor.view.content.GoogleAd
 import kosenda.makecolor.viewmodel.MergeViewModel
 import kosenda.makecolor.viewmodel.MergeViewModelImpl
 import kosenda.makecolor.viewmodel.PreviewMergeViewModel
@@ -54,6 +54,7 @@ fun MergeScreen(
     viewModel: MergeViewModelImpl,
     navController: NavController,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
@@ -62,6 +63,7 @@ fun MergeScreen(
         viewModel = viewModel,
         navController = navController,
         onClickMenu = onClickMenu,
+        onClickInfo = onClickInfo,
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
         onClickSelectColor = onClickSelectColor,
@@ -74,6 +76,7 @@ fun MergeScreenContent(
     viewModel: MergeViewModel,
     navController: NavController,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
@@ -114,6 +117,7 @@ fun MergeScreenContent(
             TopBar(
                 scrollBehavior = scrollBehavior,
                 onClickMenu = onClickMenu,
+                onClickInfo = onClickInfo,
                 hex1 = uiState.colorData.hex.toString(),
             )
         },
@@ -200,6 +204,7 @@ private fun PreviewMergeScreenContent_Light() {
                 viewModel = PreviewMergeViewModel(),
                 navController = rememberNavController(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
                 onClickSelectColor = {},
@@ -217,6 +222,7 @@ private fun PreviewMergeScreenContent_Dark() {
                 viewModel = PreviewMergeViewModel(),
                 navController = rememberNavController(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
                 onClickSelectColor = {},

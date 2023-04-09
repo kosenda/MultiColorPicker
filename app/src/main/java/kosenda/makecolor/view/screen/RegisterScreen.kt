@@ -33,7 +33,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
-import kosenda.makecolor.view.PreviewSurface
 import kosenda.makecolor.core.ui.feature.common.button.CustomOutlinedButton
 import kosenda.makecolor.core.ui.feature.common.button.CustomTextButton
 import kosenda.makecolor.core.ui.feature.common.button.TonalButton
@@ -42,9 +41,10 @@ import kosenda.makecolor.core.ui.feature.common.card.DisplayColorCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.card.TitleCard
 import kosenda.makecolor.core.ui.feature.common.textfield.EnterFiled
-import kosenda.makecolor.view.topbar.BackTopBar
-import kosenda.makecolor.view.dialog.NewCategoryDialog
+import kosenda.makecolor.core.ui.feature.common.topbar.BackTopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.feature.preview.PreviewSurface
+import kosenda.makecolor.view.dialog.NewCategoryDialog
 import kosenda.makecolor.viewmodel.PreviewRegisterViewModel
 import kosenda.makecolor.viewmodel.RegisterViewModel
 import kosenda.makecolor.viewmodel.RegisterViewModelImpl

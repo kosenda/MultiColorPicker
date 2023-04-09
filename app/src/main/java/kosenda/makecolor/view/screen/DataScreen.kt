@@ -22,14 +22,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kosenda.makecolor.core.data.default.defaultCategories
 import kosenda.makecolor.core.ui.code.ColorIndex
-import kosenda.makecolor.core.util.getNameIfNoAlias
-import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.content.GoogleAd
-import kosenda.makecolor.core.ui.feature.common.card.CategoryCard
-import kosenda.makecolor.view.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.common.SelectColorParam
+import kosenda.makecolor.core.ui.feature.common.card.CategoryCard
+import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.ui.feature.theme.backgroundBottomColor
+import kosenda.makecolor.core.util.getNameIfNoAlias
+import kosenda.makecolor.feature.preview.PreviewSurface
+import kosenda.makecolor.view.content.GoogleAd
 import kosenda.makecolor.viewmodel.DataViewModel
 import kosenda.makecolor.viewmodel.DataViewModelImpl
 import kosenda.makecolor.viewmodel.PreviewDataViewModel
@@ -38,11 +38,13 @@ import kosenda.makecolor.viewmodel.PreviewDataViewModel
 fun DataScreen(
     viewModel: DataViewModelImpl,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
 ) {
     DataScreenContent(
         viewModel = viewModel,
         onClickMenu = onClickMenu,
+        onClickInfo = onClickInfo,
         onClickSelectColor = onClickSelectColor,
     )
 }
@@ -52,6 +54,7 @@ fun DataScreen(
 fun DataScreenContent(
     viewModel: DataViewModel,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
     googleAd: @Composable () -> Unit = { GoogleAd() },
 ) {
@@ -75,6 +78,7 @@ fun DataScreenContent(
             TopBar(
                 scrollBehavior = scrollBehavior,
                 onClickMenu = onClickMenu,
+                onClickInfo = onClickInfo,
             )
         },
         bottomBar = googleAd,
@@ -118,6 +122,7 @@ private fun PreviewDataScreen_Light() {
             DataScreenContent(
                 viewModel = PreviewDataViewModel(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickSelectColor = {},
                 googleAd = {},
             )
@@ -133,6 +138,7 @@ private fun PreviewDataScreen_Dark() {
             DataScreenContent(
                 viewModel = PreviewDataViewModel(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickSelectColor = {},
                 googleAd = {},
             )

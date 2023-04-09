@@ -1,4 +1,4 @@
-package kosenda.makecolor.viewmodel
+package kosenda.makecolor.feature.settings
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -10,7 +10,7 @@ import kosenda.makecolor.core.data.repository.DataStoreRepository
 import kosenda.makecolor.core.model.data.FontType
 import kosenda.makecolor.core.model.data.Theme
 import kosenda.makecolor.core.ui.state.SettingUiState
-import kosenda.makecolor.di.IODispatcher
+import kosenda.makecolor.core.util.ui.IODispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -125,4 +125,19 @@ class SettingsViewModelImpl @Inject constructor(
             colorRepository.deleteAllCategories()
         }
     }
+}
+
+class PreviewSettingsViewModel : SettingsViewModel() {
+    override val uiState: StateFlow<SettingUiState> = MutableStateFlow(SettingUiState())
+    override val fontType: MutableState<FontType> = mutableStateOf(FontType.DEFAULT)
+    override val themeNum: MutableState<Int> = mutableStateOf(Theme.AUTO.num)
+    override fun updateThemeNum(newThemeNum: Int) {}
+    override fun updateFontType(newFontType: FontType) {}
+    override fun isSelectedThemeNum(themeNum: Int): Boolean = true
+    override fun isSelectedFont(fontType: FontType): Boolean = true
+    override fun openConfirmDialog() {}
+    override fun closeConfirmDialog() {}
+    override fun openSelectLanguageDialog() {}
+    override fun closeSelectLanguageDialog() {}
+    override suspend fun deleteAllData() {}
 }

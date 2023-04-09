@@ -1,4 +1,4 @@
-package kosenda.makecolor.view.content
+package kosenda.makecolor.core.ui.feature.common.content
 
 import android.content.Intent
 import androidx.compose.runtime.Composable
@@ -8,7 +8,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.content.ContextCompat
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
-import kosenda.makecolor.R
+import kosenda.makecolor.core.ui.R
 import kosenda.makecolor.core.ui.feature.common.button.CustomButton
 import kosenda.makecolor.core.ui.feature.common.card.TitleCard
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme

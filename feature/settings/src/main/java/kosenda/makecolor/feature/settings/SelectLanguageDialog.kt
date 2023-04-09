@@ -1,9 +1,8 @@
-package kosenda.makecolor.view.dialog
+package kosenda.makecolor.feature.settings
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import kosenda.makecolor.view.content.SelectLanguageDialogContent
 
 @Composable
 fun SelectLanguageDialog(

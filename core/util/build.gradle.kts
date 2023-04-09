@@ -1,6 +1,8 @@
 plugins {
     id(libs.plugins.android.library.get().pluginId)
     id(libs.plugins.kotlin.android.get().pluginId)
+    id(libs.plugins.hilt.get().pluginId)
+    id(libs.plugins.kotlin.kapt.get().pluginId)
 }
 
 android {
@@ -20,6 +22,8 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling)
     implementation(libs.androidx.core.ktx)
     implementation(libs.compose.color.picker)
+    implementation(libs.hilt.android)
     testImplementation(libs.junit)
     testImplementation(libs.truth)
+    kapt(libs.hilt.compiler)
 }

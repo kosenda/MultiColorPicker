@@ -9,6 +9,8 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NamedNavArgument
 import androidx.navigation.NavBackStackEntry
@@ -20,8 +22,10 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.core.model.data.ColorItem
-import kosenda.makecolor.core.ui.feature.common.SelectColorParam
 import kosenda.makecolor.core.ui.code.ColorIndex
+import kosenda.makecolor.core.ui.feature.common.SelectColorParam
+import kosenda.makecolor.feature.settings.SettingScreen
+import kosenda.makecolor.view.dialog.InfoDialog
 import kosenda.makecolor.view.screen.CategoryDetailScreen
 import kosenda.makecolor.view.screen.ColorDetailScreen
 import kosenda.makecolor.view.screen.DataScreen
@@ -36,7 +40,6 @@ import kosenda.makecolor.view.screen.RandomScreen
 import kosenda.makecolor.view.screen.RegisterScreen
 import kosenda.makecolor.view.screen.SeekbarScreen
 import kosenda.makecolor.view.screen.SelectColorScreen
-import kosenda.makecolor.view.screen.SettingScreen
 import kosenda.makecolor.view.screen.SplitColorScreen
 import kosenda.makecolor.view.screen.SplitScreen
 import kotlinx.serialization.decodeFromString
@@ -49,7 +52,16 @@ fun Navigation(
     navController: NavHostController,
     onClickMenu: () -> Unit,
 ) {
+    val isShowInfoDialog = rememberSaveable { mutableStateOf(false) }
     val animationSpec: FiniteAnimationSpec<Float> = tween(durationMillis = 400)
+
+    fun openInfoDialog() {
+        isShowInfoDialog.value = true
+    }
+
+    if (isShowInfoDialog.value) {
+        InfoDialog(onClose = { isShowInfoDialog.value = false })
+    }
 
     fun NavGraphBuilder.horizontalComposable(
         route: String,
@@ -155,6 +167,7 @@ fun Navigation(
             PickerScreen(
                 viewModel = hiltViewModel(),
                 onClickMenu = onClickMenu,
+                onClickInfo = ::openInfoDialog,
                 onClickDisplayColor = ::onClickDisplayColor,
                 onClickFloatingButton = ::onClickFloatingButton,
             )
@@ -163,6 +176,7 @@ fun Navigation(
             SeekbarScreen(
                 viewModel = hiltViewModel(),
                 onClickMenu = onClickMenu,
+                onClickInfo = ::openInfoDialog,
                 onClickDisplayColor = ::onClickDisplayColor,
                 onClickFloatingButton = ::onClickFloatingButton,
             )
@@ -171,6 +185,7 @@ fun Navigation(
             InputTextScreen(
                 viewModel = hiltViewModel(),
                 onClickMenu = onClickMenu,
+                onClickInfo = ::openInfoDialog,
                 onClickDisplayColor = ::onClickDisplayColor,
                 onClickFloatingButton = ::onClickFloatingButton,
             )
@@ -179,6 +194,7 @@ fun Navigation(
             PictureScreen(
                 viewModel = hiltViewModel(),
                 onClickMenu = onClickMenu,
+                onClickInfo = ::openInfoDialog,
                 onClickDisplayColor = ::onClickDisplayColor,
                 onClickFloatingButton = ::onClickFloatingButton,
             )
@@ -188,6 +204,7 @@ fun Navigation(
                 navController = navController,
                 viewModel = hiltViewModel(),
                 onClickMenu = onClickMenu,
+                onClickInfo = ::openInfoDialog,
                 onClickDisplayColor = ::onClickDisplayColor,
                 onClickFloatingButton = ::onClickFloatingButton,
                 onClickSelectColor = ::onClickSelectColor,
@@ -197,6 +214,7 @@ fun Navigation(
             RandomScreen(
                 viewModel = hiltViewModel(),
                 onClickMenu = onClickMenu,
+                onClickInfo = ::openInfoDialog,
                 onClickDisplayColor = ::onClickDisplayColor,
                 onClickFloatingButton = ::onClickFloatingButton,
             )
@@ -205,6 +223,7 @@ fun Navigation(
             DataScreen(
                 viewModel = hiltViewModel(),
                 onClickMenu = onClickMenu,
+                onClickInfo = ::openInfoDialog,
                 onClickSelectColor = ::onClickSelectColor,
             )
         }
@@ -213,6 +232,7 @@ fun Navigation(
                 viewModel = hiltViewModel(),
                 navController = navController,
                 onClickMenu = onClickMenu,
+                onClickInfo = ::openInfoDialog,
                 onClickSelectColor = ::onClickSelectColor,
             )
         }
@@ -221,6 +241,7 @@ fun Navigation(
                 viewModel = hiltViewModel(),
                 navController = navController,
                 onClickMenu = onClickMenu,
+                onClickInfo = ::openInfoDialog,
                 onClickDisplayGradationColor = ::onClickDisplayGradationColor,
                 onClickSelectColor = ::onClickSelectColor,
             )
@@ -229,6 +250,7 @@ fun Navigation(
             SettingScreen(
                 viewModel = hiltViewModel(),
                 onClickMenu = onClickMenu,
+                onClickInfo = ::openInfoDialog,
             )
         }
         fadeComposable(

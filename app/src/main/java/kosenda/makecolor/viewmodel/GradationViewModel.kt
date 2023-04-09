@@ -8,7 +8,7 @@ import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.ui.code.ColorIndex
 import kosenda.makecolor.core.ui.state.GradationUiState
 import kosenda.makecolor.core.util.convertDisplayStringListFromCategories
-import kosenda.makecolor.di.IODispatcher
+import kosenda.makecolor.core.util.ui.IODispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow

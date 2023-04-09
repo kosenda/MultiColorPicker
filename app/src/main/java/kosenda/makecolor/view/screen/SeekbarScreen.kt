@@ -24,15 +24,15 @@ import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.core.model.data.ColorType
-import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.content.GoogleAd
 import kosenda.makecolor.core.ui.feature.common.button.FloatingAddButton
 import kosenda.makecolor.core.ui.feature.common.card.ColorValueTextsCard
 import kosenda.makecolor.core.ui.feature.common.card.DisplayColorCard
 import kosenda.makecolor.core.ui.feature.common.card.SeekbarsCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
-import kosenda.makecolor.view.topbar.TopBar
+import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.feature.preview.PreviewSurface
+import kosenda.makecolor.view.content.GoogleAd
 import kosenda.makecolor.viewmodel.PreviewSeekbarViewModel
 import kosenda.makecolor.viewmodel.SeekbarViewModel
 import kosenda.makecolor.viewmodel.SeekbarViewModelImpl
@@ -41,12 +41,14 @@ import kosenda.makecolor.viewmodel.SeekbarViewModelImpl
 fun SeekbarScreen(
     viewModel: SeekbarViewModelImpl,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
 ) {
     SeekbarScreenContent(
         viewModel = viewModel,
         onClickMenu = onClickMenu,
+        onClickInfo = onClickInfo,
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
     )
@@ -57,6 +59,7 @@ fun SeekbarScreen(
 fun SeekbarScreenContent(
     viewModel: SeekbarViewModel,
     onClickMenu: () -> Unit,
+    onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
     googleAd: @Composable () -> Unit = { GoogleAd() },
@@ -76,6 +79,7 @@ fun SeekbarScreenContent(
             TopBar(
                 scrollBehavior = scrollBehavior,
                 onClickMenu = onClickMenu,
+                onClickInfo = onClickInfo,
                 hex1 = uiState.colorData.hex.toString(),
             )
         },
@@ -131,6 +135,7 @@ private fun PreviewSeekbarScreenContent_Light() {
             SeekbarScreenContent(
                 viewModel = PreviewSeekbarViewModel(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
             ) {}
@@ -146,6 +151,7 @@ private fun PreviewSeekbarScreenContent_Dark() {
             SeekbarScreenContent(
                 viewModel = PreviewSeekbarViewModel(),
                 onClickMenu = {},
+                onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
             ) {}
