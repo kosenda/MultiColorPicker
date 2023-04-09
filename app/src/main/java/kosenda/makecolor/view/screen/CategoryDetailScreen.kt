@@ -32,11 +32,11 @@ import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.util.getNameIfNoAlias
 import kosenda.makecolor.core.util.hexToColor
 import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.component.button.DeleteButton
-import kosenda.makecolor.view.component.button.TonalButton
-import kosenda.makecolor.view.component.topbar.BackTopBar
+import kosenda.makecolor.core.ui.feature.common.button.DeleteButton
+import kosenda.makecolor.core.ui.feature.common.button.TonalButton
+import kosenda.makecolor.view.topbar.BackTopBar
 import kosenda.makecolor.view.dialog.NewCategoryDialog
-import kosenda.makecolor.view.theme.MakeColorTheme
+import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.viewmodel.CategoryDetailViewModel
 import kosenda.makecolor.viewmodel.CategoryDetailViewModelImpl
 import kosenda.makecolor.viewmodel.PreviewCategoryDetailViewModel

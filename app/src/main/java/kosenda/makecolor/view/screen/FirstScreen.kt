@@ -16,12 +16,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import kosenda.makecolor.view.LocalIsDark
-import kosenda.makecolor.view.component.Drawer
+import kosenda.makecolor.core.ui.feature.common.LocalIsDark
+import kosenda.makecolor.view.Drawer
 import kosenda.makecolor.view.navigation.Navigation
-import kosenda.makecolor.view.theme.backgroundBottomColor
-import kosenda.makecolor.view.theme.backgroundBrush
-import kosenda.makecolor.view.theme.backgroundTopColor
+import kosenda.makecolor.core.ui.feature.theme.backgroundBottomColor
+import kosenda.makecolor.core.ui.feature.theme.backgroundBrush
+import kosenda.makecolor.core.ui.feature.theme.backgroundTopColor
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalAnimationApi::class)

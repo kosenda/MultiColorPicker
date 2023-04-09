@@ -19,7 +19,7 @@ import kosenda.makecolor.core.util.blackOrWhiteFromRGB
 import kosenda.makecolor.core.util.hexToHexStrWithSharp
 import kosenda.makecolor.core.util.randomColorData
 import kosenda.makecolor.core.util.rgbToColor
-import kosenda.makecolor.view.theme.MakeColorTheme
+import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 
 @Composable
 fun FullColorScreen(

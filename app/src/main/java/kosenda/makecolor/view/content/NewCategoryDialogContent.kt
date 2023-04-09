@@ -32,11 +32,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.Category
-import kosenda.makecolor.view.component.button.TextButton
-import kosenda.makecolor.view.component.button.TonalButton
-import kosenda.makecolor.view.component.card.TitleCard
-import kosenda.makecolor.view.component.textfield.EnterFiled
-import kosenda.makecolor.view.theme.MakeColorTheme
+import kosenda.makecolor.core.ui.feature.common.button.CustomTextButton
+import kosenda.makecolor.core.ui.feature.common.button.TonalButton
+import kosenda.makecolor.core.ui.feature.common.card.TitleCard
+import kosenda.makecolor.core.ui.feature.common.textfield.EnterFiled
+import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 
 @Composable
 fun NewCategoryDialogContent(
@@ -104,7 +104,7 @@ fun NewCategoryDialogContent(
                         .padding(top = 16.dp, bottom = 8.dp),
                     horizontalArrangement = Arrangement.End,
                 ) {
-                    TextButton(
+                    CustomTextButton(
                         text = stringResource(id = R.string.cancel),
                         onClick = onClose,
                     )

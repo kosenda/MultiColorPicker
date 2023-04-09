@@ -9,9 +9,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.content.ContextCompat
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import kosenda.makecolor.R
-import kosenda.makecolor.view.component.button.CustomButton
-import kosenda.makecolor.view.component.card.TitleCard
-import kosenda.makecolor.view.theme.MakeColorTheme
+import kosenda.makecolor.core.ui.feature.common.button.CustomButton
+import kosenda.makecolor.core.ui.feature.common.card.TitleCard
+import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 
 @Composable
 fun LicensesContent() {

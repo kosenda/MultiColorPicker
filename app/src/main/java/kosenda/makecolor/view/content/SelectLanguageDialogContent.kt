@@ -24,10 +24,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.os.LocaleListCompat
 import kosenda.makecolor.R
-import kosenda.makecolor.view.component.button.BottomCloseButton
-import kosenda.makecolor.view.component.card.LanguageCard
-import kosenda.makecolor.view.theme.MakeColorTheme
-import kosenda.makecolor.view.theme.backgroundBrush
+import kosenda.makecolor.core.ui.feature.common.button.BottomCloseButton
+import kosenda.makecolor.core.ui.feature.common.card.LanguageCard
+import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.core.ui.feature.theme.backgroundBrush
 
 @Composable
 fun SelectLanguageDialogContent(

@@ -7,7 +7,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import kosenda.makecolor.view.theme.backgroundBrush
+import kosenda.makecolor.core.ui.feature.theme.backgroundBrush
 
 @Composable
 fun PreviewSurface(

@@ -34,17 +34,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.R
 import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.component.button.CustomOutlinedButton
-import kosenda.makecolor.view.component.button.TextButton
-import kosenda.makecolor.view.component.button.TonalButton
-import kosenda.makecolor.view.component.card.ColorValueTextsCard
-import kosenda.makecolor.view.component.card.DisplayColorCard
-import kosenda.makecolor.view.component.card.SpinnerCard
-import kosenda.makecolor.view.component.card.TitleCard
-import kosenda.makecolor.view.component.textfield.EnterFiled
-import kosenda.makecolor.view.component.topbar.BackTopBar
+import kosenda.makecolor.core.ui.feature.common.button.CustomOutlinedButton
+import kosenda.makecolor.core.ui.feature.common.button.CustomTextButton
+import kosenda.makecolor.core.ui.feature.common.button.TonalButton
+import kosenda.makecolor.core.ui.feature.common.card.ColorValueTextsCard
+import kosenda.makecolor.core.ui.feature.common.card.DisplayColorCard
+import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
+import kosenda.makecolor.core.ui.feature.common.card.TitleCard
+import kosenda.makecolor.core.ui.feature.common.textfield.EnterFiled
+import kosenda.makecolor.view.topbar.BackTopBar
 import kosenda.makecolor.view.dialog.NewCategoryDialog
-import kosenda.makecolor.view.theme.MakeColorTheme
+import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.viewmodel.PreviewRegisterViewModel
 import kosenda.makecolor.viewmodel.RegisterViewModel
 import kosenda.makecolor.viewmodel.RegisterViewModelImpl
@@ -159,7 +159,7 @@ fun RegisterScreenContent(
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.End,
             ) {
-                TextButton(
+                CustomTextButton(
                     text = stringResource(id = R.string.cancel),
                     onClick = onBackScreen,
                 )

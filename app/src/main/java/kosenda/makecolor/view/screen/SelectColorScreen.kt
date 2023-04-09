@@ -32,11 +32,11 @@ import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.ColorItem
 import kosenda.makecolor.core.util.getNameIfNoAlias
 import kosenda.makecolor.view.PreviewSurface
-import kosenda.makecolor.view.component.button.TonalButton
-import kosenda.makecolor.view.component.card.ColorCard
-import kosenda.makecolor.view.component.topbar.SelectColorTopBar
+import kosenda.makecolor.core.ui.feature.common.button.TonalButton
+import kosenda.makecolor.core.ui.feature.common.card.ColorCard
+import kosenda.makecolor.view.topbar.SelectColorTopBar
 import kosenda.makecolor.view.navigation.CategoryDetailParam
-import kosenda.makecolor.view.theme.MakeColorTheme
+import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.viewmodel.PreviewSelectColorViewModel
 import kosenda.makecolor.viewmodel.SelectColorViewModel
 import kosenda.makecolor.viewmodel.SelectColorViewModelImpl

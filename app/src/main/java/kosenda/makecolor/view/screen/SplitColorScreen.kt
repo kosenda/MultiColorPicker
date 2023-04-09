@@ -20,7 +20,7 @@ import kosenda.makecolor.core.util.hexToColor
 import kosenda.makecolor.core.util.randomHex
 import kosenda.makecolor.view.PreviewSurface
 import kosenda.makecolor.view.navigation.SplitColorParam
-import kosenda.makecolor.view.theme.MakeColorTheme
+import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 
 @Composable
 fun SplitColorScreen(

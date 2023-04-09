@@ -13,8 +13,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kosenda.makecolor.core.model.data.FontType
 import kosenda.makecolor.core.model.data.Theme
+import kosenda.makecolor.core.ui.feature.common.LocalIsDark
 import kosenda.makecolor.view.screen.FirstScreen
-import kosenda.makecolor.view.theme.MakeColorTheme
+import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.viewmodel.MainViewModel
 
 /**

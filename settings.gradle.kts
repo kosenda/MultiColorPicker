@@ -30,4 +30,5 @@ include(":core:model")
 include(":core:resource")
 include(":core:ui")
 include(":core:util")
+include(":feature:settings")
 rootProject.name = "MultiColorPicker"
