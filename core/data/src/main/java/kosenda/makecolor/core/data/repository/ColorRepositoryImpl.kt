@@ -1,7 +1,6 @@
 package kosenda.makecolor.core.data.repository
 
-import kosenda.makecolor.core.data.repository.ColorRepository
-import kosenda.makecolor.core.database.ColorDao
+import kosenda.makecolor.core.data.database.ColorDao
 import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.model.data.ColorItem
 import javax.inject.Inject

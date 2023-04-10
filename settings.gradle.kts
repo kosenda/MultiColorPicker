@@ -23,8 +23,6 @@ dependencyResolutionManagement {
 }
 include(":app")
 include(":core:data")
-include(":core:database")
-include(":core:datastore")
 include(":core:domain")
 include(":core:model")
 include(":core:resource")
