@@ -63,27 +63,27 @@ flowchart LR
   
   B1 --> C1([:core:model]):::coreModule 
   B1 --> C2([:core:data]):::coreModule
-  B1 --> C5([:core:domain]):::coreModule
-  B1 --> C7([:core:ui]):::coreModule
-  B1 --> C8([:core:util]):::coreModule
+  B1 --> C3([:core:domain]):::coreModule
+  B1 --> C5([:core:ui]):::coreModule
+  B1 --> C6([:core:util]):::coreModule
   
   B2 --> C1
   B2 --> C2
-  B2 --> C7
-  B2 --> C8
+  B2 --> C5
+  B2 --> C6
   
-  B3 --> C7
+  B3 --> C5
   
   B4 --> C1
   B4 --> C2
-  B4 --> C6([:core:resource]):::coreModule
-  B4 --> C7
-  B4 --> C8
+  B4 --> C4([:core:resource]):::coreModule
+  B4 --> C5
+  B4 --> C6
   
   B5 --> C1
   B5 --> C2
-  B5 --> C7
-  B5 --> C8
+  B5 --> C5
+  B5 --> C6
 ```
 
 ## スクリーンショット
