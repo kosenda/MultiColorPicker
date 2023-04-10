@@ -1,29 +1,26 @@
 package kosenda.makecolor.viewmodel
 
-import android.content.Context
 import androidx.navigation.NavBackStackEntry
 import kosenda.makecolor.core.data.default.webColor
 import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.model.data.ColorItem
 import kosenda.makecolor.core.ui.code.ColorIndex
-import kosenda.makecolor.core.ui.state.CategoryDetailUiState
 import kosenda.makecolor.core.ui.state.ColorDetailUiState
 import kosenda.makecolor.core.ui.state.DataUiState
 import kosenda.makecolor.core.ui.state.GradationUiState
-import kosenda.makecolor.core.ui.state.RegisterUiState
 import kosenda.makecolor.core.ui.state.SelectColorUiState
 import kosenda.makecolor.core.ui.state.SplitUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-class PreviewCategoryDetailViewModel : CategoryDetailViewModel() {
-    override val uiState: StateFlow<CategoryDetailUiState> =
-        MutableStateFlow(CategoryDetailUiState())
-    override fun updateCategory(newCategory: Category) {}
-    override fun deleteCategory() {}
-    override fun closeNewCategoryDialog() {}
-    override fun openNewCategoryDialog() {}
-}
+// class PreviewCategoryDetailViewModel : CategoryDetailViewModel() {
+//    override val uiState: StateFlow<CategoryDetailUiState> =
+//        MutableStateFlow(CategoryDetailUiState())
+//    override fun updateCategory(newCategory: Category) {}
+//    override fun deleteCategory() {}
+//    override fun closeNewCategoryDialog() {}
+//    override fun openNewCategoryDialog() {}
+// }
 
 class PreviewColorDetailViewModel : ColorDetailViewModel() {
     override val uiState: StateFlow<ColorDetailUiState> = MutableStateFlow(ColorDetailUiState())
@@ -93,16 +90,16 @@ class PreviewGradationViewModel : GradationViewModel() {
 //    override fun outputRandomColors() {}
 // }
 
-class PreviewRegisterViewModel : RegisterViewModel() {
-    override val uiState: StateFlow<RegisterUiState> = MutableStateFlow(RegisterUiState())
-    override fun updateMemo(memo: String) {}
-    override fun fetchCategories() {}
-    override fun changeSelectCategory(index: Int) {}
-    override fun addCategory(newCategory: Category) {}
-    override fun closeAddCategoryDialog() {}
-    override fun openAddCategoryDialog() {}
-    override fun registerColor(hex: String, context: Context) {}
-}
+// class PreviewRegisterViewModel : RegisterViewModel() {
+//    override val uiState: StateFlow<RegisterUiState> = MutableStateFlow(RegisterUiState())
+//    override fun updateMemo(memo: String) {}
+//    override fun fetchCategories() {}
+//    override fun changeSelectCategory(index: Int) {}
+//    override fun addCategory(newCategory: Category) {}
+//    override fun closeAddCategoryDialog() {}
+//    override fun openAddCategoryDialog() {}
+//    override fun registerColor(hex: String, context: Context) {}
+// }
 
 // class PreviewSeekbarViewModel : SeekbarViewModel() {
 //    override val uiState: StateFlow<SeekbarUiState> = MutableStateFlow(SeekbarUiState())
