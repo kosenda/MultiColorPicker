@@ -48,7 +48,7 @@ adUnitId=ca-app-pub-3940256099942544/6300978111
 ## モジュール構成
 #### ⚠️ :feature と :core 内の依存関係は省略しています
 ```mermaid
-flowchart TB
+flowchart LR
   classDef appModule fill:#AEFFDA,color:#000
   classDef featureModule fill:#FFDAAE,color:#000
   classDef coreModule fill:#DAAEFF,color:#000
