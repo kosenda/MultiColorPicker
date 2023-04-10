@@ -20,10 +20,13 @@ import androidx.navigation.NavType
 import androidx.navigation.navArgument
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
+import kosenda.makecolor.core.model.data.CategoryDetailParam
 import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.core.model.data.ColorItem
 import kosenda.makecolor.core.ui.code.ColorIndex
 import kosenda.makecolor.core.ui.feature.common.SelectColorParam
+import kosenda.makecolor.feature.edit.CategoryDetailScreen
+import kosenda.makecolor.feature.edit.RegisterScreen
 import kosenda.makecolor.feature.info.InfoDialog
 import kosenda.makecolor.feature.makecolor.screen.InputTextScreen
 import kosenda.makecolor.feature.makecolor.screen.MergeScreen
@@ -33,13 +36,11 @@ import kosenda.makecolor.feature.makecolor.screen.RandomScreen
 import kosenda.makecolor.feature.makecolor.screen.SeekbarScreen
 import kosenda.makecolor.feature.settings.SettingScreen
 import kosenda.makecolor.view.content.GoogleAd
-import kosenda.makecolor.view.screen.CategoryDetailScreen
 import kosenda.makecolor.view.screen.ColorDetailScreen
 import kosenda.makecolor.view.screen.DataScreen
 import kosenda.makecolor.view.screen.FullColorScreen
 import kosenda.makecolor.view.screen.GradationColorScreen
 import kosenda.makecolor.view.screen.GradationScreen
-import kosenda.makecolor.view.screen.RegisterScreen
 import kosenda.makecolor.view.screen.SelectColorScreen
 import kosenda.makecolor.view.screen.SplitColorScreen
 import kosenda.makecolor.view.screen.SplitScreen

@@ -1,11 +1,10 @@
-package kosenda.makecolor.viewmodel
+package kosenda.makecolor.feature.edit
 
 import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kosenda.makecolor.R
 import kosenda.makecolor.core.data.repository.ColorRepository
 import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.model.data.ColorItem
@@ -111,4 +110,15 @@ class RegisterViewModelImpl @Inject constructor(
             }
         }
     }
+}
+
+class PreviewRegisterViewModel : RegisterViewModel() {
+    override val uiState: StateFlow<RegisterUiState> = MutableStateFlow(RegisterUiState())
+    override fun updateMemo(memo: String) {}
+    override fun fetchCategories() {}
+    override fun changeSelectCategory(index: Int) {}
+    override fun addCategory(newCategory: Category) {}
+    override fun closeAddCategoryDialog() {}
+    override fun openAddCategoryDialog() {}
+    override fun registerColor(hex: String, context: Context) {}
 }

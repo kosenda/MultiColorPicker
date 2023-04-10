@@ -1,4 +1,4 @@
-package kosenda.makecolor.view.screen
+package kosenda.makecolor.feature.edit
 
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -27,7 +27,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.R
 import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.ui.feature.common.button.DeleteButton
 import kosenda.makecolor.core.ui.feature.common.button.TonalButton
@@ -36,10 +35,6 @@ import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.util.getNameIfNoAlias
 import kosenda.makecolor.core.util.hexToColor
 import kosenda.makecolor.feature.preview.PreviewSurface
-import kosenda.makecolor.view.dialog.NewCategoryDialog
-import kosenda.makecolor.viewmodel.CategoryDetailViewModel
-import kosenda.makecolor.viewmodel.CategoryDetailViewModelImpl
-import kosenda.makecolor.viewmodel.PreviewCategoryDetailViewModel
 
 @Composable
 fun CategoryDetailScreen(

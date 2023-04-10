@@ -79,6 +79,7 @@ dependencies {
     implementation(project(":core:resource"))
     implementation(project(":core:ui"))
     implementation(project(":core:util"))
+    implementation(project(":feature:edit"))
     implementation(project(":feature:info"))
     implementation(project(":feature:makecolor"))
     implementation(project(":feature:preview"))

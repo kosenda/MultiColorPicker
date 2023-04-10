@@ -1,13 +1,13 @@
-package kosenda.makecolor.viewmodel
+package kosenda.makecolor.feature.edit
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kosenda.makecolor.core.data.repository.ColorRepository
 import kosenda.makecolor.core.model.data.Category
+import kosenda.makecolor.core.model.data.CategoryDetailParam
 import kosenda.makecolor.core.ui.state.CategoryDetailUiState
 import kosenda.makecolor.core.util.ui.IODispatcher
-import kosenda.makecolor.view.navigation.CategoryDetailParam
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -73,4 +73,13 @@ class CategoryDetailViewModelImpl @Inject constructor(
     override fun openNewCategoryDialog() {
         _uiState.update { it.copy(isShowNewCategoryDialog = true) }
     }
+}
+
+class PreviewCategoryDetailViewModel : CategoryDetailViewModel() {
+    override val uiState: StateFlow<CategoryDetailUiState> =
+        MutableStateFlow(CategoryDetailUiState())
+    override fun updateCategory(newCategory: Category) {}
+    override fun deleteCategory() {}
+    override fun closeNewCategoryDialog() {}
+    override fun openNewCategoryDialog() {}
 }
