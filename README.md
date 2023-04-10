@@ -56,7 +56,7 @@ flowchart TB
   A1([:app]):::appModule --> B1([:feature:makecolor]):::featureModule
   A1 --> B2([:feature:settings]):::featureModule
   A1 --> B3([:feature:preview]):::featureModule
-  
+  A1 --> B4([:feature:info]):::featureModule
   
   B1 --> C1([:core:model]):::coreModule 
   B1 --> C2
@@ -71,10 +71,14 @@ flowchart TB
   
   B3 --> C7
   
+  B4 --> C2
+  B4 --> C1
+  B4 --> C6([:core:resource]):::coreModule
+  B4 --> C7
+  B4 --> C8
   
   C5 ~~~ C3([:core:database]):::coreModule
   C5 ~~~ C4([:core:datastore]):::coreModule
-  C5 ~~~ C6([:core:resource]):::coreModule
 ```
 
 ## スクリーンショット
