@@ -1,4 +1,4 @@
-package kosenda.makecolor.core.database
+package kosenda.makecolor.core.data.database
 
 import androidx.room.Dao
 import androidx.room.Insert
