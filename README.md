@@ -84,9 +84,6 @@ flowchart LR
   B5 --> C1
   B5 --> C7
   B5 --> C8
-  
-  C2 ~~~ C3([:core:database]):::coreModule
-  C2 ~~~ C4([:core:datastore]):::coreModule
 ```
 
 ## スクリーンショット
