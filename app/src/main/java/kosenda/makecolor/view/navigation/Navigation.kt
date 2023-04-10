@@ -24,6 +24,7 @@ import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.core.model.data.ColorItem
 import kosenda.makecolor.core.ui.code.ColorIndex
 import kosenda.makecolor.core.ui.feature.common.SelectColorParam
+import kosenda.makecolor.feature.info.InfoDialog
 import kosenda.makecolor.feature.makecolor.screen.InputTextScreen
 import kosenda.makecolor.feature.makecolor.screen.MergeScreen
 import kosenda.makecolor.feature.makecolor.screen.PickerScreen
@@ -32,7 +33,6 @@ import kosenda.makecolor.feature.makecolor.screen.RandomScreen
 import kosenda.makecolor.feature.makecolor.screen.SeekbarScreen
 import kosenda.makecolor.feature.settings.SettingScreen
 import kosenda.makecolor.view.content.GoogleAd
-import kosenda.makecolor.view.dialog.InfoDialog
 import kosenda.makecolor.view.screen.CategoryDetailScreen
 import kosenda.makecolor.view.screen.ColorDetailScreen
 import kosenda.makecolor.view.screen.DataScreen

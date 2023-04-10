@@ -1,4 +1,4 @@
-package kosenda.makecolor.view.content
+package kosenda.makecolor.feature.info
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -17,9 +17,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.core.ui.feature.common.button.BottomCloseButton
-import kosenda.makecolor.core.ui.feature.common.content.AppInfoContent
-import kosenda.makecolor.core.ui.feature.common.content.DeveloperInfoContent
-import kosenda.makecolor.core.ui.feature.common.content.LicensesContent
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.ui.feature.theme.backgroundBrush
 

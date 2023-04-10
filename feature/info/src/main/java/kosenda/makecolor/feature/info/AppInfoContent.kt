@@ -1,4 +1,4 @@
-package kosenda.makecolor.core.ui.feature.common.content
+package kosenda.makecolor.feature.info
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -16,12 +16,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.BuildConfig
+import androidx.hilt.navigation.compose.hiltViewModel
 import kosenda.makecolor.core.ui.R
 import kosenda.makecolor.core.ui.feature.common.InfoItemBody
 import kosenda.makecolor.core.ui.feature.common.InfoItemTitle
@@ -30,8 +29,14 @@ import kosenda.makecolor.core.ui.feature.common.card.TitleCard
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 
 @Composable
-fun AppInfoContent() {
-    val context = LocalContext.current
+fun AppInfoContent(viewModel: AppInfoViewModelImpl = hiltViewModel()) {
+    InternalAppInfoContent(viewModel = viewModel)
+}
+
+@Composable
+private fun InternalAppInfoContent(
+    viewModel: AppInfoViewModel,
+) {
     TitleCard(
         text = stringResource(id = R.string.app_info_title),
         painter = painterResource(id = R.drawable.outline_info_24),
@@ -66,7 +71,7 @@ fun AppInfoContent() {
                     text = stringResource(id = R.string.version_title),
                     modifier = Modifier.padding(bottom = 4.dp, top = 16.dp),
                 )
-                InfoItemBody(text = BuildConfig.VERSION_NAME)
+                InfoItemBody(text = viewModel.getAppConfig().versionName)
 
                 InfoItemTitle(
                     text = stringResource(id = R.string.google_play),
@@ -93,7 +98,7 @@ fun AppInfoContent() {
 @Composable
 private fun PreviewAppInfoContent_Light() {
     MakeColorTheme(isDarkTheme = false) {
-        AppInfoContent()
+        InternalAppInfoContent(viewModel = PreviewAppInfoViewModel())
     }
 }
 
@@ -101,6 +106,6 @@ private fun PreviewAppInfoContent_Light() {
 @Composable
 private fun PreviewAppInfoContent_Dark() {
     MakeColorTheme(isDarkTheme = true) {
-        AppInfoContent()
+        InternalAppInfoContent(viewModel = PreviewAppInfoViewModel())
     }
 }

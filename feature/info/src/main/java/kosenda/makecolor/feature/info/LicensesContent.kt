@@ -1,4 +1,4 @@
-package kosenda.makecolor.core.ui.feature.common.content
+package kosenda.makecolor.feature.info
 
 import android.content.Intent
 import androidx.compose.runtime.Composable
