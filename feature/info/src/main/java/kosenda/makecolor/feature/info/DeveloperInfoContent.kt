@@ -1,4 +1,4 @@
-package kosenda.makecolor.core.ui.feature.common.content
+package kosenda.makecolor.feature.info
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
