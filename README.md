@@ -49,7 +49,7 @@ adUnitId=ca-app-pub-3940256099942544/6300978111
 #### ⚠️ :feature と :core 内の依存関係は省略しています
 ```mermaid
 flowchart LR
-%%{init: {'flowchart' : {'curve' : 'linear'}}}%%
+%%{init: {'flowchart' : {'curve' : 'cardinal'}}}%%
 
   classDef appModule fill:#AEFFDA,color:#000
   classDef featureModule fill:#FFDAAE,color:#000
@@ -59,28 +59,34 @@ flowchart LR
   A1 --> B2([:feature:settings]):::featureModule
   A1 --> B3([:feature:preview]):::featureModule
   A1 --> B4([:feature:info]):::featureModule
+  A1 --> B5([:feature:edit]):::featureModule
   
-  B1 ---> C1([:core:model]):::coreModule 
-  B1 ---> C2
-  B1 ---> C5
-  B1 ---> C7
-  B1 ---> C8
+  B1 --> C1([:core:model]):::coreModule 
+  B1 --> C2([:core:data]):::coreModule
+  B1 --> C5([:core:domain]):::coreModule
+  B1 --> C7([:core:ui]):::coreModule
+  B1 --> C8([:core:util]):::coreModule
   
-  B2 ---> C2([:core:data]):::coreModule
-  B2 ---> C5([:core:domain]):::coreModule
-  B2 ---> C7([:core:ui]):::coreModule
-  B2 ---> C8([:core:util]):::coreModule
+  B2 --> C2
+  B2 --> C5
+  B2 --> C7
+  B2 --> C8
   
-  B3 ---> C7
+  B3 --> C7
   
-  B4 ---> C2
-  B4 ---> C1
-  B4 ---> C6([:core:resource]):::coreModule
-  B4 ---> C7
-  B4 ---> C8
+  B4 --> C2
+  B4 --> C1
+  B4 --> C6([:core:resource]):::coreModule
+  B4 --> C7
+  B4 --> C8
   
-  C5 ~~~ C3([:core:database]):::coreModule
-  C5 ~~~ C4([:core:datastore]):::coreModule
+  B5 --> C2
+  B5 --> C1
+  B5 --> C7
+  B5 --> C8
+  
+  C2 ~~~ C3([:core:database]):::coreModule
+  C2 ~~~ C4([:core:datastore]):::coreModule
 ```
 
 ## スクリーンショット
