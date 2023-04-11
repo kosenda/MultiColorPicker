@@ -7,7 +7,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.core.ui.feature.common.SelectColorParam
 import kosenda.makecolor.core.ui.R
-import kosenda.makecolor.core.ui.code.ColorIndex
+import kosenda.makecolor.core.ui.data.ColorIndex
 import kosenda.makecolor.core.ui.state.SplitUiState
 import kosenda.makecolor.core.util.convertDisplayStringListFromCategories
 import kosenda.makecolor.core.util.getNameIfNoAlias

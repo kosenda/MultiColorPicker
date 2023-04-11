@@ -1,13 +1,13 @@
 plugins {
     id(libs.plugins.android.library.get().pluginId)
     id(libs.plugins.kotlin.android.get().pluginId)
+    id(libs.plugins.hilt.get().pluginId)
     id(libs.plugins.kotlin.kapt.get().pluginId)
-    id(libs.plugins.kotlin.serialization.get().pluginId)
 }
 
 android {
     compileSdk = 33
-    namespace = "kosenda.makecolor.core.ui"
+    namespace = "kosenda.makecolor.feature.display"
     defaultConfig {
         minSdk = 24
     }
@@ -25,13 +25,17 @@ android {
 
 dependencies {
     implementation(project(":core:data"))
+    implementation(project(":core:domain"))
     implementation(project(":core:model"))
-    implementation(project(":core:resource"))
+    implementation(project(":core:ui"))
     implementation(project(":core:util"))
-    implementation(libs.androidx.compose.ui.tooling)
-    implementation(libs.androidx.compose.material)
+    implementation(project(":feature:preview"))
+    implementation(libs.accompanist.systemuicontroller)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.ui.google.fonts)
-    implementation(libs.compose.color.picker)
+    implementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.androidx.lifecycle.viewModelCompose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.hilt.android)
     implementation(libs.kotlinx.serialization.json)
+    kapt(libs.hilt.compiler)
 }

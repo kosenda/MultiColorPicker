@@ -4,7 +4,7 @@ import androidx.compose.ui.graphics.Color
 import com.godaddy.android.colorpicker.harmony.ColorHarmonyMode
 import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.core.model.data.HsvColorData
-import kosenda.makecolor.core.ui.code.PickerType
+import kosenda.makecolor.core.ui.data.PickerType
 import kosenda.makecolor.core.util.randomVividColorData
 
 data class PickerUiState(

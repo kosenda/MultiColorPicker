@@ -8,7 +8,7 @@
     <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
 
     <application
-        android:name=".view.Application"
+        android:name=".Application"
         android:allowBackup="true"
         android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher"
@@ -29,7 +29,7 @@
                 android:value="true" />
         </service>
         <activity
-            android:name=".view.MainActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
