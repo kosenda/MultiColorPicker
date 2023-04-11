@@ -15,8 +15,6 @@ import kosenda.makecolor.core.model.data.FontType
 import kosenda.makecolor.core.model.data.Theme
 import kosenda.makecolor.core.ui.feature.common.LocalIsDark
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
-import kosenda.makecolor.FirstScreen
-import kosenda.makecolor.MainViewModel
 
 /**
  * 作成開始：2021/06/13
