@@ -60,6 +60,7 @@ flowchart LR
   A1 --> B3([:feature:preview]):::featureModule
   A1 --> B4([:feature:info]):::featureModule
   A1 --> B5([:feature:edit]):::featureModule
+  A1 --> B6([:feature:display]):::featureModule
   
   B1 --> C1([:core:model]):::coreModule 
   B1 --> C2([:core:data]):::coreModule
@@ -84,6 +85,12 @@ flowchart LR
   B5 --> C2
   B5 --> C5
   B5 --> C6
+  
+  B6 --> C1
+  B6 --> C2
+  B6 --> C3
+  B6 --> C5
+  B6 --> C6
 ```
 
 ## スクリーンショット
