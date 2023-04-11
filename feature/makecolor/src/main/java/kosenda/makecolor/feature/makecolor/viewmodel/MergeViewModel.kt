@@ -16,7 +16,7 @@ import kosenda.makecolor.core.domain.FetchCategoriesUseCase
 import kosenda.makecolor.core.domain.UpdateOtherColorUseCase
 import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.model.data.ColorType
-import kosenda.makecolor.core.ui.code.ColorIndex
+import kosenda.makecolor.core.ui.data.ColorIndex
 import kosenda.makecolor.core.ui.state.MergeUiState
 import kosenda.makecolor.core.util.colorToRGB
 import kosenda.makecolor.core.util.convertDisplayStringListFromCategories

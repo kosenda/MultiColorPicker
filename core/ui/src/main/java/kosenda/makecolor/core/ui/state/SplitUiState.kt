@@ -1,7 +1,7 @@
 package kosenda.makecolor.core.ui.state
 
 import kosenda.makecolor.core.model.data.Category
-import kosenda.makecolor.core.ui.code.SplitColorNum
+import kosenda.makecolor.core.ui.data.SplitColorNum
 import kosenda.makecolor.core.util.randomHex
 
 data class SplitUiState(

@@ -25,7 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.godaddy.android.colorpicker.harmony.ColorHarmonyMode
 import kosenda.makecolor.core.model.data.ColorData
-import kosenda.makecolor.core.ui.code.PickerType
+import kosenda.makecolor.core.ui.data.PickerType
 import kosenda.makecolor.core.ui.feature.common.button.FloatingAddButton
 import kosenda.makecolor.core.ui.feature.common.card.ClassicColorPickerCard
 import kosenda.makecolor.core.ui.feature.common.card.ColorValueTextsCard

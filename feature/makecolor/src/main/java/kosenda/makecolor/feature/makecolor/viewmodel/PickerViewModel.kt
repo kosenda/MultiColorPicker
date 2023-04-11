@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.godaddy.android.colorpicker.HsvColor
 import com.godaddy.android.colorpicker.harmony.ColorHarmonyMode
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kosenda.makecolor.core.ui.code.PickerType
+import kosenda.makecolor.core.ui.data.PickerType
 import kosenda.makecolor.core.ui.state.PickerUiState
 import kosenda.makecolor.core.util.hsvColorToHsv
 import kosenda.makecolor.core.util.hsvToRGB
