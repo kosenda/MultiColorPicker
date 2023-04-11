@@ -10,7 +10,6 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
-import kosenda.makecolor.BuildConfig
 
 @Composable
 fun GoogleAd() {
