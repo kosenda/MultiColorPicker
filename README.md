@@ -5,8 +5,7 @@
 Google Playで公開しているアプリ「マルチカラーピッカー」のソースになります。  
 URL: https://play.google.com/store/apps/details?id=kosenda.makecolor  
 
-<img src="https://user-images.githubusercontent.com/60963155/231223182-3bd79ba4-cf75-4c2c-aad9-31589944d814.png" height="100">
-
+<a href='https://play.google.com/store/apps/details?id=kosenda.makecolor&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Google Play で手に入れよう' src='https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png' height="100"/></a>
 
 ## アプリについての簡単な説明
 - 様々な方法で色を作成できることだけでなく、保存や比較もできるアプリ
