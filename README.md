@@ -1,10 +1,12 @@
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://https://github.com/kosenda/MultiColorPicker)
 
 ## 概要
-<img src="https://user-images.githubusercontent.com/60963155/227688048-2d858dd1-a7e9-4037-b35c-f8ce0ca6379c.png" height="150" width="150">
-Google Playで公開しているアプリ「マルチカラーピッカー」のソースになります。
 
-https://play.google.com/store/apps/details?id=kosenda.makecolor
+Google Playで公開しているアプリ「マルチカラーピッカー」のソースになります。  
+URL: https://play.google.com/store/apps/details?id=kosenda.makecolor  
+
+<img src="https://user-images.githubusercontent.com/60963155/231223182-3bd79ba4-cf75-4c2c-aad9-31589944d814.png" height="100">
+
 
 ## アプリについての簡単な説明
 - 様々な方法で色を作成できることだけでなく、保存や比較もできるアプリ
