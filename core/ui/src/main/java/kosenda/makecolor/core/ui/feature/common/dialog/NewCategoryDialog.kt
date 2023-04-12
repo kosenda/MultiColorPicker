@@ -1,4 +1,4 @@
-package kosenda.makecolor.feature.edit
+package kosenda.makecolor.core.ui.feature.common.dialog
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.window.Dialog

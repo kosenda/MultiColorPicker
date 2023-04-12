@@ -39,6 +39,7 @@ import kosenda.makecolor.core.ui.feature.common.card.ColorValueTextsCard
 import kosenda.makecolor.core.ui.feature.common.card.DisplayColorCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.card.TitleCard
+import kosenda.makecolor.core.ui.feature.common.dialog.NewCategoryDialog
 import kosenda.makecolor.core.ui.feature.common.textfield.EnterFiled
 import kosenda.makecolor.core.ui.feature.common.topbar.BackTopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme

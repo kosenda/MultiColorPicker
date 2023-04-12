@@ -1,4 +1,4 @@
-package kosenda.makecolor
+package kosenda.makecolor.navigation
 
 import kosenda.makecolor.core.resource.R
 

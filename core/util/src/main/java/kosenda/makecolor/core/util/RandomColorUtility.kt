@@ -13,7 +13,7 @@ fun outputRandomRGBColors(randomType: RandomType, size: Int = 10): List<RGB> {
 
 fun randomColorData() = rgbToColorData(rgb = makeRandomRGB(randomType = RandomType.NOT_SPECIFIED))
 
-fun randomVividColorData() = rgbToColorData(rgb = makeRandomRGB(randomType = RandomType.Vivid))
+fun randomVividColorData() = rgbToColorData(rgb = makeRandomRGB(randomType = RandomType.VIVID))
 
 fun randomHex() = rgbToHex(rgb = makeRandomRGB(randomType = RandomType.NOT_SPECIFIED)).toString()
 
@@ -53,7 +53,7 @@ private fun makeRandomRGB(randomType: RandomType): RGB {
                 blue = tempRGB[2],
             )
         }
-        RandomType.Vivid -> {
+        RandomType.VIVID -> {
             val tempRGB = mutableListOf(0f, 0f, 0f)
             val index1 = (0..2).random()
             val index2 = index2(index1)

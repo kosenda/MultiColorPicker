@@ -1,4 +1,4 @@
-package kosenda.makecolor.feature.edit
+package kosenda.makecolor.feature.display.viewmodel
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel

@@ -7,13 +7,13 @@ import org.junit.Test
 class RandomColorUtilityTest {
     @Test
     fun outputRandomRGBColors_default_size10() {
-        assertThat(outputRandomRGBColors(randomType = RandomType.Vivid).size)
+        assertThat(outputRandomRGBColors(randomType = RandomType.VIVID).size)
             .isEqualTo(10)
     }
 
     @Test
     fun outputRandomRGBColors_param1_size1() {
-        assertThat(outputRandomRGBColors(randomType = RandomType.Vivid, size = 1).size)
+        assertThat(outputRandomRGBColors(randomType = RandomType.VIVID, size = 1).size)
             .isEqualTo(1)
     }
 }

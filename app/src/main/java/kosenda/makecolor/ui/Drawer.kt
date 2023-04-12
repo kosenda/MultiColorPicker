@@ -1,4 +1,4 @@
-package kosenda.makecolor
+package kosenda.makecolor.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -23,7 +23,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import kosenda.makecolor.R
 import kosenda.makecolor.core.ui.feature.theme.backgroundBrush
+import kosenda.makecolor.navigation.NavigationItems
 import kotlinx.coroutines.launch
 
 @Composable
@@ -91,7 +93,7 @@ fun Drawer(
             color = MaterialTheme.colorScheme.primary,
         )
         Text(
-            text = "developed by KSND  2022",
+            text = "developed by KSND  2023",
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 24.dp),

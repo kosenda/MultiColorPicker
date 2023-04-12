@@ -11,7 +11,6 @@ plugins {
     alias(libs.plugins.kotlin.android) apply true
     alias(libs.plugins.kotlin.kapt) apply true
     alias(libs.plugins.kotlin.serialization) apply true
-    alias(libs.plugins.ksp) apply true
     alias(libs.plugins.secrets) apply true
 }
 
@@ -90,33 +89,23 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.compose.ui.tooling)
     implementation(libs.androidx.compose.ui.tooling.preview)
-    implementation(libs.androidx.compose.material)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.coroutines.android)
-    implementation(libs.androidx.dataStore.preferences)
-    implementation(libs.androidx.lifecycle.viewModelCompose)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.palette)
     implementation(libs.androidx.ui.google.fonts)
-    implementation(libs.compose.color.picker)
-    implementation(libs.compose.color.picker.android)
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.crashlytics)
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.play.services.ads)
     implementation(libs.oss.licenses)
-    implementation(libs.room.runtime)
     implementation(libs.kotlinx.serialization.json)
-    implementation(libs.timber)
     implementation(platform(libs.firebase.bom))
     testImplementation(libs.junit)
     testImplementation(libs.truth)
     androidTestImplementation(libs.androidx.test)
     kapt(libs.hilt.compiler)
-    ksp(libs.room.compiler)
 
     ktlint(libs.ktlint) {
         attributes {
