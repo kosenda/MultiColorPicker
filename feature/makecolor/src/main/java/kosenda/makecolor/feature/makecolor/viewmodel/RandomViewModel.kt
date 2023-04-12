@@ -45,7 +45,7 @@ class RandomViewModelImpl @Inject constructor(
             it.copy(
                 selectRandomType = when (index) {
                     RandomType.NOT_SPECIFIED.index -> RandomType.NOT_SPECIFIED
-                    RandomType.Vivid.index -> RandomType.Vivid
+                    RandomType.VIVID.index -> RandomType.VIVID
                     RandomType.PASTEL.index -> RandomType.PASTEL
                     RandomType.BLACK_AND_WHITE.index -> RandomType.BLACK_AND_WHITE
                     else -> throw IllegalArgumentException()

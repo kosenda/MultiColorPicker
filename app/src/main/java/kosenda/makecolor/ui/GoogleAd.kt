@@ -1,4 +1,4 @@
-package kosenda.makecolor
+package kosenda.makecolor.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -10,6 +10,7 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
+import kosenda.makecolor.BuildConfig
 
 @Composable
 fun GoogleAd() {

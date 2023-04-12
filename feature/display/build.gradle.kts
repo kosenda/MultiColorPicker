@@ -29,6 +29,7 @@ dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:ui"))
     implementation(project(":core:util"))
+    implementation(project(":feature:edit"))
     implementation(project(":feature:preview"))
     implementation(libs.accompanist.systemuicontroller)
     implementation(libs.androidx.compose.material3)

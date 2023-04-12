@@ -20,6 +20,8 @@ import kosenda.makecolor.core.ui.feature.common.LocalIsDark
 import kosenda.makecolor.core.ui.feature.theme.backgroundBottomColor
 import kosenda.makecolor.core.ui.feature.theme.backgroundBrush
 import kosenda.makecolor.core.ui.feature.theme.backgroundTopColor
+import kosenda.makecolor.navigation.Navigation
+import kosenda.makecolor.ui.Drawer
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalAnimationApi::class)
