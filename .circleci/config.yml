@@ -5,10 +5,12 @@ orbs:
 
 jobs:
   build-and-test:
-    executor:
-      name: android/android-machine
-      resource-class: large
-      tag: 2021.10.1
+    docker:
+      - image: cimg/android:2023.04
+#    executor:
+#      name: android/android-machine
+#      resource-class: large
+#      tag: 2021.10.1
 
     steps:
       - checkout
