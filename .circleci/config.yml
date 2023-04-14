@@ -26,7 +26,9 @@ jobs:
             sudo update-alternatives --set javac /usr/lib/jvm/java-17-openjdk-amd64/bin/javac
             java -version
       - run:
-          command: gem install bundler:3.0.0
+          export GEM_HOME="$HOME/.gem"
+      - run:
+          command: gem install bundler:1.17.3
       - run:
           command: bundle install
       - run:
