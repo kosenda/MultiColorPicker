@@ -16,7 +16,7 @@ plugins {
 
 android {
     compileSdk = 33
-
+    namespace = "kosenda.makecolor.app"
     bundle {
         language {
             enableSplit = false
@@ -59,7 +59,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.androidxComposeCompiler.get()
     }
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }

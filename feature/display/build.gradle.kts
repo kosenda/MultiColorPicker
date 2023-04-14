@@ -27,6 +27,7 @@ dependencies {
     implementation(project(":core:data"))
     implementation(project(":core:domain"))
     implementation(project(":core:model"))
+    implementation(project(":core:resource"))
     implementation(project(":core:ui"))
     implementation(project(":core:util"))
     implementation(project(":feature:edit"))

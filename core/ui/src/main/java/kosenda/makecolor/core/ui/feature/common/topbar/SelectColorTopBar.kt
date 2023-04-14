@@ -19,7 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.core.ui.R
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.feature.common.button.BackButton
 import kosenda.makecolor.core.ui.feature.common.button.TonalButton
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme

@@ -1,4 +1,4 @@
-package kosenda.makecolor.view.component
+package kosenda.makecolor.core.ui.feature.common
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -13,8 +13,7 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.core.ui.R
-import kosenda.makecolor.core.ui.feature.common.rememberButtonScaleState
+import kosenda.makecolor.core.resource.R
 
 @Composable
 fun ClearTextIcon(onClick: () -> Unit) {

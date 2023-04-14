@@ -28,7 +28,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.core.model.data.StringResource
-import kosenda.makecolor.view.component.ClearTextIcon
+import kosenda.makecolor.core.ui.feature.common.ClearTextIcon
 
 @Composable
 fun ColorTextField(

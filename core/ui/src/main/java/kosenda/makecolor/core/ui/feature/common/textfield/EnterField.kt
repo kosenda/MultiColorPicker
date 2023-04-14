@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusManager
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.view.component.ClearTextIcon
+import kosenda.makecolor.core.ui.feature.common.ClearTextIcon
 
 @Composable
 fun EnterFiled(

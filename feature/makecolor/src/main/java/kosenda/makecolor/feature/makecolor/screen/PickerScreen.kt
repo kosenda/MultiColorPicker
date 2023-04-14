@@ -25,6 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.godaddy.android.colorpicker.harmony.ColorHarmonyMode
 import kosenda.makecolor.core.model.data.ColorData
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.data.PickerType
 import kosenda.makecolor.core.ui.feature.common.button.FloatingAddButton
 import kosenda.makecolor.core.ui.feature.common.card.ClassicColorPickerCard
@@ -34,7 +35,6 @@ import kosenda.makecolor.core.ui.feature.common.card.HarmonyColorPickerCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
-import kosenda.makecolor.feature.makecolor.R
 import kosenda.makecolor.feature.makecolor.viewmodel.PickerViewModel
 import kosenda.makecolor.feature.makecolor.viewmodel.PickerViewModelImpl
 import kosenda.makecolor.feature.makecolor.viewmodel.PreviewPickerViewModel

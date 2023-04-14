@@ -30,12 +30,12 @@ import androidx.compose.ui.unit.dp
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kosenda.makecolor.core.model.data.CategoryDetailParam
 import kosenda.makecolor.core.model.data.ColorItem
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.feature.common.button.TonalButton
 import kosenda.makecolor.core.ui.feature.common.card.ColorCard
 import kosenda.makecolor.core.ui.feature.common.topbar.SelectColorTopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.util.getNameIfNoAlias
-import kosenda.makecolor.feature.display.R
 import kosenda.makecolor.feature.display.viewmodel.PreviewSelectColorViewModel
 import kosenda.makecolor.feature.display.viewmodel.SelectColorViewModel
 import kosenda.makecolor.feature.display.viewmodel.SelectColorViewModelImpl

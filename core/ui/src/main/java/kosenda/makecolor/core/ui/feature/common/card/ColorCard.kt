@@ -25,7 +25,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.core.model.data.ColorItem
-import kosenda.makecolor.core.ui.R
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.util.blackOrWhiteFromRGB
 import kosenda.makecolor.core.util.hexToColor
 import kosenda.makecolor.core.util.hexToRGB

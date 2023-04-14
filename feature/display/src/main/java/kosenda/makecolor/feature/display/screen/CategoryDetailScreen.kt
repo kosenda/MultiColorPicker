@@ -28,6 +28,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.core.model.data.Category
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.feature.common.button.DeleteButton
 import kosenda.makecolor.core.ui.feature.common.button.TonalButton
 import kosenda.makecolor.core.ui.feature.common.dialog.NewCategoryDialog
@@ -35,7 +36,6 @@ import kosenda.makecolor.core.ui.feature.common.topbar.BackTopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.util.getNameIfNoAlias
 import kosenda.makecolor.core.util.hexToColor
-import kosenda.makecolor.feature.display.R
 import kosenda.makecolor.feature.display.viewmodel.CategoryDetailViewModel
 import kosenda.makecolor.feature.display.viewmodel.CategoryDetailViewModelImpl
 import kosenda.makecolor.feature.display.viewmodel.PreviewCategoryDetailViewModel

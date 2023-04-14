@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import kosenda.makecolor.core.data.default.defaultCategories
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.data.ColorIndex
 import kosenda.makecolor.core.ui.data.SplitColorNum
 import kosenda.makecolor.core.ui.data.SplitColorParam
@@ -38,7 +39,6 @@ import kosenda.makecolor.core.ui.feature.common.card.SpinnerAndColorCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
-import kosenda.makecolor.feature.display.R
 import kosenda.makecolor.feature.display.viewmodel.PreviewSplitViewModel
 import kosenda.makecolor.feature.display.viewmodel.SplitViewModel
 import kosenda.makecolor.feature.display.viewmodel.SplitViewModelImpl

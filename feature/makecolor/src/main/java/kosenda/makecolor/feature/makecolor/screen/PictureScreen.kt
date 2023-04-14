@@ -35,7 +35,7 @@ import kosenda.makecolor.core.ui.feature.common.card.PaletteCircleCard
 import kosenda.makecolor.core.ui.feature.common.card.SelectImageCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
-import kosenda.makecolor.feature.makecolor.R
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.feature.makecolor.viewmodel.PictureViewModel
 import kosenda.makecolor.feature.makecolor.viewmodel.PictureViewModelImpl
 import kosenda.makecolor.feature.makecolor.viewmodel.PreviewPictureViewModel

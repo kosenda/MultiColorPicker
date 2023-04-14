@@ -26,6 +26,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kosenda.makecolor.core.model.data.ColorData
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.feature.common.card.CategoryNameAndMemoCard
 import kosenda.makecolor.core.ui.feature.common.card.ColorValueTextsCard
 import kosenda.makecolor.core.ui.feature.common.card.DisplayColorCard
@@ -33,11 +34,10 @@ import kosenda.makecolor.core.ui.feature.common.card.TitleCard
 import kosenda.makecolor.core.ui.feature.common.topbar.BackTopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.ui.feature.theme.backgroundBrush
-import kosenda.makecolor.feature.display.R
-import kosenda.makecolor.feature.preview.PreviewSurface
 import kosenda.makecolor.feature.display.viewmodel.ColorDetailViewModel
 import kosenda.makecolor.feature.display.viewmodel.ColorDetailViewModelImpl
 import kosenda.makecolor.feature.display.viewmodel.PreviewColorDetailViewModel
+import kosenda.makecolor.feature.preview.PreviewSurface
 
 @Composable
 fun ColorDetailScreen(

@@ -12,6 +12,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.core.model.data.FontType
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.feature.common.ContentDivider
 import kosenda.makecolor.core.ui.feature.common.button.CustomRadioButton
 import kosenda.makecolor.core.ui.feature.common.card.TitleCard

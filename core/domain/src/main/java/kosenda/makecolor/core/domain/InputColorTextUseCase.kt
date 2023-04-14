@@ -6,6 +6,7 @@ import kosenda.makecolor.core.model.data.HEXColor
 import kosenda.makecolor.core.model.data.HSVColor
 import kosenda.makecolor.core.model.data.RGBColor
 import kosenda.makecolor.core.model.data.StringResource
+import kosenda.makecolor.core.resource.R
 import timber.log.Timber
 import javax.inject.Inject
 

@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import kosenda.makecolor.core.data.default.defaultCategories
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.data.ColorIndex
 import kosenda.makecolor.core.ui.feature.common.SelectColorParam
 import kosenda.makecolor.core.ui.feature.common.card.DisplayGradationColorCard
@@ -33,7 +34,6 @@ import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.util.getNameIfNoAlias
-import kosenda.makecolor.feature.display.R
 import kosenda.makecolor.feature.display.viewmodel.GradationViewModel
 import kosenda.makecolor.feature.display.viewmodel.GradationViewModelImpl
 import kosenda.makecolor.feature.display.viewmodel.PreviewGradationViewModel
