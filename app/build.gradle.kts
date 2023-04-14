@@ -26,6 +26,10 @@ android {
         }
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId = "kosenda.makecolor"
         minSdk = 24
