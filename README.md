@@ -66,11 +66,13 @@ flowchart LR
   B1 --> C1([:core:model]):::coreModule 
   B1 --> C2([:core:data]):::coreModule
   B1 --> C3([:core:domain]):::coreModule
+  B1 --> C4([:core:resource]):::coreModule
   B1 --> C5([:core:ui]):::coreModule
   B1 --> C6([:core:util]):::coreModule
   
   B2 --> C1
   B2 --> C2
+  B2 --> C4
   B2 --> C5
   B2 --> C6
   
@@ -78,18 +80,20 @@ flowchart LR
   
   B4 --> C1
   B4 --> C2
-  B4 --> C4([:core:resource]):::coreModule
+  B4 --> C4
   B4 --> C5
   B4 --> C6
   
   B5 --> C1
   B5 --> C2
+  B5 --> C4
   B5 --> C5
   B5 --> C6
   
   B6 --> C1
   B6 --> C2
   B6 --> C3
+  B6 --> C4
   B6 --> C5
   B6 --> C6
 ```
