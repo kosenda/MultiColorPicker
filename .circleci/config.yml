@@ -1,30 +1,21 @@
 version: 2.1
 
-#orbs:
-#  android: circleci/android@2.2.0
-
 jobs:
-  build-and-test:
+  build:
     docker:
       - image: cimg/android:2023.04
-#    executor:
-#      name: android/android-machine
-#      resource-class: large
-#      tag: 2021.10.1
-
     steps:
       - checkout
-      - android/restore-gradle-cache
-      - android/restore-build-cache
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle.kts" }}-{{ checksum  "app/build.gradle.kts" }}
+      - run: ./gradlew androidDependencies
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           command: cp ./.circleci/local.properties.ci local.properties
-      - run:
-          name: Install OpenJDK 17
-          command: |
-            sudo apt-get update && sudo apt-get install openjdk-17-jdk
-            sudo update-alternatives --set java /usr/lib/jvm/java-17-openjdk-amd64/bin/java
-            sudo update-alternatives --set javac /usr/lib/jvm/java-17-openjdk-amd64/bin/javac
-            java -version
+
       - run:
           command: sudo gem install bundler:3.2.2
       - run:
@@ -34,25 +25,66 @@ jobs:
       - run:
           name: run-danger-file
           command: bundle exec danger --verbose
-      - android/run-tests:
-          test-command: ./gradlew testDebug --stacktrace
-      - android/save-gradle-cache
-      - android/save-build-cache
-#       - android/create-avd:
-#           avd-name: myavd
-#           install: true
-#           system-image: system-images;android-29;default;x86
-#       - android/start-emulator:
-#           avd-name: myavd
-#           no-window: true
-#           restore-gradle-cache-prefix: v1a
-#       - android/save-gradle-cache:
-#           cache-prefix: v1a
 
+      - run:
+          command: ./gradlew testDebug --stacktrace
+
+#orbs:
+#  android: circleci/android@2.2.0
+#jobs:
+#  build:
+#    docker:
+#      - image: cimg/android:2023.04
+#    steps:
+#      - checkout
+#      - run: ./gradlew androidDependencies
+#      - run: ./gradlew lint test
+#  test:
+#    docker:
+#      - image: cimg/android:2023.04
+#
+#    steps:
+#      - checkout
+#      - restore-gradle-cache
+#      - restore-build-cache
+#      - run:
+#          command: cp ./.circleci/local.properties.ci local.properties
+#      - run:
+#          name: Install OpenJDK 17
+#          command: |
+#            sudo apt-get update && sudo apt-get install openjdk-17-jdk
+#            sudo update-alternatives --set java /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+#            sudo update-alternatives --set javac /usr/lib/jvm/java-17-openjdk-amd64/bin/javac
+#            java -version
+#      - run:
+#          command: sudo gem install bundler:3.2.2
+#      - run:
+#          command: bundle install
+#      - run:
+#          command: ./gradlew --continue ktlintCheck
+#      - run:
+#          name: run-danger-file
+#          command: bundle exec danger --verbose
+#      - run-tests:
+#          test-command: ./gradlew testDebug --stacktrace
+#      - save-gradle-cache
+#      - save-build-cache
+##       - android/create-avd:
+##           avd-name: myavd
+##           install: true
+##           system-image: system-images;android-29;default;x86
+##       - android/start-emulator:
+##           avd-name: myavd
+##           no-window: true
+##           restore-gradle-cache-prefix: v1a
+##       - android/save-gradle-cache:
+##           cache-prefix: v1a
+#
 workflows:
   test:
     jobs:
-      - build-and-test
+      - build
+      - test
 
 # ■ memo ■
 # チェックコマンド： circleci config validate
