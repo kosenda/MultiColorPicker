@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  build:
+  build-and-test:
     docker:
       - image: cimg/android:2023.04
     steps:
@@ -35,7 +35,7 @@ jobs:
 workflows:
   test:
     jobs:
-      - build
+      - build-and-test
 
 # ■ memo ■
 # チェックコマンド： circleci config validate
