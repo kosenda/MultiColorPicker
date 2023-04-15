@@ -1,12 +1,12 @@
 [versions]
 accompanist = "0.30.1"
-androidGradlePlugin = "7.4.2"
+androidGradlePlugin = "8.0.0"
 androidxActivity = "1.7.0"
 androidxAppCompat = "1.7.0-alpha02"
-androidxComposeCompiler = "1.4.0"
+androidxComposeCompiler = "1.4.5"
 androidxComposeMaterial = "1.4.1"
 androidxComposeMaterial3 = "1.1.0-beta02"
-androidxCore = "1.9.0"
+androidxCore = "1.10.0"
 androidxCoreSplashscreen = "1.0.0"
 androidxDataStore = "1.0.0"
 androidxCoroutines = "1.6.4"
@@ -22,9 +22,9 @@ firebaseCrashlyticsPlugin = "2.9.4"
 gmsPlugin = "4.3.15"
 hilt = "2.45"
 junit4 = "4.13.2"
-kotlin = "1.8.0"
+kotlin = "1.8.20"
 kotlinxSerializationJson = "1.5.0"
-ksp = "1.8.0-1.0.9"
+ksp = "1.8.20-1.0.10"
 ktlint = "0.48.2"
 navigationAnimation = "0.30.1"
 ossLicenses = "17.0.0"
@@ -46,7 +46,7 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 androidx-compose-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "androidxAppCompat" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "androidxUi" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "androidxUi" }
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxAppCompat" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "androidxCoreSplashscreen" }
 androidx-dataStore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "androidxDataStore" }
 androidx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "androidxCoroutines" }
@@ -54,7 +54,7 @@ androidx-lifecycle-viewModelCompose = { group = "androidx.lifecycle", name = "li
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigation" }
 androidx-palette = { group = "androidx.palette", name = "palette-ktx", version.ref = "androidxPalette" }
 androidx-test = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestExt" }
-androidx-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "androidxUi" }
+androidxb-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "androidxUi" }
 androidx-ui-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "androidxUi" }
 compose-color-picker = { group = "com.godaddy.android.colorpicker", name = "compose-color-picker", version.ref = "colorPicker" }
 compose-color-picker-android = { group = "com.godaddy.android.colorpicker", name = "compose-color-picker-android", version.ref = "colorPicker" }

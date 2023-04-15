@@ -14,7 +14,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.core.ui.R
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.util.shareIntent
 import kosenda.makecolor.core.ui.feature.theme.contentBrush
 import kosenda.makecolor.core.ui.feature.theme.primaryBrush

@@ -11,6 +11,7 @@ import kosenda.makecolor.core.model.data.ColorItem
 import kosenda.makecolor.core.ui.state.RegisterUiState
 import kosenda.makecolor.core.util.ui.IODispatcher
 import kosenda.makecolor.core.util.ui.MainDispatcher
+import kosenda.makecolor.core.resource.R
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow

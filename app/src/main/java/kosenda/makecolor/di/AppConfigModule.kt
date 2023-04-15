@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kosenda.makecolor.BuildConfig
+import kosenda.makecolor.app.BuildConfig
 import kosenda.makecolor.core.resource.AppConfig
 
 @Module

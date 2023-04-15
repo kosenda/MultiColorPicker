@@ -40,7 +40,7 @@ import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.util.getNameIfNoAlias
-import kosenda.makecolor.feature.makecolor.R
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.feature.makecolor.viewmodel.MergeViewModel
 import kosenda.makecolor.feature.makecolor.viewmodel.MergeViewModelImpl
 import kosenda.makecolor.feature.makecolor.viewmodel.PreviewMergeViewModel

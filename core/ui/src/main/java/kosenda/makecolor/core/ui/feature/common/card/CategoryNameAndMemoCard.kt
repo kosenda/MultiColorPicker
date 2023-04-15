@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.core.ui.R
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.feature.common.ContentDivider
 
 @Composable

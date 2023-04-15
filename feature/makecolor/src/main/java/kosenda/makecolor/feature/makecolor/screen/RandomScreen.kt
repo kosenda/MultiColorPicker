@@ -22,6 +22,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.core.model.data.ColorData
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.feature.common.button.FloatingAddButton
 import kosenda.makecolor.core.ui.feature.common.button.TonalButton
 import kosenda.makecolor.core.ui.feature.common.card.ColorValueTextsCard
@@ -30,7 +31,6 @@ import kosenda.makecolor.core.ui.feature.common.card.RandomColorsCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
-import kosenda.makecolor.feature.makecolor.R
 import kosenda.makecolor.feature.makecolor.viewmodel.PreviewRandomViewModel
 import kosenda.makecolor.feature.makecolor.viewmodel.RandomViewModel
 import kosenda.makecolor.feature.makecolor.viewmodel.RandomViewModelImpl

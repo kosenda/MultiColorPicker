@@ -1,44 +1,36 @@
 version: 2.1
 
-orbs:
-  android: circleci/android@2.2.0
-
 jobs:
   build-and-test:
-    executor:
-      name: android/android-machine
-      resource-class: large
-      tag: 2021.10.1
-
+    docker:
+      - image: cimg/android:2023.04
     steps:
       - checkout
-      - android/restore-gradle-cache
-      - android/restore-build-cache
       - run:
+          name: copy local.properties
           command: cp ./.circleci/local.properties.ci local.properties
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle.kts" }}-{{ checksum  "app/build.gradle.kts" }}
+      - run: ./gradlew androidDependencies
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle.kts" }}-{{ checksum  "app/build.gradle.kts" }}
+
       - run:
-          command: gem install bundler:1.17.3
+          command: sudo gem install bundler:2.4.12
       - run:
-          command: bundle install
+          command: bundle install --path vendor/bundle
       - run:
+          name: ktlint-check
           command: ./gradlew --continue ktlintCheck
       - run:
           name: run-danger-file
           command: bundle exec danger --verbose
-      - android/run-tests:
-          test-command: ./gradlew testDebug --stacktrace
-      - android/save-gradle-cache
-      - android/save-build-cache
-#       - android/create-avd:
-#           avd-name: myavd
-#           install: true
-#           system-image: system-images;android-29;default;x86
-#       - android/start-emulator:
-#           avd-name: myavd
-#           no-window: true
-#           restore-gradle-cache-prefix: v1a
-#       - android/save-gradle-cache:
-#           cache-prefix: v1a
+
+      - run:
+          name: test
+          command: ./gradlew testDebug --stacktrace
 
 workflows:
   test:

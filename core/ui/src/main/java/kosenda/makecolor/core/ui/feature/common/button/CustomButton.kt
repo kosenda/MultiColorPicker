@@ -21,7 +21,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.core.ui.R
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.feature.common.rememberButtonScaleState
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 

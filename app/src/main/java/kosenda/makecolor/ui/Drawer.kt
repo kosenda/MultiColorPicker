@@ -23,7 +23,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import kosenda.makecolor.R
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.feature.theme.backgroundBrush
 import kosenda.makecolor.navigation.NavigationItems
 import kotlinx.coroutines.launch

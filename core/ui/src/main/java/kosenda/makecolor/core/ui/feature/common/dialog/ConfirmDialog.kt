@@ -6,7 +6,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import kosenda.makecolor.core.ui.R
+import kosenda.makecolor.core.resource.R
 
 @Composable
 fun ConfirmDialog(text: String, onDismissRequest: () -> Unit, onClick: () -> Unit) {

@@ -32,7 +32,7 @@ import kosenda.makecolor.core.ui.feature.common.card.InputColorValueCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
-import kosenda.makecolor.feature.makecolor.R
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.feature.makecolor.viewmodel.InputTextViewModel
 import kosenda.makecolor.feature.makecolor.viewmodel.InputTextViewModelImpl
 import kosenda.makecolor.feature.makecolor.viewmodel.PreviewInputTextViewModel

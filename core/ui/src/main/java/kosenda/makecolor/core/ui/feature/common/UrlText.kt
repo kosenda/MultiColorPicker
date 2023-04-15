@@ -13,7 +13,7 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.core.ui.R
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 
 @Composable

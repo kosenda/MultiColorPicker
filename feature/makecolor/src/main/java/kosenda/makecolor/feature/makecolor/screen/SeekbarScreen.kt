@@ -30,7 +30,7 @@ import kosenda.makecolor.core.ui.feature.common.card.SeekbarsCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
-import kosenda.makecolor.feature.makecolor.R
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.feature.makecolor.viewmodel.PreviewSeekbarViewModel
 import kosenda.makecolor.feature.makecolor.viewmodel.SeekbarViewModel
 import kosenda.makecolor.feature.makecolor.viewmodel.SeekbarViewModelImpl
