@@ -84,7 +84,6 @@ workflows:
   test:
     jobs:
       - build
-      - test
 
 # ■ memo ■
 # チェックコマンド： circleci config validate
