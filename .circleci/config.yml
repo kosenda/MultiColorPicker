@@ -19,7 +19,7 @@ jobs:
       - run:
           command: sudo gem install bundler:2.4.12
       - run:
-          command: bundle install
+          command: bundle install --path vendor/bundle
       - run:
           command: ./gradlew --continue ktlintCheck
       - run:
