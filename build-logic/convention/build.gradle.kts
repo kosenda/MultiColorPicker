@@ -25,13 +25,17 @@ gradlePlugin {
             id = "multicolorpicker.android.library"
             implementationClass = "kosenda.makecolor.AndroidLibraryPlugin"
         }
-        register("androidRoom") {
-            id = "multicolorpicker.android.room"
-            implementationClass = "kosenda.makecolor.AndroidRoomPlugin"
+        register("androidLibraryCompose") {
+            id = "multicolorpicker.android.library.compose"
+            implementationClass = "kosenda.makecolor.AndroidLibraryComposePlugin"
         }
         register("androidHilt") {
             id = "multicolorpicker.android.hilt"
             implementationClass = "kosenda.makecolor.AndroidHiltPlugin"
+        }
+        register("androidRoom") {
+            id = "multicolorpicker.android.room"
+            implementationClass = "kosenda.makecolor.AndroidRoomPlugin"
         }
     }
 }

@@ -1,16 +1,11 @@
 plugins {
     id("multicolorpicker.android.library")
+    id("multicolorpicker.android.library.compose")
     id("multicolorpicker.android.hilt")
 }
 
 android {
     namespace = "kosenda.makecolor.feature.makecolor"
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.androidxComposeCompiler.get()
-    }
 }
 
 dependencies {
@@ -23,7 +18,6 @@ dependencies {
     implementation(project(":feature:preview"))
     implementation(libs.accompanist.systemuicontroller)
     implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.compose.ui.tooling)
     implementation(libs.androidx.lifecycle.viewModelCompose)
