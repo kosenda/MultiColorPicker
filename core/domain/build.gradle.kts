@@ -1,5 +1,6 @@
 plugins {
     id("multicolorpicker.android.library")
+    id("multicolorpicker.android.room")
     id(libs.plugins.hilt.get().pluginId)
     id(libs.plugins.kotlin.kapt.get().pluginId)
     id(libs.plugins.ksp.get().pluginId)
@@ -20,8 +21,6 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.compose.color.picker.android)
     implementation(libs.kotlinx.serialization.json)
-    implementation(libs.room.runtime)
     implementation(libs.timber)
     kapt(libs.hilt.compiler)
-    ksp(libs.room.compiler)
 }
