@@ -14,11 +14,9 @@ plugins {
 
 android {
     namespace = "kosenda.makecolor.app"
-
     buildFeatures {
         buildConfig = true
     }
-
     buildTypes {
         release {
             isShrinkResources = true // リソースの圧縮
@@ -29,12 +27,6 @@ android {
                 "shrinker-rules.pro",
             )
         }
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.androidxComposeCompiler.get()
     }
     packaging {
         resources {
@@ -64,9 +56,7 @@ dependencies {
     implementation(libs.accompanist.systemuicontroller)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.activity)
-    implementation(libs.androidx.compose.ui.tooling)
     implementation(libs.androidx.compose.ui.tooling.preview)
-    implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.coroutines.android)
     implementation(libs.androidx.navigation.compose)
