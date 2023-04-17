@@ -4,11 +4,10 @@ val ktlint: Configuration by configurations.creating
 
 plugins {
     id("multicolorpicker.android.application")
+    id("multicolorpicker.android.hilt")
     alias(libs.plugins.firebase.crashlytics) apply true
     alias(libs.plugins.oss.licenses) apply true
     alias(libs.plugins.gms) apply true
-    alias(libs.plugins.hilt) apply true
-    alias(libs.plugins.kotlin.kapt) apply true
     alias(libs.plugins.kotlin.serialization) apply true
     alias(libs.plugins.secrets) apply true
 }
@@ -74,7 +73,6 @@ dependencies {
     implementation(libs.androidx.ui.google.fonts)
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.crashlytics)
-    implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.play.services.ads)
     implementation(libs.oss.licenses)
@@ -83,7 +81,6 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.truth)
     androidTestImplementation(libs.androidx.test)
-    kapt(libs.hilt.compiler)
 
     ktlint(libs.ktlint) {
         attributes {
