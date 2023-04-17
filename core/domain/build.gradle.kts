@@ -1,21 +1,12 @@
 plugins {
-    id(libs.plugins.android.library.get().pluginId)
+    id("multicolorpicker.android.library")
     id(libs.plugins.hilt.get().pluginId)
-    id(libs.plugins.kotlin.android.get().pluginId)
     id(libs.plugins.kotlin.kapt.get().pluginId)
     id(libs.plugins.ksp.get().pluginId)
 }
 
 android {
-    compileSdk = 33
     namespace = "kosenda.makecolor.core.domain"
-    defaultConfig {
-        minSdk = 24
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
 }
 
 dependencies {

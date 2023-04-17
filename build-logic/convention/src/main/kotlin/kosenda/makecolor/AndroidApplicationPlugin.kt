@@ -1,13 +1,10 @@
 package kosenda.makecolor
 
 import com.android.build.api.dsl.ApplicationExtension
-import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.plugins.ExtensionAware
 import org.gradle.kotlin.dsl.configure
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
 @Suppress("unused")
 class AndroidApplicationPlugin: Plugin<Project> {
@@ -37,12 +34,4 @@ class AndroidApplicationPlugin: Plugin<Project> {
             }
         }
     }
-}
-
-/*
- * @See GitHub-nowinandroid
- * https://github.com/android/nowinandroid/blob/main/build-logic/convention/src/main/kotlin/com/google/samples/apps/nowinandroid/KotlinAndroid.kt
- */
-fun CommonExtension<*, *, *, *>.kotlinOptions(block: KotlinJvmOptions.() -> Unit) {
-    (this as ExtensionAware).extensions.configure("kotlinOptions", block)
 }
