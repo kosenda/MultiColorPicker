@@ -46,7 +46,21 @@ adUnitId=ca-app-pub-3940256099942544/6300978111
 |danger|プルリク時に警告|
 
 ## モジュール構成
+モジュールは`:app`, `:feature`, `:core`の３階層に分かれていて基本的には一方通行になるようにしています。
+```mermaid
+flowchart LR
+  classDef appModule fill:#AEFFDA,color:#000
+  classDef featureModule fill:#FFDAAE,color:#000
+  classDef coreModule fill:#DAAEFF,color:#000
+  A([:app]):::appModule --> B([:feature]):::featureModule
+  B --> C1([:core]):::coreModule
+```
+
+<details>
+<summary>詳細（モジュール全て）</summary>
+  
 #### ⚠️ :feature と :core 内の依存関係は省略しています
+  
 ```mermaid
 flowchart LR
 %%{init: {'flowchart' : {'curve' : 'cardinal'}}}%%
@@ -96,6 +110,7 @@ flowchart LR
   B6 --> C5
   B6 --> C6
 ```
+</details>
 
 ## スクリーンショット
 <details>
