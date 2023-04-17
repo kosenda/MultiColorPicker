@@ -15,7 +15,6 @@ URL: https://play.google.com/store/apps/details?id=kosenda.makecolor
 
 
 ## 今後特にしていきたいこと
-- マルチモジュール対応
 - テストの追加
 
 ## アプリを初めて起動するとき
