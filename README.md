@@ -5,7 +5,7 @@ URL: https://play.google.com/store/apps/details?id=kosenda.makecolor
 
 <a href='https://play.google.com/store/apps/details?id=kosenda.makecolor&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Google Play で手に入れよう' src='https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png' height="100"/></a>
 #### イメージ
-<img src="https://user-images.githubusercontent.com/60963155/227682827-025fdba3-6367-41a8-8086-5bb7e9adafed.png" height="450">  <img src="https://user-images.githubusercontent.com/60963155/227682819-d63d8e6c-9c65-4104-b04a-83a643cc7bd5.png" height="450">  <img src="https://user-images.githubusercontent.com/60963155/227682842-48b6323e-2f02-4318-8031-7ca1070d3b6c.png" height="450">
+<img src="https://user-images.githubusercontent.com/60963155/227682827-025fdba3-6367-41a8-8086-5bb7e9adafed.png" height="450">  <img src="https://user-images.githubusercontent.com/60963155/227682842-48b6323e-2f02-4318-8031-7ca1070d3b6c.png" height="450">
 
 
 ## アプリについての簡単な説明
