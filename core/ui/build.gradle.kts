@@ -1,6 +1,5 @@
 plugins {
     id("multicolorpicker.android.library")
-    id(libs.plugins.kotlin.kapt.get().pluginId)
     id(libs.plugins.kotlin.serialization.get().pluginId)
 }
 

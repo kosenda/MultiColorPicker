@@ -1,7 +1,6 @@
 plugins {
     id("multicolorpicker.android.library")
-    id(libs.plugins.hilt.get().pluginId)
-    id(libs.plugins.kotlin.kapt.get().pluginId)
+    id("multicolorpicker.android.hilt")
 }
 
 android {
@@ -28,7 +27,5 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling)
     implementation(libs.androidx.lifecycle.viewModelCompose)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.hilt.android)
     implementation(libs.kotlinx.serialization.json)
-    kapt(libs.hilt.compiler)
 }
