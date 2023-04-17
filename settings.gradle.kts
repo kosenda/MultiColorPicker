@@ -1,6 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         gradlePluginPortal()
         google()
@@ -34,4 +35,4 @@ include(":feature:info")
 include(":feature:makecolor")
 include(":feature:preview")
 include(":feature:settings")
-rootProject.name = "MultiColorPicker"
+rootProject.name = "multicolorpicker"
