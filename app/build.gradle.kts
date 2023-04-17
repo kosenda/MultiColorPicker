@@ -3,40 +3,21 @@
 val ktlint: Configuration by configurations.creating
 
 plugins {
-    alias(libs.plugins.android.application) apply true
+    id("multicolorpicker.android.application")
     alias(libs.plugins.firebase.crashlytics) apply true
     alias(libs.plugins.oss.licenses) apply true
     alias(libs.plugins.gms) apply true
     alias(libs.plugins.hilt) apply true
-    alias(libs.plugins.kotlin.android) apply true
     alias(libs.plugins.kotlin.kapt) apply true
     alias(libs.plugins.kotlin.serialization) apply true
     alias(libs.plugins.secrets) apply true
 }
 
 android {
-    compileSdk = 33
     namespace = "kosenda.makecolor.app"
-    bundle {
-        language {
-            enableSplit = false
-        }
-        storeArchive {
-            enable = false
-        }
-    }
 
     buildFeatures {
         buildConfig = true
-    }
-
-    defaultConfig {
-        applicationId = "kosenda.makecolor"
-        minSdk = 24
-        targetSdk = 33
-        versionCode = 35
-        versionName = "4.1"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -49,13 +30,6 @@ android {
                 "shrinker-rules.pro",
             )
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
     }
     buildFeatures {
         compose = true
