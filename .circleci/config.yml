@@ -24,13 +24,18 @@ jobs:
       - run:
           name: ktlint-check
           command: ./gradlew --continue ktlintCheck
-      - run:
-          name: run-danger-file
-          command: bundle exec danger --verbose
 
       - run:
           name: test
           command: ./gradlew testDebug --stacktrace
+
+      - run:
+          name: jacoco-report
+          command: ./gradlew jacocoTestReport
+
+      - run:
+          name: run-danger-file
+          command: bundle exec danger --verbose
 
 workflows:
   test:
