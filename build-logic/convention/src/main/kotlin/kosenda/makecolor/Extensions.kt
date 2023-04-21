@@ -1,7 +1,18 @@
 package kosenda.makecolor
 
 import com.android.build.api.dsl.CommonExtension
+import com.android.build.api.variant.AndroidComponentsExtension
+import org.gradle.api.Project
+import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.plugins.ExtensionAware
+import org.gradle.api.tasks.testing.Test
+import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.getByType
+import org.gradle.kotlin.dsl.register
+import org.gradle.kotlin.dsl.withType
+import org.gradle.testing.jacoco.plugins.JacocoPluginExtension
+import org.gradle.testing.jacoco.plugins.JacocoTaskExtension
+import org.gradle.testing.jacoco.tasks.JacocoReport
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
 /*
@@ -10,4 +21,51 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
  */
 fun CommonExtension<*, *, *, *>.kotlinOptions(block: KotlinJvmOptions.() -> Unit) {
     (this as ExtensionAware).extensions.configure("kotlinOptions", block)
+}
+
+/*
+ * @See GitHub-nowinandroid
+ * https://github.com/android/nowinandroid/blob/main/build-logic/convention/src/main/kotlin/com/google/samples/apps/nowinandroid/Jacoco.kt
+ */
+private val coverageExclusions = listOf(
+    "**/R.class",
+    "**/R\$*.class",
+    "**/BuildConfig.*",
+    "**/Manifest*.*"
+)
+
+/*
+ * @See GitHub-nowinandroid
+ * https://github.com/android/nowinandroid/blob/main/build-logic/convention/src/main/kotlin/com/google/samples/apps/nowinandroid/Jacoco.kt
+ */
+internal fun Project.configureJacoco() {
+    val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+    configure<JacocoPluginExtension> {
+        toolVersion = libs.findVersion("jacoco").get().toString()
+    }
+    val jacocoTestReport = tasks.create("jacocoTestReport")
+    val testTaskName = "testDebugUnitTest"
+    val reportTask = tasks.register(
+        name = "jacoco${testTaskName}Report",
+        type = JacocoReport::class
+    ) {
+        dependsOn(testTaskName)
+        reports {
+            xml.required.set(true)
+        }
+        classDirectories.setFrom(
+            fileTree("$buildDir/tmp/kotlin-classes/Build") {
+                exclude(coverageExclusions)
+            }
+        )
+        sourceDirectories.setFrom(files("$projectDir/src/main/java", "$projectDir/src/main/kotlin"))
+        executionData.setFrom(file("$buildDir/jacoco/$testTaskName.exec"))
+    }
+    jacocoTestReport.dependsOn(reportTask)
+    tasks.withType<Test>().configureEach {
+        configure<JacocoTaskExtension> {
+            isIncludeNoLocationClasses = true
+            excludes = listOf("jdk.internal.*")
+        }
+    }
 }
