@@ -55,7 +55,7 @@ internal fun Project.configureJacoco() {
             xml.required.set(true)
         }
         classDirectories.setFrom(
-            fileTree("$buildDir/tmp/kotlin-classes/Build") {
+            fileTree("$buildDir/tmp/kotlin-classes/debug") {
                 exclude(coverageExclusions)
             }
         )
