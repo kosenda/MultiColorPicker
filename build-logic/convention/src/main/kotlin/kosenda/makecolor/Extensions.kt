@@ -1,7 +1,6 @@
 package kosenda.makecolor
 
 import com.android.build.api.dsl.CommonExtension
-import com.android.build.api.variant.AndroidComponentsExtension
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.plugins.ExtensionAware

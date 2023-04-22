@@ -15,4 +15,4 @@ fail("fit left in tests") if `grep -r fit specs/ `.length > 1
 checkstyle_format.base_path = Dir.pwd
 checkstyle_format.report 'app/build/reports/ktlint/ktlint-result.xml'
 
-jacoco.report("build/reports/jacoco/jacocotestDebugUnitTestReport/jacocotestDebugUnitTestReport.xml")
+jacoco.report("app/build/reports/jacoco/jacocotestDebugUnitTestReport/jacocotestDebugUnitTestReport.xml")
