@@ -22,4 +22,8 @@ class RandomColorUtilityTest {
     fun randomColorData_output_isColorData() {
         assertThat(randomColorData()).isInstanceOf(ColorData::class.java)
     }
+    @Test
+    fun randomVividColorData_output_isColorData() {
+        assertThat(randomVividColorData()).isInstanceOf(ColorData::class.java)
+    }
 }
