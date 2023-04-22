@@ -1,6 +1,7 @@
 plugins {
     id("multicolorpicker.android.library")
     id("multicolorpicker.android.library.compose")
+    id("multicolorpicker.android.library.jacoco")
     id(libs.plugins.kotlin.serialization.get().pluginId)
 }
 

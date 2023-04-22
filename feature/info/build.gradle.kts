@@ -1,5 +1,6 @@
 plugins {
     id("multicolorpicker.android.library")
+    id("multicolorpicker.android.library.jacoco")
     id("multicolorpicker.android.hilt")
     id("multicolorpicker.android.library.compose")
 }
