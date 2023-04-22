@@ -45,6 +45,8 @@ adUnitId=ca-app-pub-3940256099942544/6300978111
 |ktlint|フォーマッター|
 |Circle Ci|CI/CD|
 |danger|プルリク時に警告|
+|jacoco|カバレッジ率計算|
+|danger-jacoco|プラグイン|
 
 ## モジュール構成
 モジュールは`:app`, `:feature`, `:core`の３階層に分かれていて基本的には一方通行になるようにしています。
