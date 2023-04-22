@@ -2,6 +2,7 @@ plugins {
     id("multicolorpicker.android.library")
     id("multicolorpicker.android.room")
     id("multicolorpicker.android.hilt")
+    id("multicolorpicker.android.library.jacoco")
 }
 
 android {

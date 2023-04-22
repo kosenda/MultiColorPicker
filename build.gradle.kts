@@ -6,6 +6,7 @@ buildscript {
 }
 
 plugins {
+    jacoco
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.firebase.crashlytics) apply false
@@ -20,4 +21,22 @@ plugins {
 
 tasks.create<Delete>("clean") {
     delete(rootProject.buildDir)
+}
+
+tasks.create<JacocoReport>("mergeJacoco") {
+    gradle.afterProject {
+        if (project.rootProject != project &&
+            (project.plugins.hasPlugin("multicolorpicker.android.application.jacoco") ||
+                    project.plugins.hasPlugin("multicolorpicker.android.library.jacoco")
+            )
+        ) {
+            executionData.from.add(fileTree("${project.buildDir}/jacoco"))
+            sourceDirectories.from.add(files("$projectDir/src/main/java", "$projectDir/src/main/kotlin"))
+            classDirectories.from.add(fileTree("${project.buildDir}/tmp/kotlin-classes/debug"))
+        }
+    }
+    reports {
+        html.required.set(true)
+        xml.required.set(true)
+    }
 }

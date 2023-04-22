@@ -4,6 +4,7 @@ val ktlint: Configuration by configurations.creating
 
 plugins {
     id("multicolorpicker.android.application")
+    id("multicolorpicker.android.application.jacoco")
     id("multicolorpicker.android.hilt")
     alias(libs.plugins.firebase.crashlytics) apply true
     alias(libs.plugins.oss.licenses) apply true
@@ -68,6 +69,7 @@ dependencies {
     implementation(libs.oss.licenses)
     implementation(libs.kotlinx.serialization.json)
     implementation(platform(libs.firebase.bom))
+    testImplementation(libs.androidx.coroutines.test)
     testImplementation(libs.junit)
     testImplementation(libs.truth)
     androidTestImplementation(libs.androidx.test)

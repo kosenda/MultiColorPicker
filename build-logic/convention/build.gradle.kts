@@ -17,9 +17,17 @@ dependencies {
 
 gradlePlugin {
     plugins {
+        register("androidApplicationJacoco") {
+            id = "multicolorpicker.android.application.jacoco"
+            implementationClass = "kosenda.makecolor.AndroidApplicationJacocoPlugin"
+        }
         register("androidApplication") {
             id = "multicolorpicker.android.application"
             implementationClass = "kosenda.makecolor.AndroidApplicationPlugin"
+        }
+        register("androidLibraryJacoco") {
+            id = "multicolorpicker.android.library.jacoco"
+            implementationClass = "kosenda.makecolor.AndroidLibraryJacocoPlugin"
         }
         register("androidLibraryCompose") {
             id = "multicolorpicker.android.library.compose"
