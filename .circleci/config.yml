@@ -44,7 +44,8 @@ jobs:
           name: run-danger-file
           command: bundle exec danger --verbose
 
-      - codecov/upload
+      - codecov/upload:
+          file: ./coverage/lcov.info
 
 workflows:
   test:
