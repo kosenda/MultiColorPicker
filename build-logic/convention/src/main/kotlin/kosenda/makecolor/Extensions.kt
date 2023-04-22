@@ -51,6 +51,7 @@ internal fun Project.configureJacoco() {
     ) {
         dependsOn(testTaskName)
         reports {
+            html.required.set(true)
             xml.required.set(true)
         }
         classDirectories.setFrom(
