@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  codecov: codecov/codecov@3.2.4
+
 jobs:
   build-and-test:
     docker:
@@ -40,6 +43,8 @@ jobs:
       - run:
           name: run-danger-file
           command: bundle exec danger --verbose
+
+      - codecov/upload
 
 workflows:
   test:
