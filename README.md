@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://https://github.com/kosenda/MultiColorPicker)
+[![codecov](https://codecov.io/gh/kosenda/MultiColorPicker/branch/feature/apply-codecov/graph/badge.svg?token=AVXFZ6B9B5)](https://codecov.io/gh/kosenda/MultiColorPicker)
 ## 概要
 Google Playで公開しているアプリ「マルチカラーピッカー」のソースになります。  
 URL: https://play.google.com/store/apps/details?id=kosenda.makecolor  
