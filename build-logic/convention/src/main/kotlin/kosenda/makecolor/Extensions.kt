@@ -37,7 +37,7 @@ private val coverageExclusions = listOf(
     "**/*Screen*.*",
     "**/*Content*.*",
     "**/*Dialog*.*",
-    "**/ui/feature/common/*",
+    "**/ui/feature/common/**",
 )
 
 /*
