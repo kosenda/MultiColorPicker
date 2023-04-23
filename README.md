@@ -62,7 +62,8 @@ flowchart LR
 <details>
 <summary>詳細（モジュール全て）</summary>
   
-#### ⚠️ :feature と :core 内の依存関係は省略しています
+#### ⚠️1 :feature と :core 内の依存関係は省略しています
+#### ⚠️2 :core:testing については以下には記載していません
   
 ```mermaid
 flowchart LR
