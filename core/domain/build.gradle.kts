@@ -19,4 +19,5 @@ dependencies {
     implementation(libs.androidx.palette)
     implementation(libs.compose.color.picker.android)
     implementation(libs.timber)
+    testImplementation(project(":core:testing"))
 }

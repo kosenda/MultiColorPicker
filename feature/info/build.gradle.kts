@@ -19,4 +19,5 @@ dependencies {
     implementation(libs.accompanist.systemuicontroller)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.oss.licenses)
+    testImplementation(project(":core:testing"))
 }
