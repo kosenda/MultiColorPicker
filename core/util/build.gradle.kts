@@ -14,4 +14,5 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.compose.color.picker)
     testImplementation(project(":core:testing"))
+    testImplementation(project(":core:util"))
 }
