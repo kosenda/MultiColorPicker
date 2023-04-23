@@ -13,7 +13,7 @@ import kosenda.makecolor.core.data.repository.ColorRepository
 import kosenda.makecolor.core.model.data.ColorItem
 import kosenda.makecolor.core.ui.data.ColorIndex
 import kosenda.makecolor.core.ui.state.SelectColorUiState
-import kosenda.makecolor.core.util.ui.IODispatcher
+import kosenda.makecolor.core.util.IODispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow

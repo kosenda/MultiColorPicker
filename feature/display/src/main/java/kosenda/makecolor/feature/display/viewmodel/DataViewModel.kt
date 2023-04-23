@@ -5,7 +5,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kosenda.makecolor.core.domain.FetchCategoriesUseCase
 import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.ui.state.DataUiState
-import kosenda.makecolor.core.util.ui.IODispatcher
+import kosenda.makecolor.core.util.IODispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
