@@ -19,5 +19,6 @@ dependencies {
     implementation(libs.accompanist.systemuicontroller)
     implementation(libs.androidx.lifecycle.viewModelCompose)
     implementation(libs.kotlinx.serialization.json)
+    testImplementation(project(":core:data"))
     testImplementation(project(":core:testing"))
 }

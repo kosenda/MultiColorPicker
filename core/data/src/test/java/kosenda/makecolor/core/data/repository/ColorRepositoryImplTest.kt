@@ -1,10 +1,8 @@
 package kosenda.makecolor.core.data.repository
 
 import android.content.Context
-import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import com.google.common.truth.Truth.assertThat
-import kosenda.makecolor.core.data.database.ColorDatabase
 import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.model.data.ColorItem
 import kosenda.makecolor.core.testing.MainDispatcherRule
@@ -12,8 +10,6 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
-import org.junit.rules.TestWatcher
-import org.junit.runner.Description
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
@@ -197,19 +193,5 @@ class ColorRepositoryImplTest {
             assertThat(colorRepositoryImpl.getSize(category = defaultCategory.name))
                 .isEqualTo(0)
         }
-    }
-}
-
-class RoomRule(private val context: Context) : TestWatcher() {
-    private lateinit var database: ColorDatabase
-    fun getInstance(): ColorDatabase {
-        database = Room
-            .databaseBuilder(context = context, ColorDatabase::class.java, "test")
-            .allowMainThreadQueries()
-            .build()
-        return database
-    }
-    override fun finished(description: Description) {
-        if (::database.isInitialized) database.close()
     }
 }
