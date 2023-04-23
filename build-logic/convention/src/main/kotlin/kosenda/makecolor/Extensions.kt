@@ -22,24 +22,6 @@ fun CommonExtension<*, *, *, *>.kotlinOptions(block: KotlinJvmOptions.() -> Unit
     (this as ExtensionAware).extensions.configure("kotlinOptions", block)
 }
 
-private val coverageExclusions = listOf(
-    "**/R.class",
-    "**/R\$*.class",
-    "**/*Fake*.*",
-    "**/*Preview*.*",
-    "**/BuildConfig.*",
-    "**/*Manifest*.*",
-    "**/*Test*.*",
-    "**/*Hilt*.*",
-    "**/*Factory*.*",
-    "**/*Module*.*",
-    "**/*Key*.*",
-    "**/*Screen*.*",
-    "**/*Content*.*",
-    "**/*Dialog*.*",
-    "**/ui/feature/common/**",
-)
-
 /*
  * @See GitHub-nowinandroid
  * https://github.com/android/nowinandroid/blob/main/build-logic/convention/src/main/kotlin/com/google/samples/apps/nowinandroid/Jacoco.kt
@@ -60,11 +42,7 @@ internal fun Project.configureJacoco() {
             html.required.set(true)
             xml.required.set(true)
         }
-        classDirectories.setFrom(
-            fileTree("$buildDir/tmp/kotlin-classes/debug") {
-                exclude(coverageExclusions)
-            }
-        )
+        classDirectories.setFrom(fileTree("$buildDir/tmp/kotlin-classes/debug"))
         sourceDirectories.setFrom(files("$projectDir/src/main/java", "$projectDir/src/main/kotlin"))
         executionData.setFrom(file("$buildDir/jacoco/$testTaskName.exec"))
     }
