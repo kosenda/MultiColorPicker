@@ -19,6 +19,18 @@ class RandomColorUtilityTest {
     }
 
     @Test
+    fun outputRandomRGBColors_pastel1_size1() {
+        assertThat(outputRandomRGBColors(randomType = RandomType.PASTEL, size = 1).size)
+            .isEqualTo(1)
+    }
+
+    @Test
+    fun outputRandomRGBColors_blackAndWhite1_size1() {
+        assertThat(outputRandomRGBColors(randomType = RandomType.BLACK_AND_WHITE, size = 1).size)
+            .isEqualTo(1)
+    }
+
+    @Test
     fun randomColorData_output_isColorData() {
         assertThat(randomColorData()).isInstanceOf(ColorData::class.java)
     }
