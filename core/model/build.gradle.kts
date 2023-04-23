@@ -13,4 +13,5 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling)
     implementation(libs.compose.color.picker.android)
     implementation(libs.kotlinx.serialization.json)
+    testImplementation(project(":core:testing"))
 }
