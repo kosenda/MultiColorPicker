@@ -21,7 +21,7 @@ import kosenda.makecolor.core.ui.state.MergeUiState
 import kosenda.makecolor.core.util.colorToRGB
 import kosenda.makecolor.core.util.convertDisplayStringListFromCategories
 import kosenda.makecolor.core.util.hexToColor
-import kosenda.makecolor.core.util.ui.IODispatcher
+import kosenda.makecolor.core.util.IODispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow

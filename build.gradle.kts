@@ -1,3 +1,5 @@
+import org.gradle.internal.impldep.org.junit.experimental.categories.Categories.CategoryFilter.exclude
+
 buildscript {
     repositories {
         google()
@@ -32,7 +34,11 @@ tasks.create<JacocoReport>("mergeJacoco") {
         ) {
             executionData.from.add(fileTree("${project.buildDir}/jacoco"))
             sourceDirectories.from.add(files("$projectDir/src/main/java", "$projectDir/src/main/kotlin"))
-            classDirectories.from.add(fileTree("${project.buildDir}/tmp/kotlin-classes/debug"))
+            classDirectories.from.add(
+                fileTree("${project.buildDir}/tmp/kotlin-classes/debug") {
+                    exclude(coverageExclusions)
+                },
+            )
         }
     }
     reports {
@@ -40,3 +46,23 @@ tasks.create<JacocoReport>("mergeJacoco") {
         xml.required.set(true)
     }
 }
+
+private val coverageExclusions = listOf(
+    "**/R.class",
+    "**/R\$*.class",
+    "**/*Fake*.*",
+    "**/*Preview*.*",
+    "**/BuildConfig.*",
+    "**/*Manifest*.*",
+    "**/*Test*.*",
+    "**/*Hilt*.*",
+    "**/*Factory*.*",
+    "**/*Module*.*",
+    "**/*Key*.*",
+    "**/*Screen*.*",
+    "**/*Content*.*",
+    "**/*Dialog*.*",
+    "**/*Drawer*.*",
+    "**/*GoogleAd*.*",
+    "**/ui/feature/common/**",
+)

@@ -15,4 +15,5 @@ dependencies {
     implementation(libs.androidx.dataStore.preferences)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.timber)
+    testImplementation(project(":core:testing"))
 }

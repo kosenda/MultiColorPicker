@@ -10,7 +10,7 @@ import kosenda.makecolor.core.data.repository.DataStoreRepository
 import kosenda.makecolor.core.model.data.FontType
 import kosenda.makecolor.core.model.data.Theme
 import kosenda.makecolor.core.ui.state.SettingUiState
-import kosenda.makecolor.core.util.ui.IODispatcher
+import kosenda.makecolor.core.util.IODispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow

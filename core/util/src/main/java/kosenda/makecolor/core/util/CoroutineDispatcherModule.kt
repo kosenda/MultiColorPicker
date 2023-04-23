@@ -1,4 +1,4 @@
-package kosenda.makecolor.core.util.ui
+package kosenda.makecolor.core.util
 
 import dagger.Module
 import dagger.Provides

@@ -69,10 +69,7 @@ dependencies {
     implementation(libs.oss.licenses)
     implementation(libs.kotlinx.serialization.json)
     implementation(platform(libs.firebase.bom))
-    testImplementation(libs.androidx.coroutines.test)
-    testImplementation(libs.junit)
-    testImplementation(libs.truth)
-    androidTestImplementation(libs.androidx.test)
+    testImplementation(project(":core:testing"))
 
     ktlint(libs.ktlint) {
         attributes {
