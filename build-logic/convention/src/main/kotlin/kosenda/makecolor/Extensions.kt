@@ -22,15 +22,18 @@ fun CommonExtension<*, *, *, *>.kotlinOptions(block: KotlinJvmOptions.() -> Unit
     (this as ExtensionAware).extensions.configure("kotlinOptions", block)
 }
 
-/*
- * @See GitHub-nowinandroid
- * https://github.com/android/nowinandroid/blob/main/build-logic/convention/src/main/kotlin/com/google/samples/apps/nowinandroid/Jacoco.kt
- */
 private val coverageExclusions = listOf(
     "**/R.class",
     "**/R\$*.class",
+    "**/*Fake*.*",
+    "**/*Preview*.*",
     "**/BuildConfig.*",
-    "**/Manifest*.*"
+    "**/*Manifest*.*",
+    "**/*Test*.*",
+    "**/*Hilt*.*",
+    "**/*Factory*.*",
+    "**/*Module*.*",
+    "**/*Key*.*",
 )
 
 /*
