@@ -29,24 +29,25 @@ adUnitId=ca-app-pub-3940256099942544/6300978111
 ## 使用している代表的なライブラリ  
 |名前|簡単な説明|
 |:--|:--|
-|Jetpack Compose|UIアプリ開発ツールキット|
-|Material3|デザイン|
-|kotlinx serialization|シリアライザー|
-|Preferences DataStore|永続化データ|
-|Room|データベース|
-|Truth|アサーション|
-|Hilt|依存性注入|
-|Timber|ログ出力|
 |compose-color-picker|カラーピッカー|
+|Circle Ci|CI/CD|
+|danger|プルリク時に警告|
+|danger-jacoco|jacocoプラグイン|
+|Hilt|依存性注入|
+|jacoco|カバレッジ率計算|
+|Jetpack Compose|UIアプリ開発ツールキット|
+|kotlinx serialization|シリアライザー|
+|ktlint|フォーマッター|
+|Preferences DataStore|永続化データ|
+|Material3|デザイン|
 |palette-ktx|パレットAPI|
 |play-services-ads|Google AdMob|
 |play-services-oss-licenses|ライセンス|
+|Robolectric|単体テストフレームワーク|
+|Room|データベース|
+|Truth|アサーション|
+|Timber|ログ出力|
 |ui-text-google-fonts|ダウンロード可能なフォント|
-|ktlint|フォーマッター|
-|Circle Ci|CI/CD|
-|danger|プルリク時に警告|
-|jacoco|カバレッジ率計算|
-|danger-jacoco|プラグイン|
 
 ## モジュール構成
 モジュールは`:app`, `:feature`, `:core`の３階層に分かれていて基本的には一方通行になるようにしています。
