@@ -16,15 +16,14 @@ import androidx.navigation.NamedNavArgument
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
-import androidx.navigation.NavType
-import androidx.navigation.navArgument
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import kosenda.makecolor.core.model.data.CategoryDetailParam
 import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.core.model.data.ColorItem
-import kosenda.makecolor.core.ui.data.ColorIndex
+import kosenda.makecolor.core.ui.data.NavKey
 import kosenda.makecolor.core.ui.data.SplitColorParam
+import kosenda.makecolor.core.ui.data.navArg
 import kosenda.makecolor.core.ui.feature.common.SelectColorParam
 import kosenda.makecolor.feature.display.screen.CategoryDetailScreen
 import kosenda.makecolor.feature.display.screen.ColorDetailScreen
@@ -274,8 +273,8 @@ fun Navigation(
             )
         }
         fadeComposable(
-            route = "${NavigationItems.Register.route}/{colorData}",
-            arguments = listOf(navArgument("colorData") { NavType.StringType }),
+            route = "%s/{%s}".format(NavigationItems.Register.route, NavKey.COLOR_DATA.key),
+            arguments = listOf(navArg(NavKey.COLOR_DATA)),
         ) {
             RegisterScreen(
                 viewModel = hiltViewModel(),
@@ -283,10 +282,10 @@ fun Navigation(
             )
         }
         fadeComposable(
-            route = "${NavigationItems.FullColor.route}/{colorData}",
-            arguments = listOf(navArgument("colorData") { NavType.StringType }),
+            route = "%s/{%s}".format(NavigationItems.FullColor.route, NavKey.COLOR_DATA.key),
+            arguments = listOf(navArg(NavKey.COLOR_DATA)),
         ) {
-            it.arguments?.getString("colorData")?.let { colorDataStr ->
+            it.arguments?.getString(NavKey.COLOR_DATA.key)?.let { colorDataStr ->
                 FullColorScreen(
                     colorData = Json.decodeFromString(colorDataStr),
                     onClick = ::onBackScreen,
@@ -296,14 +295,14 @@ fun Navigation(
         fadeComposable(
             route = "%s/{%s}/{%s}/{%s}".format(
                 NavigationItems.SelectColor.route,
-                "category",
-                "index",
-                "needBack",
+                NavKey.CATEGORY.key,
+                NavKey.INDEX.key,
+                NavKey.NEED_BACK.key,
             ),
             arguments = listOf(
-                navArgument("category") { NavType.StringType },
-                navArgument("index") { defaultValue = ColorIndex.FIRST.num },
-                navArgument("needBack") { defaultValue = true },
+                navArg(NavKey.CATEGORY),
+                navArg(NavKey.INDEX),
+                navArg(NavKey.NEED_BACK),
             ),
         ) {
             SelectColorScreen(
@@ -315,10 +314,14 @@ fun Navigation(
             )
         }
         fadeComposable(
-            route = "${NavigationItems.ColorDetail.route}/{colorItem}/{categoryName}",
+            route = "%s/{%s}/{%s}".format(
+                NavigationItems.ColorDetail.route,
+                NavKey.COLOR_ITEM.key,
+                NavKey.CATEGORY_NAME.key,
+            ),
             arguments = listOf(
-                navArgument("colorItem") { NavType.StringType },
-                navArgument("categoryName") { NavType.StringType },
+                navArg(navKey = NavKey.COLOR_ITEM),
+                navArg(navKey = NavKey.CATEGORY_NAME),
             ),
         ) {
             ColorDetailScreen(
@@ -328,12 +331,13 @@ fun Navigation(
             )
         }
         fadeComposable(
-            route = "${NavigationItems.SplitColor.route}/{splitColorParam}",
-            arguments = listOf(
-                navArgument("splitColorParam") { NavType.StringType },
+            route = "%s/{%s}".format(
+                NavigationItems.SplitColor.route,
+                NavKey.SPLIT_COLOR_PARAM.key,
             ),
+            arguments = listOf(navArg(NavKey.SPLIT_COLOR_PARAM)),
         ) {
-            it.arguments?.getString("splitColorParam")?.let { param ->
+            it.arguments?.getString(NavKey.SPLIT_COLOR_PARAM.key)?.let { param ->
                 SplitColorScreen(
                     splitColorParam = Json.decodeFromString(param),
                     onBackScreen = ::onBackScreen,
@@ -341,23 +345,25 @@ fun Navigation(
             }
         }
         fadeComposable(
-            route = "${NavigationItems.GradationColor.route}/{hex1}/{hex2}",
-            arguments = listOf(
-                navArgument("hex1") { NavType.StringType },
-                navArgument("hex2") { NavType.StringType },
+            route = "%s/{%s}/{%s}".format(
+                NavigationItems.GradationColor.route,
+                NavKey.HEX1.key,
+                NavKey.HEX2.key,
             ),
+            arguments = listOf(navArg(NavKey.HEX1), navArg(NavKey.HEX2)),
         ) {
             GradationColorScreen(
-                hex1 = it.arguments?.getString("hex1") ?: "FFFFFF",
-                hex2 = it.arguments?.getString("hex2") ?: "FFFFFF",
+                hex1 = it.arguments?.getString(NavKey.HEX1.key) ?: "FFFFFF",
+                hex2 = it.arguments?.getString(NavKey.HEX2.key) ?: "FFFFFF",
                 onClick = ::onBackScreen,
             )
         }
         fadeComposable(
-            route = "${NavigationItems.CategoryDetail.route}/{categoryDetail}",
-            arguments = listOf(
-                navArgument("categoryDetail") { NavType.StringType },
+            route = "%s/{%s}".format(
+                NavigationItems.CategoryDetail.route,
+                NavKey.CATEGORY_DETAIL.key,
             ),
+            arguments = listOf(navArg(NavKey.CATEGORY_DETAIL)),
         ) {
             CategoryDetailScreen(
                 viewModel = hiltViewModel(),

@@ -6,6 +6,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kosenda.makecolor.core.data.repository.ColorRepository
 import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.model.data.CategoryDetailParam
+import kosenda.makecolor.core.ui.data.NavKey
 import kosenda.makecolor.core.ui.state.CategoryDetailUiState
 import kosenda.makecolor.core.util.IODispatcher
 import kotlinx.coroutines.CoroutineDispatcher
@@ -38,7 +39,7 @@ class CategoryDetailViewModelImpl @Inject constructor(
 
     init {
         val categoryDetailParam = Json.decodeFromString<CategoryDetailParam>(
-            string = savedStateHandle.get<String>("categoryDetail")!!,
+            string = savedStateHandle.get<String>(NavKey.CATEGORY_DETAIL.key)!!,
         )
         _uiState.update {
             it.copy(

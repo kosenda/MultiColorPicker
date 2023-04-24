@@ -6,6 +6,7 @@ import kosenda.makecolor.core.data.repository.ColorRepository
 import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.model.data.ColorItem
 import kosenda.makecolor.core.testing.MainDispatcherRule
+import kosenda.makecolor.core.ui.data.NavKey
 import kosenda.makecolor.core.util.convertDisplayStringListFromCategories
 import kosenda.makecolor.core.util.randomColorData
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -27,7 +28,7 @@ class RegisterViewModelImplTest {
         ioDispatcher = mainDispatcherRule.testDispatcher,
         mainDispatcher = mainDispatcherRule.testDispatcher,
         colorRepository = FakeColorRepository(),
-        savedStateHandle = SavedStateHandle(mapOf("colorData" to initialColorDataJson)),
+        savedStateHandle = SavedStateHandle(mapOf(NavKey.COLOR_DATA.key to initialColorDataJson)),
     )
 
     @Test

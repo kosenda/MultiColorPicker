@@ -12,6 +12,7 @@ import kosenda.makecolor.core.data.default.x11Color
 import kosenda.makecolor.core.data.repository.ColorRepository
 import kosenda.makecolor.core.model.data.ColorItem
 import kosenda.makecolor.core.ui.data.ColorIndex
+import kosenda.makecolor.core.ui.data.NavKey
 import kosenda.makecolor.core.ui.state.SelectColorUiState
 import kosenda.makecolor.core.util.IODispatcher
 import kotlinx.coroutines.CoroutineDispatcher
@@ -43,9 +44,10 @@ class SelectColorViewModelImpl @Inject constructor(
     init {
         _uiState.update {
             it.copy(
-                category = Json.decodeFromString(savedStateHandle.get<String>("category")!!),
-                index = savedStateHandle.get<Int>("index") ?: ColorIndex.FIRST.num,
-                needBack = savedStateHandle.get<Boolean>("needBack") ?: true,
+                category = Json.decodeFromString(
+                    savedStateHandle.get<String>(NavKey.CATEGORY.key)!!),
+                index = savedStateHandle.get<Int>(NavKey.INDEX.key) ?: ColorIndex.FIRST.num,
+                needBack = savedStateHandle.get<Boolean>(NavKey.NEED_BACK.key) ?: true,
             )
         }
     }
