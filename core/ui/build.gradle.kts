@@ -14,6 +14,7 @@ dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:resource"))
     implementation(project(":core:util"))
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.ui.google.fonts)
     implementation(libs.compose.color.picker)
     implementation(libs.kotlinx.serialization.json)

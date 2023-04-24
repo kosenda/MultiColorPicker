@@ -12,6 +12,7 @@ import kosenda.makecolor.core.ui.state.RegisterUiState
 import kosenda.makecolor.core.util.IODispatcher
 import kosenda.makecolor.core.util.MainDispatcher
 import kosenda.makecolor.core.resource.R
+import kosenda.makecolor.core.ui.data.NavKey
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -48,7 +49,8 @@ class RegisterViewModelImpl @Inject constructor(
     init {
         _uiState.update {
             it.copy(
-                colorData = Json.decodeFromString(savedStateHandle.get<String>("colorData")!!),
+                colorData = Json.decodeFromString(
+                    savedStateHandle.get<String>(NavKey.COLOR_DATA.key)!!),
             )
         }
     }

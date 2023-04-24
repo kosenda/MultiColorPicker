@@ -4,6 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kosenda.makecolor.core.model.data.ColorItem
+import kosenda.makecolor.core.ui.data.NavKey
 import kosenda.makecolor.core.ui.state.ColorDetailUiState
 import kosenda.makecolor.core.util.hexToRGB
 import kosenda.makecolor.core.util.rgbToColorData
@@ -30,12 +31,12 @@ class ColorDetailViewModelImpl @Inject constructor(
 
     init {
         val colorItem = Json.decodeFromString<ColorItem>(
-            string = savedStateHandle.get<String>("colorItem")!!,
+            string = savedStateHandle.get<String>(NavKey.COLOR_ITEM.key)!!,
         )
         _uiState.update {
             it.copy(
                 memo = colorItem.memo,
-                categoryName = savedStateHandle.get<String>("categoryName") ?: "",
+                categoryName = savedStateHandle.get<String>(NavKey.CATEGORY_NAME.key) ?: "",
                 complementaryColorData = rgbToColorData(
                     rgb = rgbToComplementaryRgb(rgb = hexToRGB(colorItem.hex)),
                 ),
