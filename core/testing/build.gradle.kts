@@ -11,6 +11,7 @@ dependencies {
     api(libs.androidx.test.core)
     api(libs.androidx.coroutines.test)
     api(libs.junit)
+    api(libs.mockk)
     api(libs.robolectric)
     api(libs.truth)
 }

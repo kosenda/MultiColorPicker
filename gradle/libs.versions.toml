@@ -37,6 +37,7 @@ room = "2.5.1"
 secrets = "2.0.1"
 timber = "5.0.1"
 truth = "1.1.3"
+mockk = "1.13.5"
 
 [libraries]
 accompanist-systemuicontroller = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanist" }
@@ -72,6 +73,7 @@ hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", v
 hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHilt" }
 junit = { group = "junit", name = "junit", version.ref = "junit4" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 oss-licenses = { group = "com.google.android.gms", name = "play-services-oss-licenses", version.ref = "ossLicenses" }
 play-services-ads = { group = "com.google.android.gms", name = "play-services-ads", version.ref = "playServicesAds" }
 robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }
