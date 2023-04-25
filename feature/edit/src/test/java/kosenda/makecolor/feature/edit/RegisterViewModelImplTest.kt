@@ -49,6 +49,17 @@ class RegisterViewModelImplTest {
             .isEqualTo(Category("test1", 0))
         assertThat(registerViewModel.uiState.value.displayCategories.size).isEqualTo(2)
     }
+
+    @Test
+    fun changeSelectCategory_add_isChangeable() {
+        // 選択されているカテゴリーが変更されることを確認
+        assertThat(registerViewModel.uiState.value.selectCategory)
+            .isEqualTo(Category("Category1", 0))
+        registerViewModel.addCategory(newCategory = Category(name = "test", size = 0))
+        registerViewModel.changeSelectCategory(index = 1)
+        assertThat(registerViewModel.uiState.value.selectCategory)
+            .isNotEqualTo(Category("Category1", 0))
+    }
 }
 
 class FakeColorRepository : ColorRepository {
