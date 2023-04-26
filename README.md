@@ -40,6 +40,7 @@ adUnitId=ca-app-pub-3940256099942544/6300978111
 |ktlint|フォーマッター|
 |Preferences DataStore|永続化データ|
 |Material3|デザイン|
+|Mockk|モック|
 |palette-ktx|パレットAPI|
 |play-services-ads|Google AdMob|
 |play-services-oss-licenses|ライセンス|
