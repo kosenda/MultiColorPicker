@@ -21,4 +21,5 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     testImplementation(project(":core:data"))
     testImplementation(project(":core:testing"))
+    testImplementation(project(":core:mock"))
 }

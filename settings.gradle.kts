@@ -25,6 +25,7 @@ dependencyResolutionManagement {
 include(":app")
 include(":core:data")
 include(":core:domain")
+include(":core:mock")
 include(":core:model")
 include(":core:resource")
 include(":core:testing")
