@@ -1,4 +1,5 @@
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://https://github.com/kosenda/MultiColorPicker)
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://https://github.com/kosenda/MultiColorPicker)　[![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com)
+
 ## 概要
 Google Playで公開しているアプリ「マルチカラーピッカー」のソースになります。  
 URL: https://play.google.com/store/apps/details?id=kosenda.makecolor  
