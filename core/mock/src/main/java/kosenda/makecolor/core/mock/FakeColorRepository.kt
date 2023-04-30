@@ -8,10 +8,7 @@ import kosenda.makecolor.core.util.convertDisplayStringListFromCategories
 class FakeColorRepository : ColorRepository {
 
     private val colors = mutableListOf<ColorItem>()
-    private val categories = mutableListOf(
-        Category("test1", 0),
-        Category("test2", 0),
-    )
+    private val categories = MockCategory().list.toMutableList()
 
     override suspend fun getColors(category: String): List<ColorItem> {
         return colors.filter { it.category == category }
@@ -25,11 +22,19 @@ class FakeColorRepository : ColorRepository {
         return false
     }
     override suspend fun updateSize(size: Int, name: String) {}
-    override suspend fun updateCategory(oldName: String, newName: String) {}
+    override suspend fun updateCategory(oldName: String, newName: String) {
+        categories.forEach {
+            if (it.name == oldName) it.name = newName
+        }
+    }
     override suspend fun colorChangeCategory(category: String, newCategory: String) {}
-    override suspend fun deleteColor(colorItem: ColorItem) {}
+    override suspend fun deleteColor(colorItem: ColorItem) {
+        colors.remove(colorItem)
+    }
     override suspend fun decreaseSize(name: String) {}
-    override suspend fun deleteCategory(name: String) {}
+    override suspend fun deleteCategory(name: String) {
+        categories.removeIf { it.name == name }
+    }
     override suspend fun deleteColors(category: String) {}
     override suspend fun deleteAllCategories() {}
     override suspend fun deleteAllColors() {}
