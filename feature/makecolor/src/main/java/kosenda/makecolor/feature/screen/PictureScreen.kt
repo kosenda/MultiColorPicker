@@ -1,4 +1,4 @@
-package kosenda.makecolor.feature.makecolor.screen
+package kosenda.makecolor.feature.screen
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -36,9 +36,9 @@ import kosenda.makecolor.core.ui.feature.common.card.SelectImageCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.resource.R
-import kosenda.makecolor.feature.makecolor.viewmodel.PictureViewModel
-import kosenda.makecolor.feature.makecolor.viewmodel.PictureViewModelImpl
-import kosenda.makecolor.feature.makecolor.viewmodel.PreviewPictureViewModel
+import kosenda.makecolor.feature.viewmodel.PictureViewModel
+import kosenda.makecolor.feature.viewmodel.PictureViewModelImpl
+import kosenda.makecolor.feature.viewmodel.PreviewPictureViewModel
 import kosenda.makecolor.feature.preview.PreviewSurface
 
 @Composable

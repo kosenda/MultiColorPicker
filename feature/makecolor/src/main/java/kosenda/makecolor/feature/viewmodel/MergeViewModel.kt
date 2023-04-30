@@ -1,4 +1,4 @@
-package kosenda.makecolor.feature.makecolor.viewmodel
+package kosenda.makecolor.feature.viewmodel
 
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush

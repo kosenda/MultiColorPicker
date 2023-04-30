@@ -1,4 +1,4 @@
-package kosenda.makecolor.feature.makecolor.viewmodel
+package kosenda.makecolor.feature.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.godaddy.android.colorpicker.HsvColor

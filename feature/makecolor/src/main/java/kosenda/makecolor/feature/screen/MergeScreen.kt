@@ -1,4 +1,4 @@
-package kosenda.makecolor.feature.makecolor.screen
+package kosenda.makecolor.feature.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -41,9 +41,9 @@ import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.util.getNameIfNoAlias
 import kosenda.makecolor.core.resource.R
-import kosenda.makecolor.feature.makecolor.viewmodel.MergeViewModel
-import kosenda.makecolor.feature.makecolor.viewmodel.MergeViewModelImpl
-import kosenda.makecolor.feature.makecolor.viewmodel.PreviewMergeViewModel
+import kosenda.makecolor.feature.viewmodel.MergeViewModel
+import kosenda.makecolor.feature.viewmodel.MergeViewModelImpl
+import kosenda.makecolor.feature.viewmodel.PreviewMergeViewModel
 import kosenda.makecolor.feature.preview.PreviewSurface
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

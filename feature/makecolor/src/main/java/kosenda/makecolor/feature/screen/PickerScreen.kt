@@ -1,4 +1,4 @@
-package kosenda.makecolor.feature.makecolor.screen
+package kosenda.makecolor.feature.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -35,9 +35,9 @@ import kosenda.makecolor.core.ui.feature.common.card.HarmonyColorPickerCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
-import kosenda.makecolor.feature.makecolor.viewmodel.PickerViewModel
-import kosenda.makecolor.feature.makecolor.viewmodel.PickerViewModelImpl
-import kosenda.makecolor.feature.makecolor.viewmodel.PreviewPickerViewModel
+import kosenda.makecolor.feature.viewmodel.PickerViewModel
+import kosenda.makecolor.feature.viewmodel.PickerViewModelImpl
+import kosenda.makecolor.feature.viewmodel.PreviewPickerViewModel
 import kosenda.makecolor.feature.preview.PreviewSurface
 
 @Composable
