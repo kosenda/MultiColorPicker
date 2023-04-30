@@ -11,4 +11,5 @@ data class RegisterUiState(
     val selectCategory: Category = Category("Category1", 0),
     val displayCategories: List<String> = emptyList(),
     val isShowNewCategoryDialog: Boolean = false,
+    val showToast: Boolean = false,
 )

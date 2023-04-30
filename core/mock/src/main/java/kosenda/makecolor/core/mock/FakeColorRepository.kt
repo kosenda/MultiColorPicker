@@ -21,7 +21,11 @@ class FakeColorRepository : ColorRepository {
         }
         return false
     }
-    override suspend fun updateSize(size: Int, name: String) {}
+    override suspend fun updateSize(size: Int, name: String) {
+        categories.forEach {
+            if (it.name == name) it.size = size
+        }
+    }
     override suspend fun updateCategory(oldName: String, newName: String) {
         categories.forEach {
             if (it.name == oldName) it.name = newName

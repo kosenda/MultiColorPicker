@@ -1,8 +1,6 @@
 package kosenda.makecolor.feature.edit
 
-import android.content.Context
 import androidx.lifecycle.SavedStateHandle
-import androidx.test.core.app.ApplicationProvider
 import com.google.common.truth.Truth.assertThat
 import io.mockk.spyk
 import io.mockk.verify
@@ -16,24 +14,18 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.robolectric.RobolectricTestRunner
 
-@OptIn(ExperimentalCoroutinesApi::class)
-@RunWith(RobolectricTestRunner::class)
+@ExperimentalCoroutinesApi
 class RegisterViewModelImplTest {
 
     @get: Rule
     val mainDispatcherRule = MainDispatcherRule()
-    private val context = ApplicationProvider.getApplicationContext<Context>()
 
     private val registerViewModel = spyk(
         RegisterViewModelImpl(
             ioDispatcher = mainDispatcherRule.testDispatcher,
-            mainDispatcher = mainDispatcherRule.testDispatcher,
             colorRepository = FakeColorRepository(),
             savedStateHandle = SavedStateHandle(
                 mapOf(NavKey.COLOR_DATA.key to Json.encodeToString(randomColorData())),
@@ -107,17 +99,26 @@ class RegisterViewModelImplTest {
         assertThat(registerViewModel.uiState.value.isShowNewCategoryDialog).isTrue()
     }
 
-    @Ignore("TODO: Toastを表示するのにContextを使用しているため今後削除する。")
     @Test
     fun registerColor_add1_isRegistered() = runTest {
         // カラーが登録されてサイズが更新されていることを確認
         registerViewModel.fetchCategories()
         assertThat(registerViewModel.uiState.value.selectCategory.size).isEqualTo(0)
         assertThat(registerViewModel.uiState.value.categories.first().size).isEqualTo(0)
-        registerViewModel.registerColor(hex = "FFFFFF", context = context)
+        registerViewModel.registerColor(hex = "FFFFFF")
         registerViewModel.fetchCategories()
         assertThat(registerViewModel.uiState.value.selectCategory.size).isEqualTo(1)
         assertThat(registerViewModel.uiState.value.categories.first().size).isEqualTo(1)
+        assertThat(registerViewModel.uiState.value.showToast).isTrue()
+    }
+
+    @Test
+    fun clearShowToast_once_isFalse() {
+        // isShowToastがfalseになることを確認
+        registerViewModel.registerColor(hex = "FFFFFF")
+        assertThat(registerViewModel.uiState.value.showToast).isTrue()
+        registerViewModel.clearShowToast()
+        assertThat(registerViewModel.uiState.value.showToast).isFalse()
     }
 }
 
