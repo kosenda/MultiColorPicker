@@ -20,17 +20,19 @@ class UpdateOtherColorUseCase @Inject constructor() {
                 )
             }
             ColorType.CMYK -> {
+                val rgb = cmykToRgb(colorData.cmyk)
                 colorData.copy(
-                    rgb = cmykToRgb(colorData.cmyk),
-                    hsv = rgbToHsv(colorData.rgb),
-                    hex = rgbToHex(colorData.rgb),
+                    rgb = rgb,
+                    hsv = rgbToHsv(rgb),
+                    hex = rgbToHex(rgb),
                 )
             }
             ColorType.HSV -> {
+                val rgb = hsvToRGB(colorData.hsv)
                 colorData.copy(
-                    rgb = hsvToRGB(colorData.hsv),
-                    cmyk = rgbToCmyk(colorData.rgb),
-                    hex = rgbToHex(colorData.rgb),
+                    rgb = rgb,
+                    cmyk = rgbToCmyk(rgb),
+                    hex = rgbToHex(rgb),
                 )
             }
         }

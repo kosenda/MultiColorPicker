@@ -35,7 +35,7 @@ fun rgbToCmyk(rgb: RGB): CMYK {
     val blue: Float = (rgb.blue / 255f).coerceAtMost(1f)
     val black: Float = when {
         red == 1f || green == 1f || blue == 1f -> 0f
-        else -> ((1f - (max(red, max(green, blue)))) * 100f).coerceAtMost(100f)
+        else -> (1f - (max(red, max(green, blue)))).coerceAtMost(1f)
     }
     val cyan: Float = when {
         black != 1f -> ((1f - red - black) / (1f - black) * 100f).coerceAtMost(100f)
