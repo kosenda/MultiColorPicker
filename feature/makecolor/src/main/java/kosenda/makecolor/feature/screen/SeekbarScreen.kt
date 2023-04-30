@@ -1,4 +1,4 @@
-package kosenda.makecolor.feature.makecolor.screen
+package kosenda.makecolor.feature.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -31,9 +31,9 @@ import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.resource.R
-import kosenda.makecolor.feature.makecolor.viewmodel.PreviewSeekbarViewModel
-import kosenda.makecolor.feature.makecolor.viewmodel.SeekbarViewModel
-import kosenda.makecolor.feature.makecolor.viewmodel.SeekbarViewModelImpl
+import kosenda.makecolor.feature.viewmodel.PreviewSeekbarViewModel
+import kosenda.makecolor.feature.viewmodel.SeekbarViewModel
+import kosenda.makecolor.feature.viewmodel.SeekbarViewModelImpl
 import kosenda.makecolor.feature.preview.PreviewSurface
 
 @Composable
