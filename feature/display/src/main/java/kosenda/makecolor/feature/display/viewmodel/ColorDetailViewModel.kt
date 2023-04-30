@@ -37,6 +37,7 @@ class ColorDetailViewModelImpl @Inject constructor(
             it.copy(
                 memo = colorItem.memo,
                 categoryName = savedStateHandle.get<String>(NavKey.CATEGORY_NAME.key) ?: "",
+                colorData = rgbToColorData(rgb = hexToRGB(colorItem.hex)),
                 complementaryColorData = rgbToColorData(
                     rgb = rgbToComplementaryRgb(rgb = hexToRGB(colorItem.hex)),
                 ),
