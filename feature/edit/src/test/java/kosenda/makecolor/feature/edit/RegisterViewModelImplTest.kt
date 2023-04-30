@@ -7,6 +7,7 @@ import com.google.common.truth.Truth.assertThat
 import io.mockk.spyk
 import io.mockk.verify
 import kosenda.makecolor.core.mock.FakeColorRepository
+import kosenda.makecolor.core.mock.MockCategory
 import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.testing.MainDispatcherRule
 import kosenda.makecolor.core.ui.data.NavKey
@@ -56,10 +57,12 @@ class RegisterViewModelImplTest {
             .isEqualTo(Category("Category1", 0))
         assertThat(registerViewModel.uiState.value.displayCategories).isEmpty()
         registerViewModel.fetchCategories()
-        assertThat(registerViewModel.uiState.value.categories.size).isEqualTo(2)
+        assertThat(registerViewModel.uiState.value.categories.size)
+            .isEqualTo(MockCategory().list.size)
         assertThat(registerViewModel.uiState.value.selectCategory)
-            .isEqualTo(Category("test1", 0))
-        assertThat(registerViewModel.uiState.value.displayCategories.size).isEqualTo(2)
+            .isEqualTo(MockCategory().list.first())
+        assertThat(registerViewModel.uiState.value.displayCategories.size)
+            .isEqualTo(MockCategory().list.size)
     }
 
     @Test
@@ -77,9 +80,11 @@ class RegisterViewModelImplTest {
     fun addCategory_add_isChangeable() = runTest {
         // カテゴリーが追加されること、closeAddCategoryDialogが呼ばれることを確認
         registerViewModel.fetchCategories()
-        assertThat(registerViewModel.uiState.value.categories.size).isEqualTo(2)
-        registerViewModel.addCategory(newCategory = Category(name = "test", size = 0))
-        assertThat(registerViewModel.uiState.value.categories.size).isEqualTo(3)
+        assertThat(registerViewModel.uiState.value.categories.size)
+            .isEqualTo(MockCategory().list.size)
+        registerViewModel.addCategory(newCategory = Category(name = "add", size = 0))
+        assertThat(registerViewModel.uiState.value.categories.size)
+            .isEqualTo(MockCategory().list.size + 1)
         verify { registerViewModel.closeAddCategoryDialog() }
     }
 
