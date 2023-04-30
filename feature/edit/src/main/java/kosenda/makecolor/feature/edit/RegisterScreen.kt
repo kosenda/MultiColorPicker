@@ -1,5 +1,6 @@
 package kosenda.makecolor.feature.edit
 
+import android.widget.Toast
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -77,6 +78,13 @@ fun RegisterScreenContent(
             onClickNew = viewModel::addCategory,
             onClose = viewModel::closeAddCategoryDialog,
         )
+    }
+
+    LaunchedEffect(uiState.showToast) {
+        if (uiState.showToast) {
+            Toast.makeText(context, R.string.registrated, Toast.LENGTH_SHORT).show()
+            viewModel.clearShowToast()
+        }
     }
 
     Scaffold(
@@ -166,10 +174,7 @@ fun RegisterScreenContent(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                     height = 60.dp,
                     onClick = {
-                        viewModel.registerColor(
-                            hex = uiState.colorData.hex.toString(),
-                            context = context,
-                        )
+                        viewModel.registerColor(hex = uiState.colorData.hex.toString())
                         onBackScreen()
                     },
                 )

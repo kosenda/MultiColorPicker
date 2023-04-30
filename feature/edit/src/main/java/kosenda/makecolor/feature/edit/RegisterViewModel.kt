@@ -1,18 +1,14 @@
 package kosenda.makecolor.feature.edit
 
-import android.content.Context
-import android.widget.Toast
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kosenda.makecolor.core.data.repository.ColorRepository
 import kosenda.makecolor.core.model.data.Category
 import kosenda.makecolor.core.model.data.ColorItem
+import kosenda.makecolor.core.ui.data.NavKey
 import kosenda.makecolor.core.ui.state.RegisterUiState
 import kosenda.makecolor.core.util.IODispatcher
-import kosenda.makecolor.core.util.MainDispatcher
-import kosenda.makecolor.core.resource.R
-import kosenda.makecolor.core.ui.data.NavKey
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,7 +16,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import javax.inject.Inject
@@ -33,13 +28,13 @@ abstract class RegisterViewModel : ViewModel() {
     abstract fun addCategory(newCategory: Category)
     abstract fun closeAddCategoryDialog()
     abstract fun openAddCategoryDialog()
-    abstract fun registerColor(hex: String, context: Context)
+    abstract fun registerColor(hex: String)
+    abstract fun clearShowToast()
 }
 
 @HiltViewModel
 class RegisterViewModelImpl @Inject constructor(
     @IODispatcher private val ioDispatcher: CoroutineDispatcher,
-    @MainDispatcher private val mainDispatcher: CoroutineDispatcher,
     private val colorRepository: ColorRepository,
     savedStateHandle: SavedStateHandle,
 ) : RegisterViewModel() {
@@ -93,7 +88,7 @@ class RegisterViewModelImpl @Inject constructor(
         _uiState.update { it.copy(isShowNewCategoryDialog = true) }
     }
 
-    override fun registerColor(hex: String, context: Context) {
+    override fun registerColor(hex: String) {
         CoroutineScope(ioDispatcher).launch {
             val colorItem = ColorItem(
                 hex = hex,
@@ -104,14 +99,12 @@ class RegisterViewModelImpl @Inject constructor(
             uiState.value.selectCategory.name.let {
                 colorRepository.updateSize(colorRepository.getSize(it), it)
             }
-            withContext(mainDispatcher) {
-                Toast.makeText(
-                    context,
-                    R.string.registrated,
-                    Toast.LENGTH_SHORT,
-                ).show()
-            }
+            _uiState.update { it.copy(showToast = true) }
         }
+    }
+
+    override fun clearShowToast() {
+        _uiState.update { it.copy(showToast = false) }
     }
 }
 
@@ -123,5 +116,6 @@ class PreviewRegisterViewModel : RegisterViewModel() {
     override fun addCategory(newCategory: Category) {}
     override fun closeAddCategoryDialog() {}
     override fun openAddCategoryDialog() {}
-    override fun registerColor(hex: String, context: Context) {}
+    override fun registerColor(hex: String) {}
+    override fun clearShowToast() {}
 }
