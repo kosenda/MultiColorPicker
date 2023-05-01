@@ -1,7 +1,6 @@
 package kosenda.makecolor.feature.viewmodel
 
 import android.content.ContentResolver
-import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.ImageDecoder
 import android.net.Uri
@@ -15,8 +14,8 @@ import kosenda.makecolor.core.domain.UpdateOtherColorUseCase
 import kosenda.makecolor.core.domain.UpdatePaletteColorsUseCase
 import kosenda.makecolor.core.model.data.ColorType
 import kosenda.makecolor.core.ui.state.PictureUiState
-import kosenda.makecolor.core.util.colorToRGB
 import kosenda.makecolor.core.util.IODispatcher
+import kosenda.makecolor.core.util.colorToRGB
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
