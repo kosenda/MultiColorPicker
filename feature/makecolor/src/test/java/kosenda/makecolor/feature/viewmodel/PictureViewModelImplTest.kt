@@ -20,7 +20,7 @@ import org.robolectric.RobolectricTestRunner
 
 @ExperimentalCoroutinesApi
 @RunWith(RobolectricTestRunner::class)
-class PickerViewModelImplTest {
+class PictureViewModelImplTest {
 
     @get: Rule
     val mainDispatcherRule = MainDispatcherRule()
