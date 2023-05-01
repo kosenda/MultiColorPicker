@@ -1,5 +1,6 @@
 package kosenda.makecolor.feature.viewmodel
 
+import android.content.ContentResolver
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.ImageDecoder
@@ -28,7 +29,7 @@ import javax.inject.Inject
 abstract class PictureViewModel : ViewModel() {
     abstract val uiState: StateFlow<PictureUiState>
     abstract fun updateColorData(color: Color)
-    abstract fun makeBitmapAndPalette(uri: Uri, context: Context)
+    abstract fun makeBitmapAndPalette(uri: Uri, contentResolver: ContentResolver)
     abstract fun resetImage()
 }
 
@@ -52,14 +53,14 @@ class PictureViewModelImpl @Inject constructor(
         }
     }
 
-    override fun makeBitmapAndPalette(uri: Uri, context: Context) {
+    override fun makeBitmapAndPalette(uri: Uri, contentResolver: ContentResolver) {
         CoroutineScope(ioDispatcher).launch {
             val bitmap = Bitmap.createScaledBitmap(
                 if (Build.VERSION.SDK_INT < 28) {
                     @Suppress("DEPRECATION")
-                    MediaStore.Images.Media.getBitmap(context.contentResolver, uri)
+                    MediaStore.Images.Media.getBitmap(contentResolver, uri)
                 } else {
-                    val source = ImageDecoder.createSource(context.contentResolver, uri)
+                    val source = ImageDecoder.createSource(contentResolver, uri)
                     ImageDecoder
                         .decodeBitmap(source)
                         .copy(Bitmap.Config.RGBA_F16, true)
@@ -93,6 +94,6 @@ class PictureViewModelImpl @Inject constructor(
 class PreviewPictureViewModel : PictureViewModel() {
     override val uiState: StateFlow<PictureUiState> = MutableStateFlow(PictureUiState())
     override fun updateColorData(color: Color) {}
-    override fun makeBitmapAndPalette(uri: Uri, context: Context) {}
+    override fun makeBitmapAndPalette(uri: Uri, contentResolver: ContentResolver) {}
     override fun resetImage() {}
 }

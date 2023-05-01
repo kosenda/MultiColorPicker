@@ -71,14 +71,16 @@ fun PictureScreenContent(
     googleAd: @Composable () -> Unit = {},
 ) {
     val uiState by viewModel.uiState.collectAsState()
-    val context = LocalContext.current
+    val contentResolver = LocalContext.current.contentResolver
     val scrollState = rememberScrollState()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     val horizontalPadding = 16.dp
     val launcher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent(),
         onResult = {
-            it?.let { uri -> viewModel.makeBitmapAndPalette(uri = uri, context = context) }
+            it?.let { uri ->
+                viewModel.makeBitmapAndPalette(uri = uri, contentResolver = contentResolver)
+            }
         },
     )
 
