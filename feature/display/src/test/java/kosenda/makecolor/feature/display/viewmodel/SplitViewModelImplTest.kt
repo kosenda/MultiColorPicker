@@ -66,10 +66,14 @@ class SplitViewModelImplTest {
     }
 
     @Test
-    fun updateSelectSplitColorNum_index2_settingUiState() {
-        // index2が更新されることを確認
+    fun updateSelectSplitColorNum_index_updatedUiState() {
+        // indexが更新できることを確認
         viewModel.updateSelectSplitColorNum(index = SplitColorNum.TWO.index)
         assertThat(viewModel.uiState.value.selectSplitColorNum).isEqualTo(SplitColorNum.TWO)
+        viewModel.updateSelectSplitColorNum(index = SplitColorNum.THREE.index)
+        assertThat(viewModel.uiState.value.selectSplitColorNum).isEqualTo(SplitColorNum.THREE)
+        viewModel.updateSelectSplitColorNum(index = SplitColorNum.FOUR.index)
+        assertThat(viewModel.uiState.value.selectSplitColorNum).isEqualTo(SplitColorNum.FOUR)
     }
 
     @Test
