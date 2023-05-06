@@ -1,13 +1,14 @@
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://https://github.com/kosenda/MultiColorPicker)　[![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg?style=flat)](https://renovatebot.com)　
 
+<img src="https://user-images.githubusercontent.com/60963155/236632026-4a359a66-b444-47da-a4bc-35a527165a52.png" height="300">　
+
 <a href='https://play.google.com/store/apps/details?id=kosenda.makecolor&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Google Play で手に入れよう' src='https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png' width="200"/></a>
+
 
 ## 概要
 Google Playで公開しているアプリ「マルチカラーピッカー」のソースになります。  
-URL: https://play.google.com/store/apps/details?id=kosenda.makecolor  
+URL　: https://play.google.com/store/apps/details?id=kosenda.makecolor  
 
-#### イメージ
-<img src="https://user-images.githubusercontent.com/60963155/227682827-025fdba3-6367-41a8-8086-5bb7e9adafed.png" height="450">  <img src="https://user-images.githubusercontent.com/60963155/227682842-48b6323e-2f02-4318-8031-7ca1070d3b6c.png" height="450">
 
 
 ## アプリについての簡単な説明
