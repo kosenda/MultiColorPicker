@@ -65,5 +65,6 @@ private val coverageExclusions = listOf(
     "**/*GoogleAd*.*",
     "**/*MainActivity*.*",
     "**/ui/feature/common/**",
+    "**/ui/feature/theme/**",
     "**/core/data/default/**",
 )
