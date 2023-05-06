@@ -1,6 +1,5 @@
 package kosenda.makecolor.core.ui.feature.common.card
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -19,6 +18,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.core.resource.R
+import kosenda.makecolor.core.ui.feature.common.extension.noRippleClickable
 import kosenda.makecolor.core.ui.feature.common.rememberButtonScaleState
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 
@@ -42,9 +42,8 @@ fun LanguageCard(
             .padding(all = 4.dp)
             .height(cardHeight)
             .scale(scale = buttonScaleState.animationScale.value)
-            .clickable(
+            .noRippleClickable(
                 interactionSource = buttonScaleState.interactionSource,
-                indication = null,
                 onClick = onClick,
             ),
         colors = CardDefaults.cardColors(

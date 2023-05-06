@@ -1,7 +1,6 @@
 package kosenda.makecolor.core.ui.feature.common
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -14,6 +13,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.core.resource.R
+import kosenda.makecolor.core.ui.feature.common.extension.noRippleClickable
 
 @Composable
 fun ClearTextIcon(onClick: () -> Unit) {
@@ -23,9 +23,8 @@ fun ClearTextIcon(onClick: () -> Unit) {
             .padding(end = 8.dp)
             .size(48.dp)
             .scale(scale = buttonScaleState.animationScale.value)
-            .clickable(
+            .noRippleClickable(
                 interactionSource = buttonScaleState.interactionSource,
-                indication = null,
                 onClick = onClick,
             ),
         contentAlignment = Alignment.Center,

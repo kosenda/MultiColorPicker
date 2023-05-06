@@ -1,7 +1,5 @@
 package kosenda.makecolor.feature.display.screen
 
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -15,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kosenda.makecolor.core.model.data.ColorData
+import kosenda.makecolor.core.ui.feature.common.extension.noRippleClickable
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.util.blackOrWhiteFromRGB
 import kosenda.makecolor.core.util.hexToHexStrWithSharp
@@ -40,11 +39,7 @@ fun FullColorScreen(
         color = rgbToColor(colorData.rgb),
         modifier = Modifier
             .fillMaxSize()
-            .clickable(
-                interactionSource = MutableInteractionSource(),
-                indication = null,
-                onClick = onClick,
-            ),
+            .noRippleClickable(onClick = onClick),
     ) {
         Column(
             modifier = Modifier.padding(top = 40.dp).padding(all = 16.dp),

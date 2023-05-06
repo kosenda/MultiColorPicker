@@ -1,8 +1,6 @@
 package kosenda.makecolor.feature.display.screen
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
@@ -12,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import kosenda.makecolor.core.ui.feature.common.extension.noRippleClickable
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.util.hexToColor
 import kosenda.makecolor.core.util.randomHex
@@ -37,11 +36,7 @@ fun GradationColorScreen(
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .clickable(
-                    interactionSource = MutableInteractionSource(),
-                    indication = null,
-                    onClick = onClick,
-                )
+                .noRippleClickable(onClick = onClick)
                 .background(
                     brush = Brush.verticalGradient(
                         listOf(hexToColor(hex = hex1), hexToColor(hex = hex2)),

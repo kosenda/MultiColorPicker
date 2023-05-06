@@ -1,6 +1,5 @@
 package kosenda.makecolor.core.ui.feature.common.card
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -32,6 +31,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.core.resource.R
+import kosenda.makecolor.core.ui.feature.common.extension.noRippleClickable
 import kosenda.makecolor.core.ui.feature.common.rememberButtonScaleState
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 
@@ -52,9 +52,8 @@ fun SpinnerCard(
                 .padding(vertical = 8.dp)
                 .scale(scale = buttonScaleState.animationScale.value)
                 .shadow(shape = RoundedCornerShape(12.dp), elevation = 2.dp)
-                .clickable(
+                .noRippleClickable(
                     interactionSource = buttonScaleState.interactionSource,
-                    indication = null,
                     onClick = { expanded = true },
                 ),
             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
