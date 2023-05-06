@@ -1,7 +1,6 @@
 package kosenda.makecolor.core.ui.feature.common
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -13,6 +12,7 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import kosenda.makecolor.core.ui.feature.common.extension.noRippleClickable
 
 @Composable
 fun ColorCircle(color: Color, size: Dp, onClick: (Color) -> Unit) {
@@ -26,10 +26,9 @@ fun ColorCircle(color: Color, size: Dp, onClick: (Color) -> Unit) {
                 .scale(scale = buttonScaleState.animationScale.value)
                 .clip(CircleShape)
                 .background(color = color)
-                .clickable(
-                    onClick = { onClick(color) },
+                .noRippleClickable(
                     interactionSource = buttonScaleState.interactionSource,
-                    indication = null,
+                    onClick = { onClick(color) },
                 ),
         )
     }

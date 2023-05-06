@@ -1,8 +1,6 @@
 package kosenda.makecolor.feature.display.screen
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -15,8 +13,9 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import kosenda.makecolor.core.ui.data.SplitColorParam
 import kosenda.makecolor.core.ui.data.SplitColorNum
+import kosenda.makecolor.core.ui.data.SplitColorParam
+import kosenda.makecolor.core.ui.feature.common.extension.noRippleClickable
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.util.hexToColor
 import kosenda.makecolor.core.util.randomHex
@@ -39,11 +38,7 @@ fun SplitColorScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .clickable(
-                    interactionSource = MutableInteractionSource(),
-                    indication = null,
-                    onClick = onBackScreen,
-                ),
+                .noRippleClickable(onClick = onBackScreen),
         ) {
             when (splitColorParam.splitColorNum) {
                 SplitColorNum.TWO -> {

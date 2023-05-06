@@ -1,7 +1,6 @@
 package kosenda.makecolor.core.ui.feature.common.button
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -22,6 +21,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.core.resource.R
+import kosenda.makecolor.core.ui.feature.common.extension.noRippleClickable
 import kosenda.makecolor.core.ui.feature.common.rememberButtonScaleState
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 
@@ -38,9 +38,8 @@ fun CustomButton(
             .padding(vertical = 8.dp)
             .height(56.dp)
             .scale(scale = buttonScaleState.animationScale.value)
-            .clickable(
+            .noRippleClickable(
                 interactionSource = buttonScaleState.interactionSource,
-                indication = null,
                 onClick = onClick,
             ),
     ) {
