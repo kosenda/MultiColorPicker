@@ -7,16 +7,11 @@ import kosenda.makecolor.core.model.data.CMYKColor
 import kosenda.makecolor.core.model.data.ColorType
 import kosenda.makecolor.core.model.data.HSVColor
 import kosenda.makecolor.core.model.data.RGBColor
-import kosenda.makecolor.core.testing.MainDispatcherRule
 import kosenda.makecolor.core.util.randomColorData
 import org.junit.Assert
-import org.junit.Rule
 import org.junit.Test
 
 class SeekbarViewModelImplTest {
-
-    @get: Rule
-    val mainDispatcherRule = MainDispatcherRule()
 
     private val viewModel = SeekbarViewModelImpl(
         updateColorDataUseCase = UpdateColorDataUseCase(
