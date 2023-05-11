@@ -1,7 +1,6 @@
 package kosenda.makecolor.feature.viewmodel
 
 import android.content.Context
-import android.graphics.Bitmap
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.LayoutDirection
