@@ -18,9 +18,6 @@ URL　: https://play.google.com/store/apps/details?id=kosenda.makecolor
 - 色についてはRGB, CMYK, HSV, HEXに対応
 
 
-## 今後特にしていきたいこと
-- テストの追加
-
 ## アプリを初めて起動するとき
 #### `local.properties`に以下を追記してください
 ```
