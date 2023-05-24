@@ -26,14 +26,13 @@ class MainViewModelTest {
         assertThat(mainViewModel.themeNum.first()).isEqualTo(Theme.AUTO.num)
         assertThat(mainViewModel.customFont.first()).isEqualTo(FontType.DEFAULT.fontName)
     }
- }
+}
 
- private class FakeDataStoreRepository : DataStoreRepository {
+private class FakeDataStoreRepository : DataStoreRepository {
     override fun selectedThemeNum(): Flow<Int> = flow { emit(Theme.AUTO.num) }
     override fun selectedFontType(): Flow<String> = flow { emit(FontType.DEFAULT.fontName) }
-     override fun fetchCountForReview(): Flow<Int> = flow { emit(0) }
-
-     override suspend fun updateThemeNum(newThemeNum: Int) {}
+    override fun fetchCountForReview(): Flow<Int> = flow { emit(0) }
+    override suspend fun updateThemeNum(newThemeNum: Int) {}
     override suspend fun updateFontType(newFontType: FontType) {}
-     override suspend fun updateCountForReview(newCount: Int) {}
- }
+    override suspend fun updateCountForReview(newCount: Int) {}
+}
