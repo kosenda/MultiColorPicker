@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
-const val MAX_COUNT_FOR_REVIEW = 1
+const val MAX_COUNT_FOR_REVIEW = 10
 const val COMPLETED_REVIEW = -1
 
 @HiltViewModel
