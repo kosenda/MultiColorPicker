@@ -5,6 +5,7 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -14,6 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kosenda.makecolor.core.model.data.FontType
 import kosenda.makecolor.core.model.data.Theme
 import kosenda.makecolor.core.ui.feature.common.LocalIsDark
+import kosenda.makecolor.core.ui.feature.common.dialog.RequestReviewDialog
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 
 /**
@@ -41,6 +43,34 @@ class MainActivity : AppCompatActivity() {
                 else -> isSystemInDarkTheme()
             }
 
+            LaunchedEffect(Unit) {
+                mainViewModel.checkCountForReview(
+                    onReachMaxCount = mainViewModel::showReviewDialog,
+                )
+            }
+
+            if (mainViewModel.isShowRequestReviewDialog) {
+                RequestReviewDialog(
+                    onCancel = {
+                        mainViewModel.closeReviewDialog()
+                        mainViewModel.updateCountForReview(isCompletedReview = false)
+                    },
+                    onClick = {
+                        mainViewModel.closeReviewDialog()
+                        val reviewManager = ReviewManager(
+                            context = this,
+                            onComplete = {
+                                mainViewModel.updateCountForReview(isCompletedReview = true)
+                            },
+                            onCancel = {
+                                mainViewModel.updateCountForReview(isCompletedReview = false)
+                            },
+                        )
+                        reviewManager.startReviewFlow()
+                    },
+                )
+            }
+
             MakeColorTheme(
                 isDarkTheme = isDarkTheme,
                 fontType = when (fontType.value) {
@@ -49,7 +79,7 @@ class MainActivity : AppCompatActivity() {
                     FontType.ROBOTO_SLAB.fontName -> FontType.ROBOTO_SLAB
                     FontType.PACIFICO.fontName -> FontType.PACIFICO
                     FontType.HACHI_MARU_POP.fontName -> FontType.HACHI_MARU_POP
-                    else -> throw IllegalArgumentException("定義されていない: ${fontType.value}")
+                    else -> throw IllegalArgumentException("undefined: ${fontType.value}")
                 },
             ) {
                 CompositionLocalProvider(LocalIsDark provides isDarkTheme) {

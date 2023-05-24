@@ -67,6 +67,11 @@
 
     <string name="copic_color">コピック</string>.
 
+    <!-- Request Review -->
+    <string name="request_review_title">お願い</string>
+    <string name="request_review_body">アプリのレビューをしていただけないでしょうか？</string>
+    <string name="request_review_cancel">後で</string>
+
     <array name="square_circle">
         <item>丸型</item>
         <item>角型</item>

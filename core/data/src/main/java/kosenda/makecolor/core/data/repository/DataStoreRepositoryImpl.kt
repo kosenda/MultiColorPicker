@@ -46,11 +46,26 @@ class DataStoreRepositoryImpl @Inject constructor(
             }
     }
 
+    override fun fetchCountForReview(): Flow<Int> {
+        return dataStore.data
+            .catch { exception ->
+                Timber.e("DataStore: %s", exception)
+                if (exception is IOException) emit(emptyPreferences())
+            }
+            .map { preferences ->
+                preferences[PreferencesKey.COUNT_FOR_REVIEW] ?: 0
+            }
+    }
+
     override suspend fun updateThemeNum(newThemeNum: Int) {
         dataStore.edit { it[PreferencesKey.THEME_NUM] = newThemeNum }
     }
 
     override suspend fun updateFontType(newFontType: FontType) {
         dataStore.edit { it[PreferencesKey.FONT_TYPE] = newFontType.fontName }
+    }
+
+    override suspend fun updateCountForReview(newCount: Int) {
+        dataStore.edit { it[PreferencesKey.COUNT_FOR_REVIEW] = newCount }
     }
 }

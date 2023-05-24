@@ -61,13 +61,18 @@
 
     <string name="jis_idiomatic_color">JIS conventional color name</string>
 
-    <string name="jis_safe_color">JIS safe color</string>.
+    <string name="jis_safe_color">JIS safe color</string>
 
     <string name="web_color">Web colors</string>
 
-    <string name="x11_color">X11 color names</string>.
+    <string name="x11_color">X11 color names</string>
 
-    <string name="copic_color">Copic Color</string>.
+    <string name="copic_color">Copic Color</string>
+
+    <!-- Request Review -->
+    <string name="request_review_title">अनुरोध</string>
+    <string name="request_review_body">क्या आप कृपया आवेदन की समीक्षा कर सकते हैं?</string>
+    <string name="request_review_cancel">बाद में</string>
 
 
     <array name="square_circle">

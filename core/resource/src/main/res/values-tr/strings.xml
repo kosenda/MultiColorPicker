@@ -61,13 +61,18 @@
 
     <string name="jis_idiomatic_color">JIS geleneksel renk adı</string>
 
-    <string name="jis_safe_color">JIS güvenli renk</string>.
+    <string name="jis_safe_color">JIS güvenli renk</string>
 
     <string name="web_color">Web renkleri</string>
 
-    <string name="x11_color">X11 renk adları</string>.
+    <string name="x11_color">X11 renk adları</string>
 
-    <string name="copic_color">Copic Color</string>.
+    <string name="copic_color">Copic Color</string>
+
+    <!-- Request Review -->
+    <string name="request_review_title">İstek</string>
+    <string name="request_review_body">Lütfen başvuruyu gözden geçirir misiniz?</string>
+    <string name="request_review_cancel">Daha sonra</string>
 
 
     <array name="square_circle">
