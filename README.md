@@ -42,6 +42,7 @@ adUnitId=ca-app-pub-3940256099942544/6300978111
 |Material3|デザイン|
 |Mockk|モック|
 |palette-ktx|パレットAPI|
+|play-review|アプリ内レビュー|
 |play-services-ads|Google AdMob|
 |play-services-oss-licenses|ライセンス|
 |Robolectric|単体テストフレームワーク|
