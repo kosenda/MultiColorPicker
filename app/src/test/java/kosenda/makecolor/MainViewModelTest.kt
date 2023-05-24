@@ -28,11 +28,11 @@ class MainViewModelTest {
     }
 }
 
- private class FakeDataStoreRepository : DataStoreRepository {
-     override fun selectedThemeNum(): Flow<Int> = flow { emit(Theme.AUTO.num) }
-     override fun selectedFontType(): Flow<String> = flow { emit(FontType.DEFAULT.fontName) }
-     override fun fetchCountForReview(): Flow<Int> = flow { emit(0) }
-     override suspend fun updateThemeNum(newThemeNum: Int) {}
-     override suspend fun updateFontType(newFontType: FontType) {}
-     override suspend fun updateCountForReview(newCount: Int) {}
- }
+private class FakeDataStoreRepository : DataStoreRepository {
+    override fun selectedThemeNum(): Flow<Int> = flow { emit(Theme.AUTO.num) }
+    override fun selectedFontType(): Flow<String> = flow { emit(FontType.DEFAULT.fontName) }
+    override fun fetchCountForReview(): Flow<Int> = flow { emit(0) }
+    override suspend fun updateThemeNum(newThemeNum: Int) {}
+    override suspend fun updateFontType(newFontType: FontType) {}
+    override suspend fun updateCountForReview(newCount: Int) {}
+}
