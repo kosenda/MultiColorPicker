@@ -69,6 +69,11 @@
 
     <string name="copic_color">Kopierfarbe</string>.
 
+    <!-- Request Review -->
+    <string name="request_review_title">Anfrage</string>
+    <string name="request_review_body">Könnten Sie bitte die Bewerbung überprüfen?</string>
+    <string name="request_review_cancel">Später</string>
+
     <array name="square_circle">
         <item>Kreis</item>
         <item>Quadrat</item>

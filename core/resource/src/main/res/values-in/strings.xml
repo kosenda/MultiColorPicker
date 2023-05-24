@@ -60,14 +60,18 @@
 
     <string name="jis_idiomatic_color">Nama warna konvensional JIS</string>
 
-    <string name="jis_safe_color">Warna aman JIS</string>.
+    <string name="jis_safe_color">Warna aman JIS</string>
 
     <string name="web_color">Warna web</string>
 
-    <string name="x11_color">Nama warna X11</string>.
-    .
+    <string name="x11_color">Nama warna X11</string>
 
-    <string name="copic_color">Copic Color</string>.
+    <string name="copic_color">Copic Color</string>
+
+    <!-- Request Review -->
+    <string name="request_review_title">Permintaan</string>
+    <string name="request_review_body">Bisakah Anda meninjau aplikasi ini?</string>
+    <string name="request_review_cancel">Nanti</string>
 
 
     <array name="square_circle">

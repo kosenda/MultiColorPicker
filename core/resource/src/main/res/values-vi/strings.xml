@@ -65,9 +65,14 @@
 
     <string name="web_color">Web colors</string>
 
-    <string name="x11_color">X11 color names</string>.
+    <string name="x11_color">X11 color names</string>
 
-    <string name="copic_color">Copic Color</string>.
+    <string name="copic_color">Copic Color</string>
+
+    <!-- Request Review -->
+    <string name="request_review_title">Lời yêu cầu</string>
+    <string name="request_review_body">Bạn có thể vui lòng xem lại các ứng dụng?</string>
+    <string name="request_review_cancel">Sau đó</string>
 
 
     <array name="square_circle">

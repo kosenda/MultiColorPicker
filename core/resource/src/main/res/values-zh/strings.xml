@@ -65,7 +65,12 @@
 
     <string name="x11_color">X11 color names</string>
 
-    <string name="copic_color">Copic Color</string>.
+    <string name="copic_color">Copic Color</string>
+
+    <!-- Request Review -->
+    <string name="request_review_title">要求</string>
+    <string name="request_review_body">能否请您审查该申请？</string>
+    <string name="request_review_cancel">稍后</string>
 
     <array name="square_circle">
         <item>Circle</item>

@@ -59,13 +59,18 @@
 
     <string name="jis_idiomatic_color">JIS conventional color name</string>
 
-    <string name="jis_safe_color">JIS safe color</string>.
+    <string name="jis_safe_color">JIS safe color</string>
 
     <string name="web_color">Web colors</string>
 
-    <string name="x11_color">X11 color names</string>.
+    <string name="x11_color">X11 color names</string>
 
-    <string name="copic_color">Copic Color</string>.
+    <string name="copic_color">Copic Color</string>
+
+    <!-- Request Review -->
+    <string name="request_review_title">Solicitud</string>
+    <string name="request_review_body">¿Podría revisar la solicitud?</string>
+    <string name="request_review_cancel">Más tarde</string>
 
     <array name="square_circle">
         <item>Círculo</item>

@@ -67,6 +67,11 @@
 
     <string name="copic_color">Copic Color</string>.
 
+    <!-- Request Review -->
+    <string name="request_review_title">Request</string>
+    <string name="request_review_body">Could you please review the application?</string>
+    <string name="request_review_cancel">Later</string>
+
 
     <array name="square_circle">
         <item>Circle</item>

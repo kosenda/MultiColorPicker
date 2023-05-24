@@ -60,17 +60,20 @@
     <string name="review_title">Revisione</string>
     <string name="setting_title">Impostazioni</string>
 
-    <string name="jis_idiomatic_color">Nome del colore convenzionale JIS</string>.
+    <string name="jis_idiomatic_color">Nome del colore convenzionale JIS</string>
 
-    <string name="jis_safe_color">Colore sicuro JIS</string>.
-    .
+    <string name="jis_safe_color">Colore sicuro JIS</string>
 
     <string name="web_color">Colori web</string>
 
-    <string name="x11_color">Nomi dei colori x11</string>.
-    .
+    <string name="x11_color">Nomi dei colori x11</string>
 
-    <string name="copic_color">Copic Color</string>.
+    <string name="copic_color">Copic Color</string>
+
+    <!-- Request Review -->
+    <string name="request_review_title">Richiesta</string>
+    <string name="request_review_body">Potreste rivedere la domanda?</string>
+    <string name="request_review_cancel">Più tardi</string>
 
 
     <array name="square_circle">
