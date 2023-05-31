@@ -36,7 +36,7 @@ robolectric = "4.10.3"
 room = "2.5.1"
 secrets = "2.0.1"
 timber = "5.0.1"
-truth = "1.1.3"
+truth = "1.1.4"
 mockk = "1.13.5"
 play = "2.0.1"
 
