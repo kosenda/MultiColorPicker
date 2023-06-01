@@ -1,6 +1,7 @@
 package kosenda.makecolor
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -11,12 +12,16 @@ import androidx.compose.runtime.collectAsState
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.google.firebase.crashlytics.ktx.BuildConfig
+import com.google.firebase.crashlytics.ktx.crashlytics
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 import kosenda.makecolor.core.model.data.FontType
 import kosenda.makecolor.core.model.data.Theme
 import kosenda.makecolor.core.ui.feature.common.LocalIsDark
 import kosenda.makecolor.core.ui.feature.common.dialog.RequestReviewDialog
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import timber.log.Timber
 
 /**
  * 作成開始：2021/06/13
@@ -29,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
+
+        Timber.plant(tree = if (BuildConfig.DEBUG) Timber.DebugTree() else ReleaseTree())
 
         setContent {
             val mainViewModel: MainViewModel = hiltViewModel()
@@ -87,5 +94,24 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+}
+
+private class ReleaseTree : Timber.Tree() {
+    override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
+        val priorityStr = when (priority) {
+            Log.ERROR -> "E/"
+            Log.WARN -> "W/"
+            Log.DEBUG -> "D/"
+            else -> return
+        }
+        Firebase.crashlytics.log(
+            "%s tag: %s, message: %s, t:%s".format(
+                priorityStr,
+                tag ?: "",
+                message,
+                t ?: "",
+            ),
+        )
     }
 }
