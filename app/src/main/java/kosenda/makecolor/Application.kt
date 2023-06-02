@@ -1,7 +1,36 @@
 package kosenda.makecolor
 
 import android.app.Application
+import android.util.Log
+import com.google.firebase.crashlytics.ktx.BuildConfig
+import com.google.firebase.crashlytics.ktx.crashlytics
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.HiltAndroidApp
+import timber.log.Timber
 
 @HiltAndroidApp
-class Application : Application()
+class Application : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        Timber.plant(tree = if (BuildConfig.DEBUG) Timber.DebugTree() else ReleaseTree())
+    }
+}
+
+private class ReleaseTree : Timber.Tree() {
+    override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
+        val priorityStr = when (priority) {
+            Log.ERROR -> "E/"
+            Log.WARN -> "W/"
+            Log.INFO -> "I/"
+            Log.DEBUG -> "D/"
+            else -> return
+        }
+        Firebase.crashlytics.log(
+            "%s%s%s".format(
+                priorityStr,
+                tag?.let { "[$it]" },
+                message,
+            ),
+        )
+    }
+}
