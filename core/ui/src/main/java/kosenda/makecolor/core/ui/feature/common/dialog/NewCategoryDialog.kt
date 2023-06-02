@@ -1,5 +1,6 @@
 package kosenda.makecolor.core.ui.feature.common.dialog
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
@@ -15,6 +16,7 @@ fun NewCategoryDialog(
         onDismissRequest = {},
         properties = DialogProperties(usePlatformDefaultWidth = false),
     ) {
+        BackHandler(onBack = onClose)
         NewCategoryDialogContent(
             old = oldCategories,
             onClickNew = onClickNew,
