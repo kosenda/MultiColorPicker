@@ -18,6 +18,7 @@ dependencies {
     implementation(project(":feature:preview"))
     implementation(libs.accompanist.systemuicontroller)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.lifecycle.viewModelCompose)
     implementation(libs.timber)
     testImplementation(project(":core:testing"))
