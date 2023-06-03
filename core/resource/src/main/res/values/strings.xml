@@ -95,9 +95,8 @@
         <item>SHADES</item>
     </array>
 
-    <!-- ##################  共通　START  ################################################ -->
+    <!-- ##################  COMMON　START  ################################################ -->
 
-    <string name="review_url" translatable="false">https://play.google.com/store/apps/details?id=kosenda.makecolor</string>
     <string name="close" translatable="false">Close</string>
     <string name="tap_all_screen" translatable="false"> - Tap - </string>
     <string name="developer_name" translatable="false">KSND</string>
@@ -109,7 +108,12 @@
     <string name="licenses_title" translatable="false">Licenses</string>
     <string name="oss_licenses" translatable="false">OSS Licenses</string>
     <string name="github" translatable="false">GitHub</string>
+
+    <!-- URL -->
+    <string name="review_url" translatable="false">https://play.google.com/store/apps/details?id=kosenda.makecolor</string>
     <string name="github_url" translatable="false">https://github.com/kosenda/MultiColorPicker</string>
+    <string name="developer_github_url" translatable="false">https://github.com/kosenda</string>
+    <string name="developer_twitter_url" translatable="false">https://twitter.com/ksnd_dev</string>
 
     <!-- Locale Name -->
     <string name="locale_en" translatable="false">en</string>
@@ -141,6 +145,6 @@
     <string name="display_vi" translatable="false">Tiếng Việt</string>
     <string name="display_de" translatable="false">Deutsch</string>
 
-    <!-- ##################  共通　END  ################################################## -->
+    <!-- ##################  COMMON　END  ################################################## -->
 
 </resources>
