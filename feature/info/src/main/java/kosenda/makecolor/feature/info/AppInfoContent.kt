@@ -39,6 +39,7 @@ private fun InternalAppInfoContent(
 ) {
     TitleCard(
         text = stringResource(id = R.string.app_info_title),
+        topPadding = 4.dp,
         painter = painterResource(id = R.drawable.outline_info_24),
     )
     Card(
