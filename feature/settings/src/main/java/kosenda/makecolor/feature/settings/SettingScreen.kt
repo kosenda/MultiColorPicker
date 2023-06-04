@@ -95,10 +95,10 @@ fun SettingScreenContent(
         Column(
             modifier = Modifier
                 .padding(padding)
-                .padding(horizontal = 16.dp)
                 .fillMaxSize()
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
-                .verticalScroll(rememberScrollState()),
+                .verticalScroll(rememberScrollState())
+                .padding(horizontal = 16.dp),
         ) {
             SelectThemeContent(
                 updateThemeNum = viewModel::updateThemeNum,

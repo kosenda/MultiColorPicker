@@ -134,9 +134,9 @@ fun MergeScreenContent(
         Column(
             modifier = Modifier
                 .padding(it)
-                .padding(horizontal = horizontalPadding)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
-                .verticalScroll(scrollState),
+                .verticalScroll(scrollState)
+                .padding(horizontal = horizontalPadding),
         ) {
             DisplayColorCard(
                 modifier = Modifier.padding(bottom = 16.dp),
