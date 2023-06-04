@@ -50,7 +50,7 @@ private fun InternalAppInfoContent(
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Image(
-                painter = painterResource(id = R.drawable.ic_launcher_monochrome),
+                painter = painterResource(id = R.drawable.icon),
                 contentDescription = "convert",
                 contentScale = ContentScale.Fit,
                 modifier = Modifier
