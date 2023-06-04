@@ -96,9 +96,9 @@ fun PickerScreenContent(
         Column(
             modifier = Modifier
                 .padding(padding)
-                .padding(horizontal = horizontalPadding)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
-                .verticalScroll(scrollState),
+                .verticalScroll(scrollState)
+                .padding(horizontal = horizontalPadding),
         ) {
             DisplayColorCard(
                 colorData = uiState.colorData,

@@ -100,9 +100,9 @@ fun InputTextScreenContent(
         Column(
             modifier = Modifier
                 .padding(it)
-                .padding(horizontal = 16.dp)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
                 .verticalScroll(scrollState)
+                .padding(horizontal = 16.dp)
                 .pointerInput(Unit) {
                     detectTapGestures(
                         onTap = {

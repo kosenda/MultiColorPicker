@@ -95,9 +95,9 @@ fun RegisterScreenContent(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .padding(horizontal = 16.dp)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
                 .verticalScroll(rememberScrollState())
+                .padding(horizontal = 16.dp)
                 .pointerInput(Unit) {
                     detectTapGestures(
                         onTap = {

@@ -49,12 +49,13 @@ fun Drawer(
         NavigationItems.Gradation,
         NavigationItems.Review,
         NavigationItems.Setting,
+        NavigationItems.Gradation,
     )
 
     Column(
         modifier = Modifier
             .background(brush = backgroundBrush())
-            .padding(start = 4.dp, end = 4.dp, top = 48.dp)
+            .padding(top = 48.dp)
             .fillMaxSize()
             .verticalScroll(rememberScrollState()),
     ) {
