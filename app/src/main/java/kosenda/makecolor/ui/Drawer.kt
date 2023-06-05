@@ -49,7 +49,6 @@ fun Drawer(
         NavigationItems.Gradation,
         NavigationItems.Review,
         NavigationItems.Setting,
-        NavigationItems.Gradation,
     )
 
     Column(
