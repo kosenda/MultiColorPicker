@@ -108,12 +108,15 @@
     <string name="licenses_title" translatable="false">Licenses</string>
     <string name="oss_licenses" translatable="false">OSS Licenses</string>
     <string name="github" translatable="false">GitHub</string>
+    <string name="privacy_policy_title" translatable="false">Privacy</string>
+    <string name="privacy_policy" translatable="false">Privacy Policy</string>
 
     <!-- URL -->
     <string name="review_url" translatable="false">https://play.google.com/store/apps/details?id=kosenda.makecolor</string>
     <string name="github_url" translatable="false">https://github.com/kosenda/MultiColorPicker</string>
     <string name="developer_github_url" translatable="false">https://github.com/kosenda</string>
     <string name="developer_twitter_url" translatable="false">https://twitter.com/ksnd_dev</string>
+    <string name="privacy_policy_url" translatable="false">https://kosenda.github.io/ksnd.github.io/MultiColorPicker.html</string>
 
     <!-- Locale Name -->
     <string name="locale_en" translatable="false">en</string>
