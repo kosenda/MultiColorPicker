@@ -57,6 +57,7 @@ fun InfoDialogContent(onClose: () -> Unit) {
                 AppInfoContent()
                 DeveloperInfoContent()
                 LicensesContent()
+                PrivacyPolicyContent()
                 Spacer(modifier = Modifier.height(48.dp))
             }
         }
