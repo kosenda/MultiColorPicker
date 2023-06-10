@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.displayCutoutPadding
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -58,7 +59,7 @@ fun InfoDialogContent(onClose: () -> Unit) {
                 DeveloperInfoContent()
                 LicensesContent()
                 PrivacyPolicyContent()
-                Spacer(modifier = Modifier.height(48.dp))
+                Spacer(modifier = Modifier.height(88.dp))
             }
         }
     }
