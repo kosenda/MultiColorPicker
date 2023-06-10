@@ -32,5 +32,6 @@ private class ReleaseTree : Timber.Tree() {
                 message,
             ),
         )
+        t?.let { Firebase.crashlytics.recordException(it) }
     }
 }
