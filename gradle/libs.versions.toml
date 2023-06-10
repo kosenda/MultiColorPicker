@@ -43,6 +43,7 @@ play = "2.0.1"
 [libraries]
 accompanist-systemuicontroller = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanist" }
 accompanist-navigationAnimation = { group = "com.google.accompanist", name = "accompanist-navigation-animation", version.ref = "navigationAnimation" }
+accompanist-webView = { group = "com.google.accompanist", name = "accompanist-webview", version.ref = "accompanist" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "androidxActivity" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppCompat" }
 androidx-compose-acitivity = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivity" }

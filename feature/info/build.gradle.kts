@@ -17,6 +17,7 @@ dependencies {
     implementation(project(":core:util"))
     implementation(project(":feature:preview"))
     implementation(libs.accompanist.systemuicontroller)
+    implementation(libs.accompanist.webView)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.oss.licenses)
     testImplementation(project(":core:testing"))
