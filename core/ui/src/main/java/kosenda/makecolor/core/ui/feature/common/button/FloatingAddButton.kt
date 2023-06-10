@@ -4,6 +4,7 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material3.ExtendedFloatingActionButton
@@ -27,7 +28,9 @@ fun FloatingAddButton(onClick: () -> Unit, scrollState: ScrollState) {
 
     ExtendedFloatingActionButton(
         onClick = onClick,
-        modifier = Modifier.padding(bottom = 16.dp),
+        modifier = Modifier
+            .systemBarsPadding()
+            .padding(bottom = 16.dp),
         containerColor = MaterialTheme.colorScheme.primaryContainer,
     ) {
         Icon(

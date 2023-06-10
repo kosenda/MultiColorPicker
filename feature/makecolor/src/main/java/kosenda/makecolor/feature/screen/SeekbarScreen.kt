@@ -23,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.core.model.data.ColorData
 import kosenda.makecolor.core.model.data.ColorType
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.feature.common.button.FloatingAddButton
 import kosenda.makecolor.core.ui.feature.common.card.ColorValueTextsCard
 import kosenda.makecolor.core.ui.feature.common.card.DisplayColorCard
@@ -30,11 +31,10 @@ import kosenda.makecolor.core.ui.feature.common.card.SeekbarsCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
-import kosenda.makecolor.core.resource.R
+import kosenda.makecolor.feature.preview.PreviewSurface
 import kosenda.makecolor.feature.viewmodel.PreviewSeekbarViewModel
 import kosenda.makecolor.feature.viewmodel.SeekbarViewModel
 import kosenda.makecolor.feature.viewmodel.SeekbarViewModelImpl
-import kosenda.makecolor.feature.preview.PreviewSurface
 
 @Composable
 fun SeekbarScreen(
@@ -43,7 +43,6 @@ fun SeekbarScreen(
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     SeekbarScreenContent(
         viewModel = viewModel,
@@ -51,7 +50,6 @@ fun SeekbarScreen(
         onClickInfo = onClickInfo,
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
-        googleAd = googleAd,
     )
 }
 
@@ -63,7 +61,6 @@ fun SeekbarScreenContent(
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
@@ -84,7 +81,6 @@ fun SeekbarScreenContent(
                 hex1 = uiState.colorData.hex.toString(),
             )
         },
-        bottomBar = googleAd,
         floatingActionButton = {
             FloatingAddButton(
                 onClick = { onClickFloatingButton(uiState.colorData) },
@@ -139,7 +135,7 @@ private fun PreviewSeekbarScreenContent_Light() {
                 onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
-            ) {}
+            )
         }
     }
 }
@@ -155,7 +151,7 @@ private fun PreviewSeekbarScreenContent_Dark() {
                 onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
-            ) {}
+            )
         }
     }
 }

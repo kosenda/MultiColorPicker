@@ -35,10 +35,10 @@ import kosenda.makecolor.core.ui.feature.common.card.HarmonyColorPickerCard
 import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.feature.preview.PreviewSurface
 import kosenda.makecolor.feature.viewmodel.PickerViewModel
 import kosenda.makecolor.feature.viewmodel.PickerViewModelImpl
 import kosenda.makecolor.feature.viewmodel.PreviewPickerViewModel
-import kosenda.makecolor.feature.preview.PreviewSurface
 
 @Composable
 fun PickerScreen(
@@ -47,7 +47,6 @@ fun PickerScreen(
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     PickerScreenContent(
         viewModel = viewModel,
@@ -55,7 +54,6 @@ fun PickerScreen(
         onClickInfo = onClickInfo,
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
-        googleAd = googleAd,
     )
 }
 
@@ -67,7 +65,6 @@ fun PickerScreenContent(
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val scrollState = rememberScrollState()
@@ -84,7 +81,6 @@ fun PickerScreenContent(
                 hex1 = uiState.colorData.hex.toString(),
             )
         },
-        bottomBar = googleAd,
         floatingActionButton = {
             FloatingAddButton(
                 onClick = { onClickFloatingButton(uiState.colorData) },
@@ -195,7 +191,7 @@ private fun PreviewPickerScreenContent_Light() {
                 onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
-            ) {}
+            )
         }
     }
 }
@@ -211,7 +207,7 @@ private fun PreviewPickerScreenContent_Dark() {
                 onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
-            ) {}
+            )
         }
     }
 }

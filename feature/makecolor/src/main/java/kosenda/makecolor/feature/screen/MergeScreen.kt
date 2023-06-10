@@ -29,6 +29,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import kosenda.makecolor.core.data.default.defaultCategories
 import kosenda.makecolor.core.model.data.ColorData
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.data.ColorIndex
 import kosenda.makecolor.core.ui.feature.common.ImagePicker
 import kosenda.makecolor.core.ui.feature.common.SelectColorParam
@@ -40,11 +41,10 @@ import kosenda.makecolor.core.ui.feature.common.card.SpinnerCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.util.getNameIfNoAlias
-import kosenda.makecolor.core.resource.R
+import kosenda.makecolor.feature.preview.PreviewSurface
 import kosenda.makecolor.feature.viewmodel.MergeViewModel
 import kosenda.makecolor.feature.viewmodel.MergeViewModelImpl
 import kosenda.makecolor.feature.viewmodel.PreviewMergeViewModel
-import kosenda.makecolor.feature.preview.PreviewSurface
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -57,7 +57,6 @@ fun MergeScreen(
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     MergeScreenContent(
         viewModel = viewModel,
@@ -67,7 +66,6 @@ fun MergeScreen(
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
         onClickSelectColor = onClickSelectColor,
-        googleAd = googleAd,
     )
 }
 
@@ -81,7 +79,6 @@ fun MergeScreenContent(
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     val context = LocalContext.current
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
@@ -122,7 +119,6 @@ fun MergeScreenContent(
                 hex1 = uiState.colorData.hex.toString(),
             )
         },
-        bottomBar = googleAd,
         floatingActionButton = {
             FloatingAddButton(
                 onClick = { onClickFloatingButton(uiState.colorData) },
@@ -209,7 +205,7 @@ private fun PreviewMergeScreenContent_Light() {
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
                 onClickSelectColor = {},
-            ) {}
+            )
         }
     }
 }
@@ -227,7 +223,7 @@ private fun PreviewMergeScreenContent_Dark() {
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
                 onClickSelectColor = {},
-            ) {}
+            )
         }
     }
 }

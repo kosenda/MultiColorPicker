@@ -45,7 +45,6 @@ fun InputTextScreen(
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
-    googleAd: @Composable () -> Unit,
 ) {
     InputTextScreenContent(
         viewModel = viewModel,
@@ -53,7 +52,6 @@ fun InputTextScreen(
         onClickInfo = onClickInfo,
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
-        googleAd = googleAd,
     )
 }
 
@@ -65,7 +63,6 @@ fun InputTextScreenContent(
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
@@ -88,7 +85,6 @@ fun InputTextScreenContent(
                 hex1 = uiState.colorData.hex.toString(),
             )
         },
-        bottomBar = googleAd,
         floatingActionButton = {
             FloatingAddButton(
                 onClick = { onClickFloatingButton(uiState.colorData) },
@@ -149,7 +145,6 @@ private fun PreviewInputTextScreen_Light() {
                 onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
-                googleAd = {},
             )
         }
     }
@@ -166,7 +161,6 @@ private fun PreviewInputTextScreen_Dark() {
                 onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
-                googleAd = {},
             )
         }
     }

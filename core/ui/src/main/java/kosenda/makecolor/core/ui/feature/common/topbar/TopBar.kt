@@ -9,6 +9,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import kosenda.makecolor.core.ui.data.LocalIsExpandScreenClass
 import kosenda.makecolor.core.ui.feature.common.button.CustomIconButton
 import kosenda.makecolor.core.ui.feature.common.button.ShareIcon
 
@@ -21,9 +22,11 @@ fun TopBar(
     hex1: String? = null,
     hex2: String? = null,
 ) {
+    val isExpandSizeClass = LocalIsExpandScreenClass.current
     TopAppBar(
         title = {},
         navigationIcon = {
+            if (isExpandSizeClass) return@TopAppBar
             CustomIconButton(
                 imageVector = Icons.Outlined.Menu,
                 contentDescription = "open menu",
