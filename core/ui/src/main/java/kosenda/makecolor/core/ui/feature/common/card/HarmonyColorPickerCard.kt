@@ -1,10 +1,11 @@
 package kosenda.makecolor.core.ui.feature.common.card
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -13,6 +14,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
@@ -23,6 +25,9 @@ import com.godaddy.android.colorpicker.HsvColor
 import com.godaddy.android.colorpicker.harmony.ColorHarmonyMode
 import com.godaddy.android.colorpicker.harmony.HarmonyColorPicker
 import kosenda.makecolor.core.model.data.HsvColorData
+import kosenda.makecolor.core.ui.feature.common.ColorCircle
+import kosenda.makecolor.core.ui.feature.theme.MakeColorMaterial2Theme
+import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 import kosenda.makecolor.core.util.colorToRGB
 import kosenda.makecolor.core.util.hexToColor
 import kosenda.makecolor.core.util.hsvColorToHexStr
@@ -30,9 +35,6 @@ import kosenda.makecolor.core.util.hsvColorToHsv
 import kosenda.makecolor.core.util.hsvToRGB
 import kosenda.makecolor.core.util.rgbToColor
 import kosenda.makecolor.core.util.rgbToHex
-import kosenda.makecolor.core.ui.feature.common.ColorCircle
-import kosenda.makecolor.core.ui.feature.theme.MakeColorMaterial2Theme
-import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
 
 @Composable
 fun HarmonyColorPickerCard(
@@ -47,6 +49,14 @@ fun HarmonyColorPickerCard(
     val circleSize = (screenMaxSize - 8.dp * 3) / 5 - 8.dp
     var mainColorHex by rememberSaveable {
         mutableStateOf(rgbToHex(colorToRGB(color = defaultColor)).toString())
+    }
+    val colorPickerSize = when {
+        LocalConfiguration.current.screenWidthDp > LocalConfiguration.current.screenHeightDp -> {
+            LocalConfiguration.current.screenHeightDp.dp * 0.9f
+        }
+        else -> {
+            LocalConfiguration.current.screenWidthDp.dp
+        }
     }
 
     Card(
@@ -66,6 +76,7 @@ fun HarmonyColorPickerCard(
                     hsvColorData.hsv5,
                 ).map { hsvColor ->
                     ColorCircle(
+                        modifier = Modifier.weight(1f),
                         color = rgbToColor(
                             rgb = hsvToRGB(hsv = hsvColorToHsv(hsvColor = hsvColor)),
                         ),
@@ -75,18 +86,22 @@ fun HarmonyColorPickerCard(
                 }
             }
             MakeColorMaterial2Theme {
-                HarmonyColorPicker(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(LocalConfiguration.current.screenWidthDp.dp)
-                        .padding(all = 8.dp),
-                    harmonyMode = colorHarmonyMode,
-                    color = HsvColor.from(color = hexToColor(hex = mainColorHex)),
-                    onColorChanged = {
-                        onColorChanged(it)
-                        mainColorHex = hsvColorToHexStr(hsvColor = it)
-                    },
-                )
+                Box(
+                    modifier = Modifier.fillMaxWidth(),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    HarmonyColorPicker(
+                        modifier = Modifier
+                            .size(size = colorPickerSize)
+                            .padding(all = 8.dp),
+                        harmonyMode = colorHarmonyMode,
+                        color = HsvColor.from(color = hexToColor(hex = mainColorHex)),
+                        onColorChanged = {
+                            onColorChanged(it)
+                            mainColorHex = hsvColorToHexStr(hsvColor = it)
+                        },
+                    )
+                }
             }
         }
     }
