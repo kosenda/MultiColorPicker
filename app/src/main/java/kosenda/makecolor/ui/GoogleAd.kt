@@ -2,7 +2,6 @@ package kosenda.makecolor.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -16,7 +15,6 @@ import kosenda.makecolor.app.BuildConfig
 fun GoogleAd() {
     AndroidView(
         modifier = Modifier
-            .navigationBarsPadding()
             .fillMaxWidth()
             .background(Color.Transparent),
         factory = {

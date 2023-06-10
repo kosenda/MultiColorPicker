@@ -90,9 +90,9 @@ fun RandomScreenContent(
     ) {
         Column(
             modifier = Modifier
-                .padding(it)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
                 .verticalScroll(scrollState)
+                .padding(it)
                 .padding(horizontal = horizontalPadding),
         ) {
             DisplayColorCard(

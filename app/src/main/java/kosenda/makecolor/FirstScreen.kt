@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.displayCutoutPadding
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
@@ -25,6 +26,7 @@ import kosenda.makecolor.core.ui.feature.theme.backgroundBrush
 import kosenda.makecolor.core.ui.feature.theme.backgroundTopColor
 import kosenda.makecolor.navigation.Navigation
 import kosenda.makecolor.ui.Drawer
+import kosenda.makecolor.ui.GoogleAd
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalAnimationApi::class)
@@ -67,26 +69,28 @@ fun FirstScreen() {
         modifier = Modifier.background(brush = backgroundBrush()),
         color = Color.Transparent,
     ) {
-        if (isExpandScreenClass) {
-            Column(
-                modifier = Modifier
-                    .background(brush = backgroundBrush())
-                    .fillMaxSize(),
-            ) {
-                PermanentNavigationDrawer(
-                    drawerContent = modalDrawerSheet,
-                    modifier = Modifier.displayCutoutPadding(),
-                    content = navigation,
-                )
+        Column(
+            modifier = Modifier
+                .displayCutoutPadding()
+                .systemBarsPadding()
+                .background(brush = backgroundBrush())
+                .fillMaxSize(),
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                if (isExpandScreenClass) {
+                    PermanentNavigationDrawer(
+                        drawerContent = modalDrawerSheet,
+                        content = navigation,
+                    )
+                } else {
+                    ModalNavigationDrawer(
+                        drawerContent = modalDrawerSheet,
+                        drawerState = drawerState,
+                        content = navigation,
+                    )
+                }
             }
-
-        } else {
-            ModalNavigationDrawer(
-                drawerContent = modalDrawerSheet,
-                modifier = Modifier.displayCutoutPadding(),
-                drawerState = drawerState,
-                content = navigation,
-            )
+            GoogleAd()
         }
     }
 }

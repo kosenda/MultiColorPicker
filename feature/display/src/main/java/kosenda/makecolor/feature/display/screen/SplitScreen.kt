@@ -95,9 +95,9 @@ fun SplitScreenContent(
     ) {
         Column(
             modifier = Modifier
-                .padding(it)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
                 .verticalScroll(rememberScrollState())
+                .padding(it)
                 .padding(horizontal = 16.dp),
         ) {
             Row(

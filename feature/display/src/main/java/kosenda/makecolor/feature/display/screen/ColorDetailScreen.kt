@@ -86,10 +86,10 @@ fun ColorDetailScreenContent(
     ) {
         Column(
             modifier = Modifier
-                .padding(it)
                 .fillMaxSize()
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
                 .verticalScroll(rememberScrollState())
+                .padding(it)
                 .padding(horizontal = 16.dp),
         ) {
             DisplayColorCard(

@@ -94,17 +94,17 @@ fun RegisterScreenContent(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(padding)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
                 .verticalScroll(rememberScrollState())
-                .padding(horizontal = 16.dp)
                 .pointerInput(Unit) {
                     detectTapGestures(
                         onTap = {
                             focusManager.clearFocus()
                         },
                     )
-                },
+                }
+                .padding(padding)
+                .padding(horizontal = 16.dp),
         ) {
             TitleCard(
                 text = stringResource(id = R.string.registration),

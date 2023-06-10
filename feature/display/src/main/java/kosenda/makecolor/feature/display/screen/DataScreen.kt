@@ -83,9 +83,9 @@ fun DataScreenContent(
     ) { padding ->
         Column(
             modifier = Modifier
-                .padding(padding)
                 .fillMaxSize()
-                .nestedScroll(scrollBehavior.nestedScrollConnection),
+                .nestedScroll(scrollBehavior.nestedScrollConnection)
+                .padding(padding),
         ) {
             LazyColumn {
                 items(

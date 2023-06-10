@@ -91,9 +91,9 @@ fun SeekbarScreenContent(
     ) {
         Column(
             modifier = Modifier
-                .padding(it)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
                 .verticalScroll(scrollState)
+                .padding(it)
                 .padding(horizontal = 16.dp),
         ) {
             DisplayColorCard(

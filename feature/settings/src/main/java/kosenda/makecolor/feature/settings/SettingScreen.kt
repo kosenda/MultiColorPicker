@@ -57,13 +57,6 @@ fun SettingScreenContent(
     val coroutineScope = rememberCoroutineScope()
     val uiState by viewModel.uiState.collectAsState()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
-    val systemUiController = rememberSystemUiController()
-    DisposableEffect(Unit) {
-        systemUiController.isNavigationBarVisible = false
-        onDispose {
-            systemUiController.isNavigationBarVisible = true
-        }
-    }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -94,10 +87,10 @@ fun SettingScreenContent(
         }
         Column(
             modifier = Modifier
-                .padding(padding)
                 .fillMaxSize()
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
                 .verticalScroll(rememberScrollState())
+                .padding(padding)
                 .padding(horizontal = 16.dp),
         ) {
             SelectThemeContent(

@@ -95,17 +95,17 @@ fun InputTextScreenContent(
     ) {
         Column(
             modifier = Modifier
-                .padding(it)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
                 .verticalScroll(scrollState)
-                .padding(horizontal = 16.dp)
                 .pointerInput(Unit) {
                     detectTapGestures(
                         onTap = {
                             focusManager.clearFocus()
                         },
                     )
-                },
+                }
+                .padding(it)
+                .padding(horizontal = 16.dp),
         ) {
             DisplayColorCard(
                 colorData = uiState.colorData,
