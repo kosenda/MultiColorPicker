@@ -13,9 +13,9 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import kosenda.makecolor.core.ui.state.PaletteColorsState
 import kosenda.makecolor.core.ui.feature.common.ColorCircle
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.core.ui.state.PaletteColorsState
 
 @Composable
 fun PaletteCircleCard(
@@ -43,6 +43,7 @@ fun PaletteCircleCard(
                 paletteColors.darkMutedColor,
             ).map {
                 ColorCircle(
+                    modifier = Modifier.weight(1f),
                     color = it,
                     size = circleSize,
                     onClick = updateColorData,

@@ -43,7 +43,11 @@ fun ImagePicker(
 ) {
     val density = LocalDensity.current.density
     val screenWidth = LocalConfiguration.current.screenWidthDp.dp - horizontalPadding * 2
-    val screenHeight = screenWidth * heightToWidthRatio
+    val screenHeight = if (screenWidth > LocalConfiguration.current.screenHeightDp.dp) {
+        (LocalConfiguration.current.screenHeightDp * 0.6).dp
+    } else {
+        screenWidth * heightToWidthRatio
+    }
     val widthRatio = (btm.width / density).dp / (screenWidth)
     val heightRatio = (btm.height / density).dp / screenHeight
     var posX by rememberSaveable { mutableStateOf(0f) }
