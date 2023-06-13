@@ -26,6 +26,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kosenda.makecolor.core.model.data.ColorData
+import kosenda.makecolor.core.resource.R
 import kosenda.makecolor.core.ui.feature.common.ImagePicker
 import kosenda.makecolor.core.ui.feature.common.button.FloatingAddButton
 import kosenda.makecolor.core.ui.feature.common.button.TonalButton
@@ -35,11 +36,10 @@ import kosenda.makecolor.core.ui.feature.common.card.PaletteCircleCard
 import kosenda.makecolor.core.ui.feature.common.card.SelectImageCard
 import kosenda.makecolor.core.ui.feature.common.topbar.TopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
-import kosenda.makecolor.core.resource.R
+import kosenda.makecolor.feature.preview.PreviewSurface
 import kosenda.makecolor.feature.viewmodel.PictureViewModel
 import kosenda.makecolor.feature.viewmodel.PictureViewModelImpl
 import kosenda.makecolor.feature.viewmodel.PreviewPictureViewModel
-import kosenda.makecolor.feature.preview.PreviewSurface
 
 @Composable
 fun PictureScreen(
@@ -48,7 +48,6 @@ fun PictureScreen(
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     PictureScreenContent(
         viewModel = viewModel,
@@ -56,7 +55,6 @@ fun PictureScreen(
         onClickInfo = onClickInfo,
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
-        googleAd = googleAd,
     )
 }
 
@@ -68,7 +66,6 @@ fun PictureScreenContent(
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val contentResolver = LocalContext.current.contentResolver
@@ -94,7 +91,6 @@ fun PictureScreenContent(
                 hex1 = uiState.colorData.hex.toString(),
             )
         },
-        bottomBar = googleAd,
         floatingActionButton = {
             FloatingAddButton(
                 onClick = { onClickFloatingButton(uiState.colorData) },
@@ -105,9 +101,9 @@ fun PictureScreenContent(
     ) {
         Column(
             modifier = Modifier
-                .padding(it)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
                 .verticalScroll(scrollState)
+                .padding(it)
                 .padding(horizontal = horizontalPadding),
         ) {
             DisplayColorCard(
@@ -160,7 +156,7 @@ private fun PreviewPictureScreenContent_Light() {
                 onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
-            ) {}
+            )
         }
     }
 }
@@ -176,7 +172,7 @@ private fun PreviewPictureScreenContent_Dark() {
                 onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
-            ) {}
+            )
         }
     }
 }

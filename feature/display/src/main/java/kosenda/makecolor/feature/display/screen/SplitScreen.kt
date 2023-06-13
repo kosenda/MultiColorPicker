@@ -52,7 +52,6 @@ fun SplitScreen(
     onClickInfo: () -> Unit,
     onClickSplitColor: (SplitColorParam) -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     SplitScreenContent(
         viewModel = viewModel,
@@ -61,7 +60,6 @@ fun SplitScreen(
         onClickInfo = onClickInfo,
         onClickSelectColor = onClickSelectColor,
         onClickSplitColor = onClickSplitColor,
-        googleAd = googleAd,
     )
 }
 
@@ -74,7 +72,6 @@ fun SplitScreenContent(
     onClickInfo: () -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
     onClickSplitColor: (SplitColorParam) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     val context = LocalContext.current
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
@@ -94,14 +91,13 @@ fun SplitScreenContent(
                 onClickInfo = onClickInfo,
             )
         },
-        bottomBar = googleAd,
         containerColor = Color.Transparent,
     ) {
         Column(
             modifier = Modifier
-                .padding(it)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
                 .verticalScroll(rememberScrollState())
+                .padding(it)
                 .padding(horizontal = 16.dp),
         ) {
             Row(
@@ -161,7 +157,7 @@ private fun PreviewSplitScreenContent_Light() {
                 onClickInfo = {},
                 onClickSelectColor = {},
                 onClickSplitColor = {},
-            ) {}
+            )
         }
     }
 }
@@ -178,7 +174,7 @@ private fun PreviewSplitScreenContent_Dark() {
                 onClickInfo = {},
                 onClickSelectColor = {},
                 onClickSplitColor = {},
-            ) {}
+            )
         }
     }
 }

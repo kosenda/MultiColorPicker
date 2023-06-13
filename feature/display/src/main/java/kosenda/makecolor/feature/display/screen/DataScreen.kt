@@ -39,14 +39,12 @@ fun DataScreen(
     onClickMenu: () -> Unit,
     onClickInfo: () -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     DataScreenContent(
         viewModel = viewModel,
         onClickMenu = onClickMenu,
         onClickInfo = onClickInfo,
         onClickSelectColor = onClickSelectColor,
-        googleAd = googleAd,
     )
 }
 
@@ -57,7 +55,6 @@ fun DataScreenContent(
     onClickMenu: () -> Unit,
     onClickInfo: () -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     val context = LocalContext.current
     val uiState by viewModel.uiState.collectAsState()
@@ -82,14 +79,13 @@ fun DataScreenContent(
                 onClickInfo = onClickInfo,
             )
         },
-        bottomBar = googleAd,
         containerColor = Color.Transparent,
     ) { padding ->
         Column(
             modifier = Modifier
-                .padding(padding)
                 .fillMaxSize()
-                .nestedScroll(scrollBehavior.nestedScrollConnection),
+                .nestedScroll(scrollBehavior.nestedScrollConnection)
+                .padding(padding),
         ) {
             LazyColumn {
                 items(
@@ -125,7 +121,6 @@ private fun PreviewDataScreen_Light() {
                 onClickMenu = {},
                 onClickInfo = {},
                 onClickSelectColor = {},
-                googleAd = {},
             )
         }
     }
@@ -141,7 +136,6 @@ private fun PreviewDataScreen_Dark() {
                 onClickMenu = {},
                 onClickInfo = {},
                 onClickSelectColor = {},
-                googleAd = {},
             )
         }
     }

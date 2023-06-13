@@ -96,9 +96,9 @@ fun CategoryDetailScreenContent(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(it)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
                 .verticalScroll(rememberScrollState())
+                .padding(it)
                 .padding(horizontal = horizontalPadding),
         ) {
             Text(

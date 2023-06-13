@@ -47,7 +47,6 @@ fun GradationScreen(
     onClickInfo: () -> Unit,
     onClickDisplayGradationColor: (String, String) -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     GradationScreenContent(
         viewModel = viewModel,
@@ -56,7 +55,6 @@ fun GradationScreen(
         onClickInfo = onClickInfo,
         onClickDisplayGradationColor = onClickDisplayGradationColor,
         onClickSelectColor = onClickSelectColor,
-        googleAd = googleAd,
     )
 }
 
@@ -69,7 +67,6 @@ fun GradationScreenContent(
     onClickInfo: () -> Unit,
     onClickDisplayGradationColor: (String, String) -> Unit,
     onClickSelectColor: (SelectColorParam) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     val context = LocalContext.current
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
@@ -91,14 +88,13 @@ fun GradationScreenContent(
                 hex2 = uiState.selectHex2,
             )
         },
-        bottomBar = googleAd,
         containerColor = Color.Transparent,
     ) {
         Column(
             modifier = Modifier
-                .padding(it)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
                 .verticalScroll(rememberScrollState())
+                .padding(it)
                 .padding(horizontal = 16.dp),
         ) {
             DisplayGradationColorCard(
@@ -161,7 +157,6 @@ private fun PreviewGradationScreen_Light() {
                 onClickInfo = {},
                 onClickDisplayGradationColor = { _, _ -> },
                 onClickSelectColor = {},
-                googleAd = {},
             )
         }
     }
@@ -179,7 +174,6 @@ private fun PreviewGradationScreen_Dark() {
                 onClickInfo = {},
                 onClickDisplayGradationColor = { _, _ -> },
                 onClickSelectColor = {},
-                googleAd = {},
             )
         }
     }

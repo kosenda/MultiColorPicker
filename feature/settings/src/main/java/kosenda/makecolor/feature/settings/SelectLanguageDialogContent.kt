@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -28,6 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.os.LocaleListCompat
 import kosenda.makecolor.core.resource.R
+import kosenda.makecolor.core.ui.data.LocalIsExpandScreenClass
 import kosenda.makecolor.core.ui.feature.common.button.CustomIconButton
 import kosenda.makecolor.core.ui.feature.common.card.LanguageCard
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
@@ -37,6 +39,7 @@ import kosenda.makecolor.core.ui.feature.theme.backgroundBrush
 fun SelectLanguageDialogContent(
     onClickClose: () -> Unit,
 ) {
+    val isExpandScreenClass = LocalIsExpandScreenClass.current
     val languagePair = listOf(
         stringResource(id = R.string.locale_en) to stringResource(id = R.string.display_en),
         stringResource(id = R.string.locale_de) to stringResource(id = R.string.display_de),
@@ -79,7 +82,7 @@ fun SelectLanguageDialogContent(
                 )
             }
             LazyVerticalGrid(
-                columns = GridCells.Fixed(2),
+                columns = GridCells.Fixed(count = if (isExpandScreenClass) 3 else 2),
                 contentPadding = PaddingValues(all = 4.dp)
             ) {
                 items(items = languagePair) { (locale, displayLanguage) ->
@@ -92,6 +95,11 @@ fun SelectLanguageDialogContent(
                             )
                         },
                     )
+                }
+                repeat(
+                    times = if (languagePair.count() % 3 == 0) 1 else 4 - languagePair.count() % 3,
+                ) {
+                    item { Spacer(modifier = Modifier.height(72.dp)) }
                 }
             }
         }

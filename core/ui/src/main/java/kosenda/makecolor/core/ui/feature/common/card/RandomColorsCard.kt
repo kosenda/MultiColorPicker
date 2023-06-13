@@ -37,6 +37,7 @@ fun RandomColorsCard(
             Row(modifier = Modifier.padding(vertical = 8.dp)) {
                 for (i in 0..4) {
                     ColorCircle(
+                        modifier = Modifier.weight(1f),
                         color = rgbToColor(randomRGBColors[i]),
                         size = size,
                         onClick = updateColorData,
@@ -46,6 +47,7 @@ fun RandomColorsCard(
             Row(modifier = Modifier.padding(vertical = 8.dp)) {
                 for (i in 5..9) {
                     ColorCircle(
+                        modifier = Modifier.weight(1f),
                         color = rgbToColor(randomRGBColors[i]),
                         size = size,
                         onClick = updateColorData,

@@ -43,8 +43,6 @@ import kosenda.makecolor.feature.screen.PictureScreen
 import kosenda.makecolor.feature.screen.RandomScreen
 import kosenda.makecolor.feature.screen.SeekbarScreen
 import kosenda.makecolor.feature.settings.SettingScreen
-import kosenda.makecolor.ui.GoogleAd
-import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
@@ -181,7 +179,6 @@ fun Navigation(
                 onClickInfo = ::openInfoDialog,
                 onClickDisplayColor = ::onClickDisplayColor,
                 onClickFloatingButton = ::onClickFloatingButton,
-                googleAd = { GoogleAd() },
             )
         }
         horizontalComposable(NavigationItems.Seekbar.route) {
@@ -200,7 +197,6 @@ fun Navigation(
                 onClickInfo = ::openInfoDialog,
                 onClickDisplayColor = ::onClickDisplayColor,
                 onClickFloatingButton = ::onClickFloatingButton,
-                googleAd = { GoogleAd() },
             )
         }
         horizontalComposable(NavigationItems.Picture.route) {
@@ -210,7 +206,6 @@ fun Navigation(
                 onClickInfo = ::openInfoDialog,
                 onClickDisplayColor = ::onClickDisplayColor,
                 onClickFloatingButton = ::onClickFloatingButton,
-                googleAd = { GoogleAd() },
             )
         }
         horizontalComposable(NavigationItems.Merge.route) {
@@ -222,7 +217,6 @@ fun Navigation(
                 onClickDisplayColor = ::onClickDisplayColor,
                 onClickFloatingButton = ::onClickFloatingButton,
                 onClickSelectColor = ::onClickSelectColor,
-                googleAd = { GoogleAd() },
             )
         }
         horizontalComposable(NavigationItems.Random.route) {
@@ -240,7 +234,6 @@ fun Navigation(
                 onClickMenu = onClickMenu,
                 onClickInfo = ::openInfoDialog,
                 onClickSelectColor = ::onClickSelectColor,
-                googleAd = { GoogleAd() },
             )
         }
         horizontalComposable(NavigationItems.Split.route) {
@@ -251,7 +244,6 @@ fun Navigation(
                 onClickInfo = ::openInfoDialog,
                 onClickSelectColor = ::onClickSelectColor,
                 onClickSplitColor = ::onClickSplitColor,
-                googleAd = { GoogleAd() },
             )
         }
         horizontalComposable(NavigationItems.Gradation.route) {
@@ -262,7 +254,6 @@ fun Navigation(
                 onClickInfo = ::openInfoDialog,
                 onClickDisplayGradationColor = ::onClickDisplayGradationColor,
                 onClickSelectColor = ::onClickSelectColor,
-                googleAd = { GoogleAd() },
             )
         }
         horizontalComposable(NavigationItems.Setting.route) {

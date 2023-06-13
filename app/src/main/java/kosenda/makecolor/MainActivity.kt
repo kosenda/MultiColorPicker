@@ -4,6 +4,10 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
+import androidx.compose.material3.windowsizeclass.WindowSizeClass
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
+import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.State
@@ -14,6 +18,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kosenda.makecolor.core.model.data.FontType
 import kosenda.makecolor.core.model.data.Theme
+import kosenda.makecolor.core.ui.data.LocalIsExpandScreenClass
 import kosenda.makecolor.core.ui.feature.common.LocalIsDark
 import kosenda.makecolor.core.ui.feature.common.dialog.RequestReviewDialog
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
@@ -22,6 +27,7 @@ import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
  * 作成開始：2021/06/13
  * 色を作成するアプリ
 */
+@OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -82,10 +88,16 @@ class MainActivity : AppCompatActivity() {
                     else -> throw IllegalArgumentException("undefined: ${fontType.value}")
                 },
             ) {
-                CompositionLocalProvider(LocalIsDark provides isDarkTheme) {
+                CompositionLocalProvider(
+                    LocalIsDark provides isDarkTheme,
+                    LocalIsExpandScreenClass provides calculateWindowSizeClass(this).isExpand,
+                ) {
                     FirstScreen()
                 }
             }
         }
     }
 }
+
+private val WindowSizeClass.isExpand: Boolean
+    get() = this.widthSizeClass == WindowWidthSizeClass.Expanded

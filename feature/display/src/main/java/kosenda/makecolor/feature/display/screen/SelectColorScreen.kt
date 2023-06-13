@@ -1,5 +1,6 @@
 package kosenda.makecolor.feature.display.screen
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
@@ -38,6 +39,8 @@ import kosenda.makecolor.core.ui.feature.common.button.TonalButton
 import kosenda.makecolor.core.ui.feature.common.card.ColorCard
 import kosenda.makecolor.core.ui.feature.common.topbar.SelectColorTopBar
 import kosenda.makecolor.core.ui.feature.theme.MakeColorTheme
+import kosenda.makecolor.core.ui.feature.theme.backgroundBrush
+import kosenda.makecolor.core.ui.feature.theme.backgroundTopColor
 import kosenda.makecolor.core.util.getNameIfNoAlias
 import kosenda.makecolor.feature.display.viewmodel.PreviewSelectColorViewModel
 import kosenda.makecolor.feature.display.viewmodel.SelectColorViewModel
@@ -72,7 +75,7 @@ fun SelectColorScreenContent(
     val uiState by viewModel.uiState.collectAsState()
     var topContentHeight by rememberSaveable { mutableStateOf(0f) }
     var topContentTopPosition by rememberSaveable { mutableStateOf(0f) }
-    val topContentBackgroundColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.85f)
+    val topContentBackgroundColor = backgroundTopColor().copy(alpha = 0.85f)
     val density = LocalDensity.current.density
     val systemUiController = rememberSystemUiController()
     val navigationHeight = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
@@ -85,7 +88,12 @@ fun SelectColorScreenContent(
         viewModel.getColors()
     }
 
-    Surface(modifier = Modifier.fillMaxSize()) {
+    Surface(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(brush = backgroundBrush()),
+        color = Color.Transparent,
+    ) {
         Box {
             if (uiState.colors.isNotEmpty()) {
                 LazyColumn(modifier = Modifier.fillMaxSize()) {
@@ -142,10 +150,11 @@ fun SelectColorScreenContent(
             }
 
             SelectColorTopBar(
-                modifier = Modifier.onGloballyPositioned {
-                    topContentHeight = it.size.height / density
-                    topContentTopPosition = it.positionInWindow().y / density
-                },
+                modifier = Modifier
+                    .onGloballyPositioned {
+                        topContentHeight = it.size.height / density
+                        topContentTopPosition = it.positionInWindow().y / density
+                    },
                 backgroundColor = topContentBackgroundColor,
                 categoryName = uiState.category.getNameIfNoAlias(),
                 onBackScreen = onBackScreen,

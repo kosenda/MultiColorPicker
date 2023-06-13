@@ -43,7 +43,6 @@ fun RandomScreen(
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     RandomScreenContent(
         viewModel = viewModel,
@@ -51,7 +50,6 @@ fun RandomScreen(
         onClickInfo = onClickInfo,
         onClickFloatingButton = onClickFloatingButton,
         onClickDisplayColor = onClickDisplayColor,
-        googleAd = googleAd,
     )
 }
 
@@ -63,7 +61,6 @@ fun RandomScreenContent(
     onClickInfo: () -> Unit,
     onClickFloatingButton: (ColorData) -> Unit,
     onClickDisplayColor: (ColorData) -> Unit,
-    googleAd: @Composable () -> Unit = {},
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val scrollState = androidx.compose.foundation.rememberScrollState()
@@ -83,7 +80,6 @@ fun RandomScreenContent(
                 hex1 = uiState.colorData.hex.toString(),
             )
         },
-        bottomBar = googleAd,
         floatingActionButton = {
             FloatingAddButton(
                 onClick = { onClickFloatingButton(uiState.colorData) },
@@ -94,9 +90,9 @@ fun RandomScreenContent(
     ) {
         Column(
             modifier = Modifier
-                .padding(it)
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
                 .verticalScroll(scrollState)
+                .padding(it)
                 .padding(horizontal = horizontalPadding),
         ) {
             DisplayColorCard(
@@ -142,7 +138,7 @@ private fun PreviewRandomScreenContent_Light() {
                 onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
-            ) {}
+            )
         }
     }
 }
@@ -158,7 +154,7 @@ private fun PreviewRandomScreenContent_Dark() {
                 onClickInfo = {},
                 onClickFloatingButton = {},
                 onClickDisplayColor = {},
-            ) {}
+            )
         }
     }
 }

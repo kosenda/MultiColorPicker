@@ -18,4 +18,5 @@ dependencies {
     implementation(libs.androidx.ui.google.fonts)
     implementation(libs.compose.color.picker)
     implementation(libs.kotlinx.serialization.json)
+    api(libs.androidx.compose.material3.windowSizeClass)
 }

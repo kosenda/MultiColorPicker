@@ -4,10 +4,11 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -52,30 +53,28 @@ fun DrawerItem(
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
-            .padding(horizontal = 8.dp)
             .clip(CircleShape)
             .background(
                 color = when {
                     isSelected -> when {
-                        LocalIsDark.current -> {
-                            MaterialTheme.colorScheme.primaryContainer.changeBrightness(1.2f)
-                        }
+                        LocalIsDark.current -> MaterialTheme.colorScheme.primaryContainer.changeBrightness(1.2f)
                         else -> MaterialTheme.colorScheme.primaryContainer
                     }
+
                     else -> Color.Transparent
                 },
             )
             .height(52.dp)
-            .fillMaxWidth()
             .clickable { onItemClick(item) },
     ) {
+        Spacer(modifier = Modifier.width(16.dp))
         Image(
             painter = painterResource(id = item.icon!!),
             contentDescription = displayNavigationItemTitles,
             colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.tertiary),
             contentScale = ContentScale.Fit,
             modifier = Modifier
-                .padding(horizontal = 12.dp)
+                .padding(end = 12.dp)
                 .size(32.dp)
                 .contentBrush(brush = primaryBrush()),
         )
@@ -88,5 +87,6 @@ fun DrawerItem(
                 color = MaterialTheme.colorScheme.onSecondaryContainer,
             )
         }
+        Spacer(modifier = Modifier.width(16.dp))
     }
 }
