@@ -24,8 +24,8 @@ class AndroidApplicationPlugin: Plugin<Project> {
                     applicationId = "kosenda.makecolor"
                     minSdk = 24
                     targetSdk = 33
-                    versionCode = 38
-                    versionName = "4.3"
+                    versionCode = 39
+                    versionName = "4.4"
                     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 }
                 compileOptions {
