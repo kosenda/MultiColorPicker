@@ -15,6 +15,11 @@ plugins {
 
 android {
     namespace = "kosenda.makecolor.app"
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
     buildFeatures {
         buildConfig = true
     }
