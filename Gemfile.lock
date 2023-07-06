@@ -32,7 +32,7 @@ GEM
       nokogiri-happymapper (~> 0.6)
     danger-plugin-api (1.0.0)
       danger (> 2.0)
-    faraday (2.7.9)
+    faraday (2.7.10)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-http-cache (2.4.1)
