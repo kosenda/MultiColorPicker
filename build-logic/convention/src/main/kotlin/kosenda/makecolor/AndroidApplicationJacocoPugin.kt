@@ -9,7 +9,6 @@ class AndroidApplicationJacocoPlugin: Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("org.gradle.jacoco")
-                apply("com.android.application")
             }
             configureJacoco()
         }
