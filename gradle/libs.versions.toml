@@ -37,7 +37,7 @@ room = "2.5.2"
 secrets = "2.0.1"
 timber = "5.0.1"
 truth = "1.1.5"
-mockk = "1.13.8"
+mockk = "1.13.9"
 play = "2.0.1"
 
 [libraries]
