@@ -1,3 +1,7 @@
+> [!IMPORTANT]  
+> やる気の問題で更新止めてます
+
+
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://https://github.com/kosenda/MultiColorPicker)　[![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg?style=flat)](https://renovatebot.com)　
 
 <img src="https://user-images.githubusercontent.com/60963155/236632026-4a359a66-b444-47da-a4bc-35a527165a52.png" height="300">　
